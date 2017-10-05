@@ -1,4 +1,4 @@
-var basic = require('./basic.js'),
+var basic = require('./veda/qa/basic.js'),
     timeStamp = ''+Math.round(+new Date()/1000),
     assert = require('assert');
 

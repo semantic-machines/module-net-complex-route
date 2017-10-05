@@ -1,6 +1,6 @@
 var assert = require('assert'),
-    basic = require('./basic.js'),
-    complexRoute = require('./complexRoute.js');
+    basic = require('./veda/qa/basic.js'),
+    complexRoute = require('./veda/qa/complexRoute.js');
 
 /**
  * 0.Open page -> login(as kaprovrt);
