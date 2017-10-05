@@ -27,7 +27,7 @@ before_install:
 # Build
 install:
   - go version
-  - ./veda/build.sh
+  - ./build.sh
 
 
 # Run service as daemon and GUI
@@ -35,18 +35,18 @@ before_script:
   #- "export DISPLAY=:99.0"
   #- "sh -e /etc/init.d/xvfb start"
   #- sleep 3 # give xvfb some time to start
-  - ./veda/control-start.sh
+  - ./control-start.sh
   - sleep 120  # give Web server some time to bind to sockets, load startup data, etc
   - date
 
 # Run API & integration test
 script:
   - grunt test --stack --verbose
-  - travis_wait 20 node ./qa/testInbox.js
-  - travis_wait 20 node ./qa/testRepeatComplexRoute.js
-  - travis_wait 20 node ./qa/testNetComplexRoute.js
-  - node ./qa/testDelegationDocument.js
-  - node ./qa/testDelegationTask.js
+  - node ./qa/module-net-complex-route/testInbox.js
+  - node ./qa/module-net-complex-route/testRepeatComplexRoute.js
+  - node ./qa/module-net-complex-route/testNetComplexRoute.js
+  - node ./qa/module-net-complex-route/testDelegationDocument.js
+  - node ./qa/module-net-complex-route/testDelegationTask.js
 
 # Stop deamon and show log
 after_script:

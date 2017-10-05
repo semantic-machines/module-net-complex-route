@@ -1,7 +1,7 @@
-var basic = require('./veda/qa/basic.js'),
-    compl/exRoute = require('./veda/qa/complexRoute.js'),
-    delegationRequest = require('./veda/qa/delegationRequest.js'),
-    person = require('./veda/qa/person.js'),
+var basic = require('../basic.js'),
+    compl/exRoute = require('../complexRoute.js'),
+    delegationRequest = require('../delegationRequest.js'),
+    person = require('../person.js'),
     timeStamp = ''+Math.round(+new Date()/1000),
     webdriver = require('selenium-webdriver');
     

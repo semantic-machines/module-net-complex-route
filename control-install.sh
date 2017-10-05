@@ -2,4 +2,6 @@
 
 git clone https://github.com/semantic-machines/veda.git
 ln -s $PWD/ontology ./veda/ontology/module-net-complex-route
-./veda/control-install.sh
+ln -s $PWD/qa ./veda/qa/module-net-complex-route
+cd veda
+./control-install.sh
