@@ -1,5 +1,5 @@
-var basic = require('../basic.js'),
-    complexRoute = require('../complexRoute.js'),
+var basic = require('./../basic.js'),
+    complexRoute = require('./../complexRoute.js'),
     timeStamp = ''+Math.round(+new Date()/1000);
 
 
