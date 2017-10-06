@@ -1,7 +1,7 @@
-var basic = require('basic.js'),
-    compl/exRoute = require('complexRoute.js'),
-    delegationRequest = require('delegationRequest.js'),
-    person = require('../person.js'),
+var basic = require('./basic.js'),
+    complexRoute = require('./complexRoute.js'),
+    delegationRequest = require('./delegationRequest.js'),
+    person = require('./person.js'),
     timeStamp = ''+Math.round(+new Date()/1000),
     webdriver = require('selenium-webdriver');
     
