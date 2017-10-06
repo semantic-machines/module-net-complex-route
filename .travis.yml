@@ -43,11 +43,12 @@ before_script:
 # Run API & integration test
 script:
   - grunt test --stack --verbose
-  - node ./qa/module-net-complex-route/testInbox.js
-  - node ./qa/module-net-complex-route/testRepeatComplexRoute.js
-  - node ./qa/module-net-complex-route/testNetComplexRoute.js
-  - node ./qa/module-net-complex-route/testDelegationDocument.js
-  - node ./qa/module-net-complex-route/testDelegationTask.js
+  - cd ./qa/module-net-complex-route
+  - node testInbox.js
+  - node testRepeatComplexRoute.js
+  - node testNetComplexRoute.js
+  - node testDelegationDocument.js
+  - node testDelegationTask.js
 
 # Stop deamon and show log
 after_script:
