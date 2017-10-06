@@ -43,6 +43,7 @@ before_script:
 # Run API & integration test
 script:
   - grunt test --stack --verbose
+  - ls    
   - node ./qa/testInbox.js
   - node ./qa/testRepeatComplexRoute.js
   - node ./qa/testNetComplexRoute.js
