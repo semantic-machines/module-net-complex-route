@@ -1,6 +1,6 @@
 var console = require('console');
-var basic = require('../basic.js'),
-    complexRoute = require('../complexRoute.js'),
+var basic = require('basic.js'),
+    complexRoute = require('complexRoute.js'),
     assert = require('assert');
 
 /**
