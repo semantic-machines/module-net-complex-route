@@ -39,7 +39,6 @@ before_script:
   - ./control-start.sh
   - sleep 120  # give Web server some time to bind to sockets, load startup data, etc
   - date
-  - cd ..
   - ls    
 
 # Run API & integration test
