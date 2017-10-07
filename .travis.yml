@@ -39,6 +39,7 @@ before_script:
   - ./control-start.sh
   - sleep 120  # give Web server some time to bind to sockets, load startup data, etc
   - date
+  - cd ..    
 
 # Run API & integration test
 script:
@@ -51,10 +52,10 @@ script:
 
 # Stop deamon and show log
 after_script:
-  - ./control-stop.sh
-#  - ./send-to-chunk-io.sh
+  - ./veda/control-stop.sh
+#  - ./veda/send-to-chunk-io.sh
 #  - grunt coveralls
 
 after_failure:
-  - ./control-stop.sh
-  - ./send-to-chunk-io.sh
+  - ./veda/control-stop.sh
+  - ./veda/send-to-chunk-io.sh
