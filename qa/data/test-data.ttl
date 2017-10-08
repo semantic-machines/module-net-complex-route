@@ -67,7 +67,7 @@ td:IvanovRT
   rdfs:label "IvanovRT" ;
 .
 
-td:Membership_50_su
+td:Membership_50_su1
   rdf:type v-s:Membership ;
   v-s:memberOf cfg:SuperUser ;
   v-s:resource td:RomanIvanov ;
@@ -132,7 +132,7 @@ td:PetrovRT
   rdfs:label "PetrovRT" ;
 .
 
-td:Membership_50_su
+td:Membership_50_su2
   rdf:type v-s:Membership ;
   v-s:memberOf cfg:SuperUser ;
   v-s:resource td:RomanPetrov ;
