@@ -52,10 +52,10 @@ script:
 
 # Stop deamon and show log
 after_script:
-  - ./veda/control-stop.sh
-#  - ./veda/send-to-chunk-io.sh
+  - ./control-stop.sh
+#  - ./send-to-chunk-io.sh
 #  - grunt coveralls
 
 after_failure:
-  - ./veda/control-stop.sh
-  - ./veda/send-to-chunk-io.sh
+  - ./control-stop.sh
+  - ./send-to-chunk-io.sh
