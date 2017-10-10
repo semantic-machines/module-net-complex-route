@@ -844,5 +844,24 @@ s-wf:map_msg_template_project
   rdfs:isDefinedBy s-wf: ;
 .
 
+s-wf:complexRouteTransform
+  rdf:type v-wf:Transform ;
+  v-wf:transformRule s-wf:complexRouteRule ;
+  rdfs:isDefinedBy s-wf: ;
+.
+s-wf:complexRouteRule
+  rdf:type v-wf:Rule ;
+  v-wf:segregateElement "contentName('@')" ;
+  v-wf:aggregate "putValue ('v-wf:processedDocument')" ;
+  v-wf:aggregate "putUri ('v-wf:forNet', 's-wf:net_complex_route')" ;
+  v-wf:aggregate "putUri ('rdf:type', 's-wf:ComplexRouteStartForm')" ;
+  v-wf:aggregate "putUri ('v-wf:useTransformation', 's-wf:complexRouteStartFormToNet')" ;
+  rdfs:isDefinedBy s-wf: ;
+  v-wf:grouping "1";
+.
 
-
+v-s:SendComplex
+  rdf:type v-s:Bundle ;
+  rdfs:label "Отправить по комплексному маршруту"@ru ;
+  rdfs:label "Complex workflow route"@en ;
+.
