@@ -900,3 +900,52 @@ s-wf:map_msg_template_4_SV_processEnd
   v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_processEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
+
+v-wf:DecisionGoCoordination1
+  rdf:type owl:Class ;
+  rdfs:subClassOf v-wf:Decision ;
+  rdfs:label "Перейти к 1 этапу согласования"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+.
+
+v-wf:DecisionGoCoordination2
+  rdf:type owl:Class ;
+  rdfs:subClassOf v-wf:Decision ;
+  rdfs:label "Перейти к 2 этапу согласования"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+.
+
+v-wf:DecisionGoCoordination3
+  rdf:type owl:Class ;
+  rdfs:subClassOf v-wf:Decision ;
+  rdfs:label "Перейти к 3 этапу согласования"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+.
+
+v-wf:DecisionGoCoordination4
+  rdf:type owl:Class ;
+  rdfs:subClassOf v-wf:Decision ;
+  rdfs:label "Перейти к 4 этапу согласования"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+.
+
+v-wf:DecisionGoCoordination5
+  rdf:type owl:Class ;
+  rdfs:subClassOf v-wf:Decision ;
+  rdfs:label "Перейти к 5 этапу согласования"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+.
+
+v-wf:DecisionGoCoordination6
+  rdf:type owl:Class ;
+  rdfs:subClassOf v-wf:Decision ;
+  rdfs:label "Перейти к 6 этапу согласования"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+.
+
