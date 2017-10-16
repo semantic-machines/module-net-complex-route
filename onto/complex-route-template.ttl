@@ -2370,6 +2370,171 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputPlan") {
 
 }
 
+//--------------------------------------------------------------------------Программа ОПВ
+if (doc['rdf:type'][0].id === "mnd-s:TrialOutputProgram") {
+  routes['informing'][simple+'visible'] = [false];
+  routes['informing'][simple+'editable'] = [false];
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination1'][simple+'deadlineDays'] = [3];
+//Главный технолог
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); 
+// Начальник производства
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+
+// Начальник цеха
+// mnd-s:hasTrialOutputResponsible - v-s:responsibleDepartment - hasChief
+
+// Руководитель группы. Группа технологического контроля ПЦ и ЭП
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024794")); 
+// Руководитель группы. Группа технологического контроля ПБ
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024795")); 
+// Начальник лаборатории. Производств.лаборат.технолог.контроля
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024493")); 
+//Начальник отдела анализа управления бухучета и контроллинга.
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000220")); 
+
+  
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+  routes['coordination2'][simple+'deadlineDays'] = [3];
+  
+  
+  routes['coordination3'][simple+'visible'] = [true];
+  routes['coordination3'][simple+'editable'] = [true];
+  routes['coordination3'][simple+'deadlineDays'] = [3];
+// Начальник производства
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+// Технический директор
+  routes['coordination3'][simple+'participant'] = routes['coordination3'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017804")); 
+// Начальник управления бухучета и контроллинга
+  routes['coordination3'][simple+'participant'] = routes['coordination3'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024618")); 
+
+  routes['sign'][simple+'visible'] = [false];
+  routes['sign'][simple+'editable'] = [false];
+  routes['approval'][simple+'visible'] = [true];
+  routes['approval'][simple+'editable'] = [false];
+  routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_70013758")]; //Генеральный директор
+
+  routes['examination'][simple+'visible'] = [true];
+  routes['examination'][simple+'editable'] = [true];
+// Ответственный за выработку
+  routes['examination'][simple+'participant'] = doc["v-s:responsible"] ;
+// Начальник производства
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+
+// Начальник цеха
+// mnd-s:hasTrialOutputResponsible - v-s:responsibleDepartment - hasChief
+
+// Руководитель выработки
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc["v-s:projectManager"]); 
+// Главный технолог
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); 
+// Начальник УЗ
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71020115")); 
+// Главный диспетчер
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:GLAV_DISP_position")); 
+// инженер по ОПВ
+// mnd-s:hasTrialOutputResponsible - v-s:responsible
+
+  routes['examination'][simple+'comment'] = [new String('Программа ОПВ утверждена / не утверждена')];
+
+  routes['review'][simple+'visible'] = [false];
+  routes['review'][simple+'editable'] = [false];
+
+}
+
+
+//--------------------------------------------------------------------------Заявка на проведение ОПВ
+if (doc['rdf:type'][0].id === "mnd-s:TrialOutputRequest") {
+  routes['informing'][simple+'visible'] = [false];
+  routes['informing'][simple+'editable'] = [false];
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination1'][simple+'deadlineDays'] = [3];
+//Главный технолог
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); 
+  
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+  routes['coordination2'][simple+'deadlineDays'] = [3];
+// Начальник производства
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+  
+  
+  routes['coordination3'][simple+'visible'] = [false];
+  routes['coordination3'][simple+'editable'] = [false];
+  routes['sign'][simple+'visible'] = [false];
+  routes['sign'][simple+'editable'] = [false];
+  routes['approval'][simple+'visible'] = [false];
+  routes['approval'][simple+'editable'] = [false];
+
+  routes['review'][simple+'visible'] = [true];
+  routes['review'][simple+'editable'] = [true];
+// инженер по ОПВ
+// mnd-s:hasTrialOutputResponsible - v-s:responsible
+
+}
+
+
+
+//--------------------------------------------------------------------------Отчет по ОПВ
+if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
+  routes['informing'][simple+'visible'] = [false];
+  routes['informing'][simple+'editable'] = [false];
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination1'][simple+'deadlineDays'] = [3];
+//Главный технолог
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); 
+// Начальник производства
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+
+// Начальник цеха
+// mnd-s:hasTrialOutputResponsible - v-s:responsibleDepartment - hasChief
+								
+// Руководитель группы. Группа технологического контроля ПЦ и ЭП
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024794")); 
+// Руководитель группы. Группа технологического контроля ПБ
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024795")); 
+// Начальник лаборатории. Производств.лаборат.технолог.контроля
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024493")); 
+//Начальник отдела анализа управления бухучета и контроллинга.
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000220")); 
+  
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+// аналогично Согласованию 2 из Программы ОПВ  
+  
+  routes['coordination3'][simple+'visible'] = [false];
+  routes['coordination3'][simple+'editable'] = [false];
+  routes['sign'][simple+'visible'] = [false];
+  routes['sign'][simple+'editable'] = [false];
+
+  routes['approval'][simple+'visible'] = [true];
+  routes['approval'][simple+'editable'] = [true];
+// Если успешная то   Начальник производства, иначе - никого
+
+
+  routes['examination'][simple+'visible'] = [true];
+  routes['examination'][simple+'editable'] = [true];
+// Начальник производства
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+
+// инженер по ОПВ
+// mnd-s:hasTrialOutputResponsible - v-s:responsible
+
+// Ответственный за выработку
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc["v-s:responsible"]); 
+  
+  routes['examination'][simple+'comment'] = [new String('Отчет о выработке утвержден / не утвержден. Ознакомьтесь с результатами выработки и принятыми решениями')];
+
+  routes['review'][simple+'visible'] = [false];
+  routes['review'][simple+'editable'] = [false];
+
+}
+
+
 if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest") { //Тестовый маршрут
     routes['coordination1'][simple+'participant'] = [
                  new veda.IndividualModel("td:RomanKarpov-Analyst1"),
