@@ -2544,19 +2544,19 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   routes['coordination2'][simple+'visible'] = [true];
   routes['coordination2'][simple+'editable'] = [true];
   routes['coordination2'][simple+'deadlineDays'] = [3];
-  if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:a3hzlhyu3zre8p0tp4qw2rks1")){
+  if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:a3hzlhyu3zre8p0tp4qw2rks1")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71020115")];
-  } else if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:ozen3oyudubzn0kg2jr2pp7h")){
+  } else if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:ozen3oyudubzn0kg2jr2pp7h")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71014270")];
-  } else if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:a24axszfwusf1lcckv80m0nag")){
+  } else if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:a24axszfwusf1lcckv80m0nag")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71014270")];
-  } else if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:hy3bz0iy5lumznz3t1p8d0mc")){
+  } else if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:hy3bz0iy5lumznz3t1p8d0mc")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71024364")];
-  } else if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:t2hjs6drp55qrwhloomf1ffv")){
+  } else if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:t2hjs6drp55qrwhloomf1ffv")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017956")];
-  } else if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:ov6s3mpclgumzsjdh7ww0lgl")){
+  } else if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:ov6s3mpclgumzsjdh7ww0lgl")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71024364"), new veda.IndividualModel("d:mondi_position_71017956"), new veda.IndividualModel("d:mondi_position_71020115")];
-  } else if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:vrph83cmydgalaper6wrxiuq")){
+  } else if (doc['v-s:backwardTarget'][0].hasValue("mnd-s:hasAreaForImprovement", "d:vrph83cmydgalaper6wrxiuq")){
     routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71020115"), new veda.IndividualModel("d:mondi_position_71014270"), new veda.IndividualModel("d:mondi_position_71001270")];
   } else {
     routes['coordination2'][simple+'participant'] = [];
@@ -2569,7 +2569,7 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   routes['approval'][simple+'visible'] = [true];
   routes['approval'][simple+'editable'] = [true];
   // Если успешная то Директор по производству, иначе - никого
-  if (doc.hasValue("mnd-s:hasAreaForImprovement", "d:jb6nx8vb0c4fefmfpc9a90n0")){
+  if (doc.hasValue("mnd-s:hasTrialOutputResult", "d:jb6nx8vb0c4fefmfpc9a90n0")){
 	routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")]; 
   } else {
     routes['approval'][simple+'participant'] = [];
@@ -2578,21 +2578,18 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   routes['examination'][simple+'visible'] = [true];
   routes['examination'][simple+'editable'] = [true];
   routes['examination'][simple+'comment'] = [new String('Отчет о выработке утвержден / не утвержден. Ознакомьтесь с результатами выработки и принятыми решениями')];
-  // Начальник производства
-  // mnd-s:hasTrialOutputResponsible - v-s:parentUnit - hasChief
+  // Если отрицательный то Директор по производству
+  if (doc.hasValue("mnd-s:hasTrialOutputResult", "d:s2bohtnclkh9qu51fzm45p0p")){
+	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71018870")); 
+  } 
+   
+  if ( doc.hasValue("v-s:creator") ){   // инициатор - автор документа 
+	var creator = doc["v-s:creator"][0];
+	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(creator);
+	}
   // инженер по ОПВ
-  // mnd-s:hasTrialOutputResponsible - v-s:responsible
-  if (doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].hasValue('v-s:hasChief') || doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0]['v-s:responsibleDepartment'][0].hasValue('v-s:hasChief')){
-    var Chief, Chief_2, backResp ;
-    Chief = doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0]['v-s:hasChief'][0];
-    Chief_2 = doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0]['v-s:responsibleDepartment'][0]['v-s:hasChief'][0];
-    backResp = doc['v-s:backwardTarget'][0]["v-s:responsible"][0];
-    routes['examination'][simple+'participant'] = [ Chief, Chief_2, backResp ];
-  } else {
-    // Ответственный за выработку
-    routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['v-s:backwardTarget'][0]["v-s:responsible"]);
-  }
-
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024777")); 
+	    
   routes['review'][simple+'visible'] = [false];
   routes['review'][simple+'editable'] = [false];
 
