@@ -2373,15 +2373,15 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputProgram") {
   routes['coordination1'][simple+'editable'] = [true];
   routes['coordination1'][simple+'deadlineDays'] = [3];
 // Начальник производства
-// mnd-s:hasTrialOutputResponsible - v-s:parentUnit 
+// mnd-s:hasTrialOutputResponsible - v-s:parentUnit
 if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:parentUnit')) {
   var parentUnitName = doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].id;
-  if (parentUnitName === 'd:mondi_department_50001664')	{ // Производство бумаги
-	routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042 "));   
+  if (parentUnitName === 'd:mondi_department_50001664') { // Производство бумаги
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));
   } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
-	routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));   
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));
   } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
-	routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014260"));
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014260"));
   }
 }
 // Начальник цеха
@@ -2426,12 +2426,12 @@ if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutput
   routes['coordination3'][simple+'editable'] = [true];
   routes['coordination3'][simple+'deadlineDays'] = [3];
   // Директор по производству
-  routes['coordination3'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")]; 
+  routes['coordination3'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")];
   // Технический директор
   routes['coordination3'][simple+'participant'] = routes['coordination3'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017804"));
   // Начальник управления бухучета и контроллинга
   routes['coordination3'][simple+'participant'] = routes['coordination3'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024618"));
-  
+
   routes['sign'][simple+'visible'] = [false];
   routes['sign'][simple+'editable'] = [false];
   routes['approval'][simple+'visible'] = [true];
@@ -2447,19 +2447,19 @@ if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutput
   // Начальник производства
 if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:parentUnit')) {
   var parentUnitName = doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].id;
-  if (parentUnitName === 'd:mondi_department_50001664')	{ // Производство бумаги
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));   
+  if (parentUnitName === 'd:mondi_department_50001664') { // Производство бумаги
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));
   } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));   
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));
   } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014260"));
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014260"));
   }
 }
   // Начальник цеха
   // mnd-s:hasTrialOutputResponsible - v-s:responsibleDepartment - hasChief
   if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:responsibleDepartment') && doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:responsibleDepartment'][0].hasValue('v-s:hasChief')) {
-	var responsibleDepartment = doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:responsibleDepartment'][0]['v-s:hasChief'][0];
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(responsibleDepartment);
+  var responsibleDepartment = doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:responsibleDepartment'][0]['v-s:hasChief'][0];
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(responsibleDepartment);
    }
 // Главный технолог
   routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071"));
@@ -2467,7 +2467,7 @@ if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutput
   routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71020115"));
 // Главный диспетчер
   routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:GLAV_DISP_position"));
-// Инженер по ОПВ 
+// Инженер по ОПВ
   routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024777"));
 
   routes['review'][simple+'visible'] = [false];
@@ -2489,8 +2489,8 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputRequest") {
   routes['coordination2'][simple+'editable'] = [true];
   routes['coordination2'][simple+'deadlineDays'] = [3];
   // Директор по производству
-  routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")]; 
-   
+  routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")];
+
   routes['coordination3'][simple+'visible'] = [false];
   routes['coordination3'][simple+'editable'] = [false];
   routes['sign'][simple+'visible'] = [false];
@@ -2521,15 +2521,15 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   // Начальник производства
   if (doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:parentUnit')){
     var parentUnitName = doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].id;
-	  if (parentUnitName === 'd:mondi_department_50001664')	{ // Производство бумаги
-		routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));   
-	  } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
-		routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));   
-	  } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
-		routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014260"));
-	  }
+    if (parentUnitName === 'd:mondi_department_50001664') { // Производство бумаги
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));
+    } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));
+    } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014260"));
+    }
    }
-     
+
     //Главный технолог
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071"));
     // Руководитель группы. Группа технологического контроля ПЦ и ЭП
@@ -2570,7 +2570,7 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   routes['approval'][simple+'editable'] = [true];
   // Если успешная то Директор по производству, иначе - никого
   if (doc.hasValue("mnd-s:hasTrialOutputResult", "d:jb6nx8vb0c4fefmfpc9a90n0")){
-	routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")]; 
+  routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71018870")];
   } else {
     routes['approval'][simple+'participant'] = [];
   }
@@ -2580,16 +2580,16 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   routes['examination'][simple+'comment'] = [new String('Отчет о выработке утвержден / не утвержден. Ознакомьтесь с результатами выработки и принятыми решениями')];
   // Если отрицательный то Директор по производству
   if (doc.hasValue("mnd-s:hasTrialOutputResult", "d:s2bohtnclkh9qu51fzm45p0p")){
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71018870")); 
-  } 
-   
-  if ( doc.hasValue("v-s:creator") ){   // инициатор - автор документа 
-	var creator = doc["v-s:creator"][0];
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(creator);
-	}
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71018870"));
+  }
+
+  if ( doc.hasValue("v-s:creator") ){   // инициатор - автор документа
+  var creator = doc["v-s:creator"][0];
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(creator);
+  }
   // инженер по ОПВ
-  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024777")); 
-	    
+  routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024777"));
+
   routes['review'][simple+'visible'] = [false];
   routes['review'][simple+'editable'] = [false];
 
