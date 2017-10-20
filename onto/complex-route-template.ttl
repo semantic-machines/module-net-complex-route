@@ -2377,7 +2377,7 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputProgram") {
 if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:parentUnit')) {
   var parentUnitName = doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].id;
   if (parentUnitName === 'd:mondi_department_50001664')	{ // Производство бумаги
-	routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71018870"));   
+	routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042 "));   
   } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
 	routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));   
   } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
@@ -2448,7 +2448,7 @@ if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutput
 if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:parentUnit')) {
   var parentUnitName = doc['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].id;
   if (parentUnitName === 'd:mondi_department_50001664')	{ // Производство бумаги
-	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71018870"));   
+	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));   
   } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
 	routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));   
   } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
@@ -2522,7 +2522,7 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   if (doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0].hasValue('v-s:parentUnit')){
     var parentUnitName = doc['v-s:backwardTarget'][0]['mnd-s:hasTrialOutputResponsible'][0]['v-s:parentUnit'][0].id;
 	  if (parentUnitName === 'd:mondi_department_50001664')	{ // Производство бумаги
-		routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71018870"));   
+		routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014042"));   
 	  } else if (parentUnitName === 'd:mondi_department_50001721') { // Производство целлюлозы
 		routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71014040"));   
 	  } else if (parentUnitName === 'd:mondi_department_50001665') { // Производство целлюлозы
