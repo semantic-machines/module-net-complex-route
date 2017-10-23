@@ -6,15 +6,9 @@
 v-s:module-net-complex-route
   rdf:type v-s:Module ;
   v-s:moduleUrl "https://github.com/semantic-machines/module-net-complex-route" ;
-  v-s:dependency v-s:module-net-basic;
+  v-s:dependency v-s:module-net-universal;
   rdfs:label "Module - net-complex-route"@en ;
   rdfs:label "Модуль - комплексный маршрут"@ru ;
-.
-
-v-s:module-net-basic
-  rdf:type v-s:Module ;
-  v-s:moduleUrl "https://github.com/semantic-machines/module-net-basic" ;
-  v-s:moduleVersion "v1.1.3" ;
 .
 
 v-s:module-net-universal
