@@ -1053,8 +1053,37 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
       routes['review'][simple+'comment'] = [new String('Оформить подписанный контракт')];
       routes['review'][simple+'participant'] = routes['review'][simple+'participant'].concat(new veda.IndividualModel("d:61e1919e-2460-41ed-8692-042d2634542a")); // Регистратор документов СЛПК
       routes['examination'][simple+'visible'] = [true];
-      routes['examination'][simple+'editable'] = [true];
+      routes['examination'][simple+'editable'] = [false];
       routes['examination'][simple+'deadlineDays'] = [10];
+      routes['examination'][simple+'comment'] = [new String('Ознакомиться с документом для дальнейшей работы')];
+      routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['mnd-s:executorSpecialistOfContract']); // Исполнитель по контракту
+      routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['mnd-s:supportSpecialistOfContract']); // Специалист по сопровождению
+      routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:47ba4b3a-da9a-412f-bd42-b11b0c847229')); // ПУ Регистратор контрактов
+      if (
+        doc.hasValue('mnd-s:hasContractDirection')
+        && doc['mnd-s:hasContractDirection'][0].id === 'd:d4cf39d06aec4a9aafcd4663f7996125'
+      ) {
+        if (doc.hasValue('v-s:customer') && doc['v-s:customer'][0].id === 'd:org_RU1121003135') {
+          routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:4ec5dead-aab6-4789-bdd1-94e036ae4a16')); // Специалист ОТО имп
+        }
+        if (doc.hasValue('v-s:supplier') && doc['v-s:supplier'][0].id === 'd:org_RU1121003135') {
+          routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:SYK-CCDG_position')); // Специалист ОТО эксп
+        }
+      }
+      if (
+        doc.hasValue('v-s:hasBudgetCategory')
+        && (
+          doc['v-s:hasBudgetCategory'][0].id === 'd:add478ffd-4996-ca11-8d8c-51bf810357c7' ||
+          doc['v-s:hasBudgetCategory'][0].id === 'd:a486cc102-8ec8-3f09-b326-6fabeec30882' ||
+          doc['v-s:hasBudgetCategory'][0].id === 'd:a0bfac3cc-ecf3-7847-59b2-5793ebd73879' ||
+          doc['v-s:hasBudgetCategory'][0].id === 'd:a58764c7b-9730-2baa-68a4-da7b9fa36625'
+        )
+      ) {
+        routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:ff670646-d509-4ff9-92f2-482c255441e8')); // Спец ОУП
+        routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:554f8555-af9a-436d-ada9-09458614e878')); // Спец по ИЗ
+        routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:mondi_position_71021843')); // Нач УриР
+        routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:mondi_position_71024461')); // Нач ОКС УриР
+      }
 
     } else {
 
