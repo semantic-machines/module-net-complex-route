@@ -9,5 +9,5 @@ cp -r veda-$VEDA_VERSION/* $PWD
 mkdir $PWD/ontology/$PROJECT_NAME
 cp -r $PWD/qa/data/* $PWD/ontology/$PROJECT_NAME
 cp -r $PWD/onto/* $PWD/ontology/$PROJECT_NAME
-cp -r $PWD/module.ttl $PWD/ontology/$PROJECT_NAME
+cp $PWD/module.ttl $PWD/ontology/$PROJECT_NAME
 ./control-install.sh
