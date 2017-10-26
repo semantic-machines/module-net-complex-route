@@ -444,7 +444,7 @@ if (doc['rdf:type'][0].id === "mnd-s:EnergyResourceRequest") {
   routes['approval'][simple+'visible'] = [true];
   routes['approval'][simple+'editable'] = [false];
   routes['approval'][simple+'deadlineDays'] = [5];
-  routes['approval'][simple+'participant'] =  [new veda.IndividualModel("d:SYK-NSMEN-PP_person")];
+  routes['approval'][simple+'participant'] =  [new veda.IndividualModel("d:SYK-NSMEN-PP_appointment")];
   routes['review'][simple+'visible'] = [true];
   routes['review'][simple+'editable'] = [false];
   routes['review'][simple+'deadlineDays'] = [3];
