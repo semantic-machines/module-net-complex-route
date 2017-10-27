@@ -512,8 +512,6 @@ if (doc['rdf:type'][0].id === "mnd-s:DismantlingProject") {
 
 //--------------------------------------------------------------------------Внутренний документ
 if (doc['rdf:type'][0].id === "mnd-s:InternalDocument") {
-  routes['informing'][simple+'visible'] = [true];
-  routes['informing'][simple+'editable'] = [true];
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
   routes['coordination2'][simple+'visible'] = [true];
@@ -552,10 +550,22 @@ if (doc['rdf:type'][0].id === "mnd-s:InternalDocument") {
   routes['approval'][simple+'visible'] = [true];
   routes['approval'][simple+'editable'] = [true];
   routes['approval'][simple+'deadlineDays'] = [5];
-
   routes['review'][simple+'visible'] = [true];
   routes['review'][simple+'editable'] = [true];
   routes['review'][simple+'deadlineDays'] = [3];
+  //Ознакомление
+  if (doc.hasValue('v-s:copyTo')){
+    var copy = doc["v-s:copyTo"];
+    routes['examination'][simple+'visible'] = [true];
+    routes['examination'][simple+'editable'] = [true];
+    routes['examination'][simple+'participant'] = [copy][0];
+  } else {
+    routes['examination'][simple+'visible'] = [true];
+    routes['examination'][simple+'editable'] = [true];
+  }
+  //Поручение
+  routes['instruction'][simple+'visible'] = [true];
+  routes['instruction'][simple+'editable'] = [true];
 }
 
 //--------------------------------------------------------------------------Заявка на контракт
@@ -2341,10 +2351,12 @@ if (doc['rdf:type'][0].id === "mnd-s:ProjectCapex") {
   routes['coordination2'][simple+'participant'] = routes['coordination2'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024462")); //Начальник ОУП УРиР
   routes['coordination2'][simple+'participant'] = routes['coordination2'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_employee_00051823")); //ПоважановаЭ
 
-  routes['coordination3'][simple+'visible']  =  [false];
-  routes['coordination3'][simple+'editable'] = [false];
-  routes['coordination4'][simple+'visible']  =  [false];
-  routes['coordination4'][simple+'editable'] = [false];
+  routes['coordination3'][simple+'visible']  =  [true];
+  routes['coordination3'][simple+'editable'] = [true];
+  routes['coordination4'][simple+'visible']  =  [true];
+  routes['coordination4'][simple+'editable'] = [true];
+  routes['coordination5'][simple+'visible']  =  [true];
+  routes['coordination5'][simple+'editable'] = [true];
 
   routes['sign'][simple+'visible'] = [true];
   routes['sign'][simple+'editable'] = [true];
