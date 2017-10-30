@@ -554,11 +554,11 @@ if (doc['rdf:type'][0].id === "mnd-s:InternalDocument") {
   routes['review'][simple+'editable'] = [true];
   routes['review'][simple+'deadlineDays'] = [3];
   //Ознакомление
-  if (doc.hasValue('v-s:copyTo')){
+  if (doc.hasValue('v-s:copyTo')) {
     var copy = doc["v-s:copyTo"];
     routes['examination'][simple+'visible'] = [true];
     routes['examination'][simple+'editable'] = [true];
-    routes['examination'][simple+'participant'] = [copy][0];
+    routes['examination'][simple+'participant'] = copy;
   } else {
     routes['examination'][simple+'visible'] = [true];
     routes['examination'][simple+'editable'] = [true];
