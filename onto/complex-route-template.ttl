@@ -1958,11 +1958,20 @@ if (doc['rdf:type'][0].id === "mnd-s:PassRequest") {
   routes['coordination1'][simple+'deadlineDays'] = [10];
   routes['coordination1'][simple+'comment'] = [new String('Согласовать заявку на пропуск')];
 
-  if ( (doc.hasValue("mnd-s:hasPassRequestGoal", "d:ac519d730b3347069f86f38673522918")) || (doc.hasValue("mnd-s:hasPassRequestGoal", "d:b8186a3dd9254a048c4a26044518b129"))){
-    routes['coordination2'][simple+'visible'] = [true];
-    routes['coordination2'][simple+'editable'] = [false];
-    routes['coordination2'][simple+'comment'] = [new String('Согласовать заявку на пропуск')];
-    routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:js1nnk9i8lnlfsai1tl6ks5t")];
+  if ( (doc.hasValue("mnd-s:hasPassRequestGoal", "d:ac519d730b3347069f86f38673522918")) || (doc.hasValue("mnd-s:hasPassRequestGoal", "d:b8186a3dd9254a048c4a26044518b129")) || (doc.hasValue("mnd-s:hasPassRequestGoal", "d:9d99778155314394abbf36e54a091677"))){
+    //проверяем есть ли в массиве пропусков хотя бы один с заполненным полем v-s:correspondentPersonDescription
+    var corPerDes = doc["mnd-s:hasPass"] ;
+    var logic = corPerDes.some(function (request){return request.hasValue("v-s:correspondentPersonDescription")});
+    console.log( logic );
+    //проверяем массив пропусков на наличие "временный на человека" || "электронный пропуск" || "изменение уровня доступа" || "разовый на человека"
+    var hasPassKind = corPerDes.some(function (request){return request.hasValue("mnd-s:hasPassKind", "d:a149d268628b46ae8d40c6ea0ac7f3dd") || request.hasValue("mnd-s:hasPassKind", "d:ece7e741557e406bb996809163810c6e") || request.hasValue("mnd-s:hasPassKind", "d:621eee85422448d8994242641def3e5e") || request.hasValue("mnd-s:hasPassKind", "d:228e15d5afe544c099c337ceafa47ea6")});
+    console.log( hasPassKind );
+    if (doc.hasValue("mnd-s:hasPass") && logic && hasPassKind){
+      routes['coordination2'][simple+'visible'] = [true];
+      routes['coordination2'][simple+'editable'] = [false];
+      routes['coordination2'][simple+'comment'] = [new String('Согласовать заявку на пропуск')];
+      routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:js1nnk9i8lnlfsai1tl6ks5t")];
+    }
   }
 
   routes['sign'][simple+'visible'] = [true];
