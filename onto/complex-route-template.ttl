@@ -1835,8 +1835,6 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
     ) {
       routes['coordination1'][simple+'visible'] = [true];
       routes['coordination1'][simple+'editable'] = [true];
-      routes['coordination1'][simple+'deadlineDays'] = [10];
-      routes['coordination1'][simple+'comment'] = [new String('Согласовать заявку на контракт')];
     } else if (doc.hasValue("v-s:businessTripEmployee")) {
       var chief = doc["v-s:businessTripEmployee"][0]["v-s:occupation"][0].getChief();
       routes['coordination1'][simple+'participant'] = [chief];
