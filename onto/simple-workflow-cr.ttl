@@ -925,3 +925,8 @@ v-wf:DecisionGoCoordination6
   v-ui:hasTemplate v-wf:DecisionTemplate1 ;
 .
 
+s-wf:map_documentType_4_TIV_DocId_documentType
+  rdf:type v-wf:Mapping ;
+  v-wf:mapToVariable s-wf:var_documentType ;
+  v-wf:mappingExpression  "get_properties_chain (task.getInputVariable ('docId'), [{$get:'rdf:type'}])')";
+.
