@@ -26,7 +26,7 @@ s-wf:net_complex_route a v-wf:Net;
     v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
     v-s:updateCounter "16"^^xsd:integer;
     v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp, s-wf:cr_join_point, s-wf:crf_jp_to_rework, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i, s-wf:crf_a_to_r, s-wf:crf_a_to_ai, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_auto_instruction, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
-    v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4 ;
+    v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:cr_i_rightset_to_i, s-wf:cr_i_rightset ;
     v-wf:inputVariable s-wf:var_doc_id, s-wf:var_startForm_id, s-wf:var_journal_initiator;
     v-wf:localVariable s-wf:var_right_1.
 s-wf:cr_start a v-wf:InputCondition;
@@ -94,8 +94,30 @@ s-wf:crf_dr_to_i a v-wf:Flow;
     v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
+    v-wf:flowsInto s-wf:cr_i_rightset;
+    v-wf:predicate "true"^^xsd:string.
+
+s-wf:cr_i_rightset_to_i 
+	a v-wf:Flow;
+    v-s:updateCounter "17"^^xsd:integer;
+    v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_informing_task;
     v-wf:predicate "true"^^xsd:string.
+
+s-wf:cr_i_rightset
+  a v-wf:Task;
+  rdfs:isDefinedBy s-wf: ;
+  v-wf:locationX "108"^^xsd:integer;
+  v-wf:locationY "287"^^xsd:integer;
+  v-wf:belongsTo s-wf:net_complex_route;
+  v-wf:predicate "true"^^xsd:string;
+  v-wf:hasFlow s-wf:cr_i_rightset_to_i;
+  v-wf:inputVariable s-wf:var_to ;
+  v-wf:startingMapping s-wf:map_to_1_informing_task ;  
+  v-wf:executor s-wf:codelet_change_to_informing_right;
+  rdfs:label "Установить права"^^xsd:string;
+  v-wf:split v-wf:XOR;
+.
 
 s-wf:cr_informing_task a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -107,8 +129,8 @@ s-wf:cr_informing_task a v-wf:Task;
     v-s:updateCounter "2"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:join v-wf:None;
-    v-wf:locationX "146"^^xsd:integer;
-    v-wf:locationY "294"^^xsd:integer;
+    v-wf:locationX "235"^^xsd:integer;
+    v-wf:locationY "284"^^xsd:integer;
     v-wf:split v-wf:None;
     v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator, s-wf:map_to_1_informing_task;
     v-wf:startingMessageMap s-wf:map_msg_template_4_SV_processStart, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_var_wf_to_task_to;
