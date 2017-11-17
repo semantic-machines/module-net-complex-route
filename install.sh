@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VEDA_VERSION=5.1.24
+VEDA_VERSION=5.1.25
 PROJECT_NAME=module-net-complex-route
 
 wget https://github.com/semantic-machines/veda/archive/v$VEDA_VERSION.zip
