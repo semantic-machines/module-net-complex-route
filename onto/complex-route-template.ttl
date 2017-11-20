@@ -95,7 +95,7 @@ stages.forEach(function(stage) {
 routes['introduction'][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined')]")];
 routes['introduction'][simple+'task_label'] = veda.Util.mlstring("Ознакомление", "Introduction");
 for (var i = 1; i <= 6; i++) {
-  routes['coordination'+i][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAgreed'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+  routes['coordination'+i][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAgreed'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionNoAgreed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
   routes['coordination'+i][simple+'task_label'] = veda.Util.mlstring("Согласовать", "Coordinate");
 }
 
