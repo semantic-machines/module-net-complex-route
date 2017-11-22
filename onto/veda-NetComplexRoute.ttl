@@ -25,8 +25,8 @@ s-wf:net_complex_route a v-wf:Net;
     v-s:edited "2017-06-06T07:45:34.000Z"^^xsd:dateTime;
     v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
     v-s:updateCounter "16"^^xsd:integer;
-    v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp, s-wf:cr_join_point, s-wf:crf_jp_to_rework, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i, s-wf:crf_a_to_r, s-wf:crf_a_to_ai, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_auto_instruction, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
-    v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4 ;
+    v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp, s-wf:cr_join_point, s-wf:crf_jp_to_rework, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i, s-wf:crf_a_to_r, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
+    v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap ;
     v-wf:inputVariable s-wf:var_doc_id, s-wf:var_startForm_id, s-wf:var_journal_initiator;
     v-wf:localVariable s-wf:var_right_1.
 s-wf:cr_start a v-wf:InputCondition;
@@ -162,7 +162,7 @@ s-wf:crf_c1_to_jp a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_join_point;
-    v-wf:predicate "task_result.is_exists_result (task_result) == true && (task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false)"^^xsd:string.
+    v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false"^^xsd:string.
 s-wf:cr_c2 a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Согласование 2"^^xsd:string;
@@ -195,7 +195,7 @@ s-wf:crf_c2_to_jp a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_join_point;
-    v-wf:predicate "task_result.is_exists_result (task_result) == true && (task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false)"^^xsd:string.
+    v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false"^^xsd:string.
 s-wf:cr_c3 a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Согласование 3"^^xsd:string;
@@ -228,7 +228,7 @@ s-wf:crf_c3_to_jp a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_join_point;
-    v-wf:predicate "task_result.is_exists_result (task_result) == true && (task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false)"^^xsd:string.
+    v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false"^^xsd:string.
 s-wf:cr_c4 a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Согласование 4"^^xsd:string;
@@ -261,7 +261,7 @@ s-wf:crf_c4_to_jp a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_join_point;
-    v-wf:predicate "task_result.is_exists_result (task_result) == true && (task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false)"^^xsd:string.
+    v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false"^^xsd:string.
 s-wf:cr_c5 a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Согласование 5"^^xsd:string;
@@ -294,7 +294,7 @@ s-wf:crf_c5_to_jp a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_join_point;
-    v-wf:predicate "task_result.is_exists_result (task_result) == true && (task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false)"^^xsd:string.
+    v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false"^^xsd:string.
 s-wf:cr_c6 a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Согласование 6"^^xsd:string;
@@ -317,7 +317,7 @@ s-wf:crf_c6_to_jp a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:belongsTo s-wf:net_complex_route;
     v-wf:flowsInto s-wf:cr_join_point;
-    v-wf:predicate "task_result.is_exists_result (task_result) == true && (task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false)"^^xsd:string.
+    v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == false && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == false"^^xsd:string.
 s-wf:cr_join_point a v-wf:Condition;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label ""^^xsd:string;
@@ -482,7 +482,7 @@ s-wf:cr_approval a v-wf:Task;
     v-wf:completeDecisionTransform s-wf:tr_taken_decision;
     v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible;
     v-wf:executor s-wf:executor_approval;
-    v-wf:hasFlow s-wf:crf_a_to_jp, s-wf:crf_a_to_r, s-wf:crf_a_to_i, s-wf:crf_a_to_ai, s-wf:crf_a_to_i2;
+    v-wf:hasFlow s-wf:crf_a_to_jp, s-wf:crf_a_to_r, s-wf:crf_a_to_i, s-wf:crf_a_to_ai, s-wf:crf_a_to_i2, s-wf:crf_a_to_aap;
     v-wf:locationX "1350"^^xsd:integer;
     v-wf:locationY "200"^^xsd:integer;
     v-wf:split v-wf:OR;
@@ -516,15 +516,7 @@ s-wf:crf_a_to_r a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:flowsInto s-wf:cr_review;
     v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionApprove')) == true"^^xsd:string.
-s-wf:crf_a_to_ai a v-wf:Flow;
-    rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
-    v-s:created "2017-05-23T12:44:37.000Z"^^xsd:dateTime;
-    v-s:creator td:RomanKarpov-Analyst1;
-    v-s:edited "2017-06-06T07:45:34.641Z"^^xsd:dateTime;
-    v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
-    v-s:updateCounter "17"^^xsd:integer;
-    v-wf:flowsInto s-wf:cr_auto_instruction;
-    v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionApprove')) == true"^^xsd:string.
+
 s-wf:cr_instruction a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Поручение"^^xsd:string;
@@ -569,16 +561,6 @@ s-wf:cr_examination a v-wf:Task;
     v-wf:startDecisionTransform s-wf:tr_examin_form;
     v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
     v-wf:subNet s-wf:InterlayerNet.
-s-wf:cr_auto_instruction a v-wf:Task;
-    rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
-    rdfs:label "Автопоручение"^^xsd:string;
-    v-s:updateCounter "1"^^xsd:integer;
-    v-wf:completeDecisionTransform s-wf:tr_taken_decision;
-    v-wf:locationX "1500"^^xsd:integer;
-    v-wf:locationY "-100"^^xsd:integer;
-    v-wf:startDecisionTransform s-wf:tr_approv_form;
-    v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
-    v-wf:subNet <d:MeetingNet>.
 s-wf:cr_review a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Рассмотрение"^^xsd:string;
@@ -812,3 +794,24 @@ s-wf:map_to_1_distribution_task
   v-wf:mappingExpression  "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_distribution'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
   rdfs:label "map_to_2_informing_task" ;
 .
+
+s-wf:autoActionProcess 
+	a v-wf:Task;
+    v-wf:subNet d:MeetingSubNet;
+    v-wf:split v-wf:None;
+    v-s:updateCounter "3"^^xsd:integer;
+    v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
+    v-wf:join v-wf:None;
+    v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible;
+    v-wf:executor d:executor_meeting;
+    v-wf:locationX "1500"^^xsd:integer;
+    v-wf:locationY "-100"^^xsd:integer;
+    rdfs:label "Автопоручения"^^xsd:string;
+    v-s:updateCounter "1"^^xsd:integer;
+    v-wf:completedJournalMap s-wf:map_journal_msg_4_task_label_complete, s-wf:map_jrn_ev_type_4_TaskCompleted, s-wf:map_journal_doc_id, s-wf:map_journal_process_id.
+
+
+s-wf:crf_a_to_aap a v-wf:Flow;
+    v-s:updateCounter "17"^^xsd:integer;
+    v-wf:flowsInto s-wf:autoActionProcess;
+    v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionApprove')) == true"^^xsd:string.
