@@ -31,7 +31,7 @@ s-wf:crf_c6_to_s a v-wf:Flow;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_sign;
-  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true";
+  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true"^^xsd:string;
 .
 
 s-wf:crf_a_to_jp a v-wf:Flow;
