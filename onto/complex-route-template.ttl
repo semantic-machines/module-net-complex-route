@@ -2254,26 +2254,24 @@ if (doc['rdf:type'][0].id === "mnd-s:MaterialRequest") {
   routes['sign'][simple+'editable'] = [false];
   routes['approval'][simple+'visible'] = [false];
   routes['approval'][simple+'editable'] = [false];
-  routes['review'][simple+'visible'] = [false];
-  routes['review'][simple+'editable'] = [false];
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['instruction'][simple+'deadlineDays'] =[10];
+  routes['review'][simple+'visible'] = [true];
+  routes['review'][simple+'editable'] = [true];
+  routes['review'][simple+'deadlineDays'] =[10];
 
   if (doc["mnd-s:hasMaterialRequestKind"][0].id === 'd:688f20468e1b4fbd8fb8e4e8c7b05e5f'){
-      routes['instruction'][simple+'comment'] = [new String('Создание ОЗМ')];
+      routes['review'][simple+'comment'] = [new String('Создание ОЗМ')];
 
     } else if (doc["mnd-s:hasMaterialRequestKind"][0].id === 'd:3ae657fee4ea41308acd5e239660976f'){
-      routes['instruction'][simple+'comment'] = [new String('Изменение ОЗМ')];
+      routes['review'][simple+'comment'] = [new String('Изменение ОЗМ')];
 
     } else if (doc["mnd-s:hasMaterialRequestKind"][0].id === 'd:1d53b0e615ef446bb25c877cdbe1a0e4'){
-      routes['instruction'][simple+'comment'] = [new String('Удаление ОЗМ')];
+      routes['review'][simple+'comment'] = [new String('Удаление ОЗМ')];
     }
 
   if(doc.hasValue('mnd-s:hasMaterialGroup')){
     var mrp_contr = new veda.IndividualModel(doc['mnd-s:hasMaterialGroup'][0].id);
     if (mrp_contr.hasValue('mnd-s:controllerMRP')){
-      routes['instruction'][simple+'participant'] = routes['instruction'][simple+'participant'].concat(mrp_contr["mnd-s:controllerMRP"]); // MRP контроллер группы материалов
+      routes['review'][simple+'participant'] = routes['instruction'][simple+'participant'].concat(mrp_contr["mnd-s:controllerMRP"]); // MRP контроллер группы материалов
     }
   }
   routes['examination'][simple+'visible'] = [true];
