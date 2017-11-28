@@ -797,7 +797,7 @@ s-wf:map_to_1_distribution_task
 
 s-wf:autoActionProcess 
 	a v-wf:Task;
-    v-wf:subNet d:MeetingSubNet;
+    v-wf:subNet s-wf:subnet_autoinstruction_route;
     v-wf:split v-wf:None;
     v-s:updateCounter "3"^^xsd:integer;
     v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
