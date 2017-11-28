@@ -26,7 +26,7 @@ s-wf:net_complex_route a v-wf:Net;
     v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
     v-s:updateCounter "16"^^xsd:integer;
     v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp, s-wf:cr_join_point, s-wf:crf_jp_to_rework, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i, s-wf:crf_a_to_r, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
-    v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap ;
+    v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap, s-wf:cr_informing5, s-wf:crf_r_to_i5 ;
     v-wf:inputVariable s-wf:var_doc_id, s-wf:var_startForm_id, s-wf:var_journal_initiator;
     v-wf:localVariable s-wf:var_right_1.
 s-wf:cr_start a v-wf:InputCondition;
@@ -567,11 +567,12 @@ s-wf:cr_review a v-wf:Task;
     v-s:updateCounter "3"^^xsd:integer;
     v-wf:completeDecisionTransform s-wf:tr_taken_decision;
     v-wf:executor s-wf:executor_review;
-    v-wf:hasFlow s-wf:crf_r_to_i2;
+    v-wf:hasFlow s-wf:crf_r_to_i2, s-wf:crf_r_to_i5;
     v-wf:locationX "1500"^^xsd:integer;
     v-wf:locationY "50"^^xsd:integer;
     v-wf:startDecisionTransform s-wf:tr_review_form;
     v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
+    v-wf:split v-wf:OR;
     v-wf:subNet s-wf:InterlayerNet.
 s-wf:crf_r_to_i2 a v-wf:Flow;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -582,6 +583,34 @@ s-wf:crf_r_to_i2 a v-wf:Flow;
     v-s:updateCounter "17"^^xsd:integer;
     v-wf:flowsInto s-wf:cr_instruction2;
     v-wf:predicate "true"^^xsd:string.
+
+s-wf:cr_informing5 a v-wf:Task;
+    rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+    rdfs:label "Уведомление"^^xsd:string;
+    v-s:created "2017-05-23T12:44:37.000Z"^^xsd:dateTime;
+    v-s:creator td:AleksandraKhvostikova-Analyst1;
+    v-s:edited "2017-06-06T07:12:27.000Z"^^xsd:dateTime;
+    v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
+    v-s:updateCounter "17"^^xsd:integer;
+    v-wf:join v-wf:None;
+    v-wf:locationX "1646"^^xsd:integer;
+    v-wf:locationY "-40"^^xsd:integer;
+    v-wf:split v-wf:None;
+    v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template_notification_reviewEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_0_initiator;
+    v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl;
+    v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_initiator, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType;
+    v-wf:startingMapping s-wf:map_doc_id;
+.    
+s-wf:crf_r_to_i5 a v-wf:Flow;
+    rdfs:isDefinedBy <http://semantic-machines.com/veda/net_complex_route>;
+    v-s:created "2017-05-23T12:44:37.000Z"^^xsd:dateTime;
+    v-s:creator td:RomanKarpov-Analyst1;
+    v-s:edited "2017-06-06T07:45:34.676Z"^^xsd:dateTime;
+    v-s:lastEditor td:AleksandraKhvostikova-Analyst1;
+    v-s:updateCounter "19"^^xsd:integer;
+    v-wf:flowsInto s-wf:cr_informing5;
+    v-wf:predicate "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_review'}]).length > 0"^^xsd:string.
+
 s-wf:cr_instruction2 a v-wf:Task;
     rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
     rdfs:label "Поручение"^^xsd:string;
