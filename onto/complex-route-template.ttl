@@ -2685,6 +2685,71 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
   routes['review'][simple+'editable'] = [false];
 
 }
+//--------------------------------------------------------------------------------Встреча-------
+//if (doc['rdf:type'][0].id === "mnd-s:Meeting") {
+//  routes['introduction'][simple+'visible'] = [false];
+//  routes['introduction'][simple+'editable'] = [false];
+//  routes['coordination1'][simple+'visible'] = [false];
+//  routes['coordination1'][simple+'editable'] = [false];
+//  routes['coordination2'][simple+'visible'] = [false];
+//  routes['coordination2'][simple+'editable'] = [false];
+//  routes['coordination3'][simple+'visible'] = [false];
+//  routes['coordination3'][simple+'editable'] = [false];
+//  routes['sign'][simple+'visible'] = [false];
+//  routes['sign'][simple+'editable'] = [false];
+//  routes['approval'][simple+'visible'] = [false];
+//  routes['approval'][simple+'editable'] = [false];
+//  routes['review'][simple+'visible'] = [false];
+//  routes['review'][simple+'editable'] = [false];
+//}
+
+//--------------------------------------------------------------------------------Конструкторская_заявка-------
+if (doc['rdf:type'][0].id === "mnd-s:EngineeringRequest") {
+  routes['introduction'][simple+'visible'] = [false];
+  routes['introduction'][simple+'editable'] = [false];
+
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  if (doc.hasValue('v-s:initiator') && doc['v-s:initiator'][0].hasValue('v-s:parentUnit')) {
+	 var parentUnitName = doc['v-s:initiator'][0]['v-s:parentUnit'][0];
+     var chief = parentUnitName.getChief();
+	 routes['coordination1'][simple+'participant'] = [chief]; // Руководитель подразделения Ответственного лица
+   }  
+  
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+
+  routes['coordination3'][simple+'visible'] = [false];
+  routes['coordination3'][simple+'editable'] = [false];
+
+  routes['sign'][simple+'visible'] = [true];
+  routes['sign'][simple+'editable'] = [false];
+  
+// если Разработчик = d:mondi_department_50002627 (Проектно-конструкторский отд. УРиР)
+// то Рассматривающий - Начальник ПКО УРИР (d:mondi_position_71016920)
+// если Разработчик = d:mondi_department_50001898 (Группа раб. проектиров.ПКО)
+// то подписывающий - Начальник службы-главный механик. Руководство центральн.механ.службы (d:mondi_position_71013780)
+//    рассматривающий - Руководитель группы. Группа раб. проектиров.ПКО (d:mondi_position_71013969)
+  if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50002627'){
+	 routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71016920")];
+   } else 
+	  if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50001898'){
+	  routes['sign'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013780")];
+	  routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013969")];	
+	  }
+
+  routes['approval'][simple+'visible'] = [false];
+  routes['approval'][simple+'editable'] = [false];
+  routes['review'][simple+'visible'] = [true];
+  routes['review'][simple+'editable'] = [false];
+  routes['examination'][simple+'visible'] = [true];
+  routes['examination'][simple+'editable'] = [true];
+  routes['instruction'][simple+'visible'] = [true];
+  routes['instruction'][simple+'editable'] = [true];
+  routes['distribution'][simple+'visible'] = [true];
+  routes['distribution'][simple+'editable'] = [true];
+}
+
 
 //---------------------------------------------------------Тестовый маршрут
 
