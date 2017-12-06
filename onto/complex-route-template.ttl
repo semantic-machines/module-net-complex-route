@@ -2711,11 +2711,11 @@ if (doc['rdf:type'][0].id === "mnd-s:EngineeringRequest") {
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
   if (doc.hasValue('v-s:initiator') && doc['v-s:initiator'][0].hasValue('v-s:parentUnit')) {
-	 var parentUnitName = doc['v-s:initiator'][0]['v-s:parentUnit'][0];
+   var parentUnitName = doc['v-s:initiator'][0]['v-s:parentUnit'][0];
      var chief = parentUnitName.getChief();
-	 routes['coordination1'][simple+'participant'] = [chief]; // Руководитель подразделения Ответственного лица
-   }  
-  
+   routes['coordination1'][simple+'participant'] = [chief]; // Руководитель подразделения Ответственного лица
+   }
+
   routes['coordination2'][simple+'visible'] = [true];
   routes['coordination2'][simple+'editable'] = [true];
 
@@ -2724,19 +2724,19 @@ if (doc['rdf:type'][0].id === "mnd-s:EngineeringRequest") {
 
   routes['sign'][simple+'visible'] = [true];
   routes['sign'][simple+'editable'] = [false];
-  
+
 // если Разработчик = d:mondi_department_50002627 (Проектно-конструкторский отд. УРиР)
 // то Рассматривающий - Начальник ПКО УРИР (d:mondi_position_71016920)
 // если Разработчик = d:mondi_department_50001898 (Группа раб. проектиров.ПКО)
 // то подписывающий - Начальник службы-главный механик. Руководство центральн.механ.службы (d:mondi_position_71013780)
 //    рассматривающий - Руководитель группы. Группа раб. проектиров.ПКО (d:mondi_position_71013969)
   if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50002627'){
-	 routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71016920")];
-   } else 
-	  if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50001898'){
-	  routes['sign'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013780")];
-	  routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013969")];	
-	  }
+   routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71016920")];
+   } else
+    if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50001898'){
+    routes['sign'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013780")];
+    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013969")];
+    }
 
   routes['approval'][simple+'visible'] = [false];
   routes['approval'][simple+'editable'] = [false];
@@ -2987,9 +2987,9 @@ stages.forEach(function(stage) {
     </div>
   </div>
   <br>
-  <div class="actions">
-    <button type="button" class="action btn btn-warning" id="save_and_start_process" about="v-s:Send" property="rdfs:label"></button>
-    <button type="button" class="action btn btn-default" id="cancel" about="v-s:Cancel" property="rdfs:label"></button>
+  <div class="actions clearfix">
+    <button type="button" class="action btn btn-warning pull-left" id="save_and_start_process" about="v-s:Send" property="rdfs:label"></button>
+    <div about="@" class="pull-left" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="cancel"></div>
   </div>
 </div>
   """ ;
