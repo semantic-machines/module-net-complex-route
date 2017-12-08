@@ -2394,7 +2394,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ProjectCapexRequestChange") {
   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_appointment_00004758_71019104")); //БезбородоваНВ
   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71023848")); //Руководитель группы. Группа по капитальным вложениям ОТЗ УЗ
   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_appointment_00069811_71017956")); //Сабо
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel(" d:mondi_appointment_00064183_71013321")); //Плавюк
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_appointment_00064183_71013321")); //Плавюк
   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_appointment_00058045_71023059")); //Урнышев
 
   routes['coordination2'][simple+'visible']  =  [true];
