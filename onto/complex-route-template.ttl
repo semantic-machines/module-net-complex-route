@@ -750,7 +750,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractRequest") {
       // Стратегия: Безальтернативная основа
 
         var chief=doc["v-s:initiator"][0].getChief()
-        routes['coordination1'][simple+'participant'] = [doc["v-s:initiator"][0].getChief()];
+        routes['coordination1'][simple+'participant'] = [chief];
         
         routes['coordination1'][simple+'visible'] = [true];
         routes['coordination1'][simple+'editable'] = [true];
@@ -1035,12 +1035,10 @@ if (doc['rdf:type'][0].id === "mnd-s:TenderProcedure") {
   }
 }*/
 //-----------------------------------------------------------------------------------------------------------------------------------------------------Контракт / Дополнительное соглашение
-if ((doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd-s:AdditionalAgreement") &&
-  doc.hasValue('mnd-s:onExamination') && doc['mnd-s:onExamination'][0] == false) {
+if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd-s:AdditionalAgreement") {
     if ( doc.hasValue("mnd-s:hasCriterionOfSimplifiedCoordination") && 
         doc["mnd-s:hasCriterionOfSimplifiedCoordination"][0].id == "d:cdtmieltfglusb8ai0dhnqn6" ) 
     {
-
       routes['coordination1'][simple+'visible'] = [true];
       routes['coordination1'][simple+'editable'] = [true];
       routes['coordination1'][simple+'deadlineDays'] = [10];
@@ -1610,7 +1608,7 @@ if ((doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mn
 //----------------------------------------------------------------------------------На ознакомление для контрактов и Допов
 
 if ((doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd-s:AdditionalAgreement")
-    && (doc.hasValue('mnd-s:onExamination') && doc['mnd-s:onExamination'][0] == true)) {
+    && (doc.hasValue('mnd-s:onExaminationForContract') && doc['mnd-s:onExaminationForContract'][0] == true)) {
   var temp=$("div.row>div.ui-sortable:not([style*='display:none'])");
   console.log(doc);
   console.log(temp);
