@@ -165,8 +165,8 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractorCategoryRequest") {
       if (doc.hasValue('v-s:backwardTarget') && doc['v-s:backwardTarget'][0].hasValue('v-s:backwardTarget')) {
         var squery = "( 'rdf:type' == 'mnd-s:Contract' || 'rdf:type' == 'mnd-s:AdditionalAgreement' ) && 'v-s:supplier' == '"+doc['v-s:backwardTarget'][0]['v-s:backwardTarget'][0].id+"'";
         console.log(squery);
-        var s = new veda.SearchModel(squery, null);
-        Object.getOwnPropertyNames(s.results).forEach( function (res_id) {
+        var s = query(veda.ticket, squery);
+        s.result.forEach( function (res_id) {
           var obj = new veda.IndividualModel(res_id);
           if (obj.hasValue('mnd-s:supportSpecialistOfContract')) {
             routes['coordination2'][simple+'participant'] = routes['coordination2'][simple+'participant'].concat([new veda.IndividualModel(obj['mnd-s:supportSpecialistOfContract'][0].id)]);
