@@ -716,6 +716,11 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractRequest") {
         doc['v-s:hasBudgetCategory'][0].id == 'd:a58764c7b-9730-2baa-68a4-da7b9fa36625' // CAPEX lease contract | Лизинг
       )
     ) {
+      routes['informing'][simple+'participant'] = [new veda.IndividualModel("d:ff670646-d509-4ff9-92f2-482c255441e8")]; // Специалист ОУП
+      routes['informing'][simple+'visible'] = [true];
+      routes['informing'][simple+'editable'] = [true];
+      routes['informing'][simple+'deadlineDays'] = [10];
+      routes['informing'][simple+'comment'] = [new String('Информирование')];
       // CAPEX
       if (doc.hasValue('mnd-s:hasStrategyOfChoice') && doc['mnd-s:hasStrategyOfChoice'][0].id == 'd:a7a1e835a-b23b-8465-cecd-a261a31f78fe') {
         // Стратегия: Проведение конкурса (Тендер)
@@ -2830,6 +2835,59 @@ if (doc['rdf:type'][0].id === "mnd-s:EngineeringRequest") {
   routes['instruction'][simple+'editable'] = [true];
   routes['distribution'][simple+'visible'] = [true];
   routes['distribution'][simple+'editable'] = [true];
+}
+
+
+//---------------------------------------------------------Заявка на услуги сторонних организаций
+if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
+
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination1'][simple+'deadlineDays'] = [3];
+  routes['coordination1'][simple+'comment'] = [new String('Согласовать заявку')];
+
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+  routes['coordination2'][simple+'deadlineDays'] = [3];
+  routes['coordination2'][simple+'comment'] = [new String('Согласовать заявку')];
+
+  if (doc.hasValue("v-s:supplier")){
+    let address="";
+    switch (doc["v-s:supplier"][0].id){
+      case "d:org_RU1121013750":
+        address = "d:hhqbdw2moap8q67q3wf984sg";
+        break;
+      case "d:a7zkeogdmcr00idlvb8fdeu1b":
+        address = "d:sv2flbts3fh3etbfbm95pavv";
+        break;
+      case "d:org_RU1121009144":
+        address = "d:bfzgev0929gfk1z5shlrrgc0";
+        break;
+      case "d:org_RU7826035384":
+        address = "d:frq48nsftbkbmo3zk4vy07ix";
+        break;
+      case "d:org_RU1121017628":
+        address = "d:a7b2p052weud8yowjkjwbmgkx";
+        break;
+      case "d:org_RU112100014401":
+        address = "d:pbfg63kgy6ijste3ue149hf7";
+        break;
+      case "d:org_RU1121011810":
+        address = "d:v70q7kln7jionsxkuow0ugzl";
+        break;
+      default:
+        break;
+    }
+    routes['review'][simple+'participant'] = [new veda.IndividualModel(address)];
+    routes['review'][simple+'visible'] = [true];
+    routes['review'][simple+'editable'] = [true];
+    routes['review'][simple+'deadlineDays'] = [3];
+    routes['review'][simple+'comment'] = [new String('Рассмотреть заявку')];
+  }
+  
+  routes['examination'][simple+'visible'] = [true];
+  routes['examination'][simple+'editable'] = [true];
+  routes['examination'][simple+'comment'] = [new String('Ознакомиться с заявкой')];
 }
 
 
