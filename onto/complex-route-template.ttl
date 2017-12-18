@@ -716,11 +716,6 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractRequest") {
         doc['v-s:hasBudgetCategory'][0].id == 'd:a58764c7b-9730-2baa-68a4-da7b9fa36625' // CAPEX lease contract | Лизинг
       )
     ) {
-      routes['informing'][simple+'participant'] = [new veda.IndividualModel("d:ff670646-d509-4ff9-92f2-482c255441e8")]; // Специалист ОУП
-      routes['informing'][simple+'visible'] = [true];
-      routes['informing'][simple+'editable'] = [true];
-      routes['informing'][simple+'deadlineDays'] = [10];
-      routes['informing'][simple+'comment'] = [new String('Информирование')];
       // CAPEX
       if (doc.hasValue('mnd-s:hasStrategyOfChoice') && doc['mnd-s:hasStrategyOfChoice'][0].id == 'd:a7a1e835a-b23b-8465-cecd-a261a31f78fe') {
         // Стратегия: Проведение конкурса (Тендер)
@@ -1101,7 +1096,20 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
       }
 
     } else {
-
+  // ОЗНАКОМЛЕНИЕ
+    routes['introduction'][simple+'visible'] = [true];
+    routes['introduction'][simple+'editable'] = [true];
+    if (
+      doc.hasValue('v-s:hasBudgetCategory')
+      && (
+        doc['v-s:hasBudgetCategory'][0].id === 'd:add478ffd-4996-ca11-8d8c-51bf810357c7' ||
+        doc['v-s:hasBudgetCategory'][0].id === 'd:a486cc102-8ec8-3f09-b326-6fabeec30882' ||
+        doc['v-s:hasBudgetCategory'][0].id === 'd:a0bfac3cc-ecf3-7847-59b2-5793ebd73879' ||
+        doc['v-s:hasBudgetCategory'][0].id === 'd:a58764c7b-9730-2baa-68a4-da7b9fa36625'
+      )
+    ) {
+      routes['introduction'][simple+'participant'] = routes['introduction'][simple+'participant'].concat(new veda.IndividualModel('d:ff670646-d509-4ff9-92f2-482c255441e8')); // Спец ОУП
+    }
   // СОГЛАСОВАНИЕ 1
 
     routes['coordination1'][simple+'visible'] = [true];
