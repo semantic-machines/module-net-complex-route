@@ -22,49 +22,41 @@
 # ---------------------------- Тестовые экземпляры маршрутов ------------------------------
 
 s-wf:ComplexRouteTest
-    rdf:type rdfs:Class ;
-    rdfs:label "Тестовый шаблон комплексного маршурута"@ru;
-    rdfs:label "Complex route test template"@en;
-    rdfs:isDefinedBy s-wf: ;
-    v-ui:hasTemplate s-wf:ComplexRouteTest_Template ;
+  rdf:type rdfs:Class ;
+  rdfs:label "Тестовый шаблон комплексного маршурута"@ru;
+  rdfs:label "Complex route test template"@en;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate s-wf:ComplexRouteTest_Template ;
 .
 
 s-wf:ComplexRouteTest_Template
-    rdf:type v-ui:ClassTemplate ;
-    rdfs:isDefinedBy s-wf: ;
-    rdfs:label "Шаблон для Тестовый шаблон комплексного маршурута"@ru;
-    rdfs:label "Template for Complex route test template"@en;
-    v-ui:forClass s-wf:ComplexRouteTest ;
-    v-ui:template """
+  rdf:type v-ui:ClassTemplate ;
+  rdfs:isDefinedBy s-wf: ;
+  rdfs:label "Шаблон для Тестовый шаблон комплексного маршурута"@ru;
+  rdfs:label "Template for Complex route test template"@en;
+  v-ui:forClass s-wf:ComplexRouteTest ;
+  v-ui:template """
 <div class="container sheet">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="row">
-                <div class="col-md-6">
-                    <span about="s-wf:ComplexRouteTest" property="rdfs:label" />
-                </div>
-                <div class="col-md-6 text-right">
-                    <a href="#/@"><span property="@">ID</span></a>
-                </div>
-            </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-6">
+          <span about="s-wf:ComplexRouteTest" property="rdfs:label"></span>
         </div>
-        <div class="btn-group dropup">
-            <button class="btn btn-warning dropdown-toggle sendbutton" data-toggle="dropdown">
-                <span about="v-s:SendTask" property="rdfs:label"> </span>
-                    <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" id="standard-tasks">
-            </ul>
+        <div class="col-md-6 text-right">
+          <a href="#/@"><span property="@">ID</span></a>
         </div>
-        <div class="panel-footer">
-            <button type="submit" class="action btn btn-warning" id="send" about="v-s:Send" property="rdfs:label"></button>
-        </div>
+      </div>
     </div>
+    <div class="panel-footer">
+      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel send task"></div>
+    </div>
+  </div>
 </div>
 <script>
-    $('#send.action', template).on('click', function () {
-        veda.Util.send(individual, template, 's-wf:complexRouteTransform');
-    });
+  $('#send.action', template).on('click', function () {
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+  });
 </script>
 """ ;
 .
@@ -95,26 +87,26 @@ s-wf:ComplexRouteTest2_Template
   v-ui:forClass s-wf:ComplexRouteTest2 ;
   v-ui:template """
 <div class="container sheet">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="row">
-                <div class="col-md-6">
-                    <span about="s-wf:ComplexRouteTest2" property="rdfs:label" />
-                </div>
-                <div class="col-md-6 text-right">
-                    <a href="#/@"><span property="@">ID</span></a>
-                </div>
-            </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-6">
+          <span about="s-wf:ComplexRouteTest2" property="rdfs:label"></span>
         </div>
-        <div class="panel-footer">
-            <button type="submit" class="action btn btn-warning" id="send" about="v-s:Send" property="rdfs:label"></button>
+        <div class="col-md-6 text-right">
+          <a href="#/@"><span property="@">ID</span></a>
         </div>
+      </div>
     </div>
+    <div class="panel-footer">
+      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="send"></div>
+    </div>
+  </div>
 </div>
 <script>
-    $('#send.action', template).on('click', function () {
-        veda.Util.send(individual, template, 's-wf:complexRouteTransform');
-    });
+  $('#send.action', template).on('click', function () {
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+  });
 </script>
 """ ;
 .
@@ -127,78 +119,69 @@ s-wf:ComplexRouteTest3_Template
   v-ui:forClass s-wf:ComplexRouteTest3 ;
   v-ui:template """
 <div class="container sheet">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="row">
-                <div class="col-md-6">
-                    <span about="s-wf:ComplexRouteTest3" property="rdfs:label" />
-                </div>
-                <div class="col-md-6 text-right">
-                    <a href="#/@"><span property="@">ID</span></a>
-                </div>
-            </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-6">
+          <span about="s-wf:ComplexRouteTest3" property="rdfs:label"></span>
         </div>
-        <div class="panel-footer">
-            <button type="submit" class="action btn btn-warning" id="send" about="v-s:Send" property="rdfs:label"></button>
+        <div class="col-md-6 text-right">
+          <a href="#/@"><span property="@">ID</span></a>
         </div>
+      </div>
     </div>
+    <div class="panel-footer">
+      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="send"></div>
+    </div>
+  </div>
 </div>
 <script>
-    $('#send.action', template).on('click', function () {
-        veda.Util.send(individual, template, 's-wf:complexRouteTransform');
-    });
+  $('#send.action', template).on('click', function () {
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+  });
 </script>
 """ ;
 .
 
 s-wf:ComplexRouteTest0
-    rdf:type rdfs:Class ;
-    rdfs:label "Тестовый шаблон комплексного маршурута 0"@ru;
-    rdfs:label "Complex route test template 0"@en;
-    rdfs:isDefinedBy s-wf: ;
-    v-ui:hasTemplate s-wf:ComplexRouteTest0_Template ;
+  rdf:type rdfs:Class ;
+  rdfs:label "Тестовый шаблон комплексного маршурута 0"@ru;
+  rdfs:label "Complex route test template 0"@en;
+  rdfs:isDefinedBy s-wf: ;
+  v-ui:hasTemplate s-wf:ComplexRouteTest0_Template ;
 .
 
 s-wf:ComplexRouteTest0_Template
-    rdf:type v-ui:ClassTemplate ;
-    rdfs:isDefinedBy s-wf: ;
-    rdfs:label "Шаблон для Тестовый шаблон комплексного маршурута 0"@ru;
-    rdfs:label "Template for Complex route test template 0"@en;
-    v-ui:forClass s-wf:ComplexRouteTest0 ;
-    v-ui:template """
+  rdf:type v-ui:ClassTemplate ;
+  rdfs:isDefinedBy s-wf: ;
+  rdfs:label "Шаблон для Тестовый шаблон комплексного маршурута 0"@ru;
+  rdfs:label "Template for Complex route test template 0"@en;
+  v-ui:forClass s-wf:ComplexRouteTest0 ;
+  v-ui:template """
 <div class="container sheet">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="row">
-                <div class="col-md-6">
-                    <span about="s-wf:ComplexRouteTest0" property="rdfs:label" />
-                </div>
-                <div class="col-md-6 text-right">
-                    <a href="#/@"><span property="@">ID</span></a>
-                </div>
-            </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-6">
+          <span about="s-wf:ComplexRouteTest0" property="rdfs:label"></span>
         </div>
-        <div class="btn-group dropup">
-            <button class="btn btn-warning dropdown-toggle sendbutton" data-toggle="dropdown">
-                <span about="v-s:SendTask" property="rdfs:label"> </span>
-                    <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" id="standard-tasks">
-            </ul>
+        <div class="col-md-6 text-right">
+          <a href="#/@"><span property="@">ID</span></a>
         </div>
-        <div class="panel-footer">
-            <button type="submit" class="action btn btn-warning" id="send" about="v-s:Send" property="rdfs:label"></button>
-        </div>
+      </div>
     </div>
+    <div class="panel-footer">
+      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel send task"></div>
+    </div>
+  </div>
 </div>
 <script>
-    $('#send.action', template).on('click', function () {
-        veda.Util.send(individual, template, 's-wf:complexRouteTransform');
-    });
+  $('#send.action', template).on('click', function () {
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+  });
 </script>
-""" ;
+  """ ;
 .
-
 
 
 # -------- стартовая форма маршрута ----------------
