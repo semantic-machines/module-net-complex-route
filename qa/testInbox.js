@@ -14,15 +14,15 @@ function sendTask(driver, valueToSearch, valueToChoose, phase) {
     basic.openCreateDocumentForm(driver, 'Тестовый шаблон комплексного маршурута', 's-wf:ComplexRouteTest', 1);
     driver.findElement({css:'#save.action'}).click().thenCatch(function (e) {
       errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Cannot click on save button")});
-    basic.isVisible(driver, 'span[about="v-s:SendTask"]', FAST_OPERATION * 2, 1);
+    basic.isVisible(driver, 'span[about="v-s:SendTask"]', basic.FAST_OPERATION * 2, 1);
     basic.execute(driver, "click", 'span[about="v-s:SendTask"]', "****** PHASE#1 > Create task : ERROR = Cannot click on SendTask button");
-    basic.isVisible(driver, 'a[about="v-s:Instruction"]', FAST_OPERATION * 2, 1);
+    basic.isVisible(driver, 'a[about="v-s:Instruction"]', basic.FAST_OPERATION * 2, 1);
     basic.execute(driver, "click", 'a[about="v-s:Instruction"]', "****** PHASE#1 > Create task : ERROR = Cannot click on Instruction link");
-    basic.isVisible(driver, 'div.modal-dialog.modal-lg', FAST_OPERATION * 2, 1);
+    basic.isVisible(driver, 'div.modal-dialog.modal-lg', basic.FAST_OPERATION * 2, 1);
     basic.chooseFromDropdown(driver, 'v-s:responsible', valueToSearch, valueToChoose, 1);
     basic.execute(driver, "sendKeys", 'veda-control[property="rdfs:comment"] textarea.form-control',
         "****** PHASE#1 > Create task : ERROR = Cannot fill Comment field", timeStamp);
-    basic.isEnabled(driver, 'div.modal-dialog.modal-lg button#send', FAST_OPERATION * 2, 1);
+    basic.isEnabled(driver, 'div.modal-dialog.modal-lg button#send', basic.FAST_OPERATION * 2, 1);
     basic.execute(driver, "click", 'div.modal-dialog.modal-lg button#send', "****** PHASE#1 > Create task : ERROR = Cannot click on Send button");
     driver.sleep(basic.FAST_OPERATION * 3);
     basic.execute(driver, 'click', 'a[href="#/v-l:Welcome"]', "****** PHASE#1 > Create task : ERROR = Cannot click on 'Welcome' button");
