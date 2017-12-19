@@ -148,6 +148,20 @@ if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
     routes['approval'][simple+'editable'] = [true];
     routes['approval'][simple+'deadlineDays'] = [10];
   }
+  //проверка чекбоксов на тру и подстановка людей в ознакомление
+  if ( doc["mnd-s:isAFrequiredPurchase"][0] === true && doc["mnd-s:isAFrequiredProject"][0] === true){
+    routes['examination'][simple+'visible'] = [true];
+    routes['examination'][simple+'editable'] = [true];
+    routes['examination'][simple+'participant'] = [ new veda.IndividualModel('d:mondi_position_71018045'), new veda.IndividualModel('d:mondi_position_71021843') ] ;
+  } else if ( doc["mnd-s:isAFrequiredPurchase"][0] === true && ( doc["mnd-s:isAFrequiredProject"][0] === false || doc["mnd-s:isAFrequiredProject"][0] === undefined ) ){
+    routes['examination'][simple+'visible'] = [true];
+    routes['examination'][simple+'editable'] = [true];
+    routes['examination'][simple+'participant'] = [ new veda.IndividualModel('d:mondi_position_71018045') ] ;
+  } else if ( ( doc["mnd-s:isAFrequiredPurchase"][0] === false || doc["mnd-s:isAFrequiredPurchase"][0] === undefined ) && doc["mnd-s:isAFrequiredProject"][0] === true ){
+    routes['examination'][simple+'visible'] = [true];
+    routes['examination'][simple+'editable'] = [true];
+    routes['examination'][simple+'participant'] = [ new veda.IndividualModel('d:mondi_position_71021843') ] ;
+  }
 }
 //---------------------------------------------------------------------------------------------------------------------------Запрос на согласование контрагента
 if (doc['rdf:type'][0].id === "mnd-s:ContractorCategoryRequest") {
@@ -2892,7 +2906,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
     routes['review'][simple+'deadlineDays'] = [3];
     routes['review'][simple+'comment'] = [new String('Рассмотреть заявку')];
   }
-  
+
   routes['examination'][simple+'visible'] = [true];
   routes['examination'][simple+'editable'] = [true];
   routes['examination'][simple+'comment'] = [new String('Ознакомиться с заявкой')];
