@@ -2334,6 +2334,10 @@ var informingDecree ;
   else if(doc.hasValue("mnd-s:hasDecreeKind", "d:8b527be6d03742caa2756f560a4e10ba") //(Распоряжение по УРиР)
   ){
     aprovalDecree = [new veda.IndividualModel("d:8467ac45-59b9-4c94-833a-330da3683069")]; //(Регистратор документов УРиР)
+  }
+  else if(doc.hasValue("mnd-s:hasDecreeKind", "d:d581c6a8c3224d3e801607af3357a4aa") //(Распоряжение по УЛ СПЖТ)
+  ){
+    aprovalDecree = [new veda.IndividualModel("d:cca0e582-3b9d-4858-98bf-45fe03d1ceb1")]; //(Регистратор документов УЛ СПЖТ)
   } else { aprovalDecree = []; }
 
   routes['approval'][simple+'participant'] = aprovalDecree ;
