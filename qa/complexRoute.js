@@ -26,7 +26,7 @@ module.exports = {
         basic.login(driver, login, password, firstName, lastName, phase);
         basic.menu(driver, 'Inbox', phase);
         driver.sleep(basic.FAST_OPERATION*2);
-//  ------ без этого кода тесты часто не проходят ! ???? 
+//  ------ без этого кода тесты часто не проходят ! ????
         driver.findElement({css:'a[about="v-ft:Inbox"]'}).click()
             .thenCatch(function (e) {basic.errorHandler(e,"****** PHASE#" + phase + " : ERROR = Cannot click on Inbox messages")});
         driver.sleep(basic.FAST_OPERATION);
@@ -40,7 +40,7 @@ module.exports = {
         }
         driver.sleep(basic.FAST_OPERATION);
         if (chooseValue === '+') {
-            driver.executeScript("document.querySelector('#fulltext').scrollIntoView(true)")
+            driver.executeScript("document.querySelector('input.fulltext.tt-input').scrollIntoView(true)")
                 .thenCatch(function(e) {basic.errorHandler(e, "****** PHASE#" + phase + " : ERROR = Cannot scroll to fulltext button");});
             basic.chooseFromDropdown(driver, 'v-wf:to', to1, to2, phase);
         }
@@ -125,7 +125,7 @@ module.exports = {
         }).thenCatch(function (e) {basic.errorHandler(e, "****** PHASE#" + phase + " : ERROR = Seems number of displayed inbox messages in is wrong: expected = " + inbox);});
         driver.findElement({css:'a[about="v-ft:Outbox"]'}).click()
             .thenCatch(function (e) {basic.errorHandler(e,"Cannot click on Outbox messages")});
-        driver.sleep(basic.FAST_OPERATION);    
+        driver.sleep(basic.FAST_OPERATION);
         driver.findElement({css:'span[property="v-ft:outboxCount"]'}).getText().then(function (result) {
             assert.equal(outbox, result);
         }).thenCatch(function (e) {basic.errorHandler(e, "****** PHASE#" + phase + " : ERROR = Seems number of outbox messages is wrong: expected = " + outbox);});
