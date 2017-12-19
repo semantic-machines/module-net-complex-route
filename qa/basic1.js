@@ -217,7 +217,7 @@ module.exports = {
         (
             webdriver.until.elementIsEnabled(driver.findElement({css:''+ element +''})),
             time
-        ).thenCatch(function (e) {errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Cannot find" + element + "button");});
+        ).thenCatch(function (e) {errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Seems `" + element + "` is not enabled");});
     },
 
     /**
@@ -232,7 +232,7 @@ module.exports = {
         (
             webdriver.until.elementIsVisible(driver.findElement({css:''+ element +''})),
             time
-        ).thenCatch(function (e) {errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Seems " + element +" is not visible");});
+        ).thenCatch(function (e) {errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Seems `" + element + "` is not visible");});
     },
 
     /**

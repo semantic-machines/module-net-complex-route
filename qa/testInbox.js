@@ -10,19 +10,21 @@ var basic = require('./basic1.js'),
  * @param valueToChoose - значение, которое будет выбрано в качестве получателя задачи
  */
 
-function sendTask(driver, valueToSearch, valueToChoose) {
+function sendTask(driver, valueToSearch, valueToChoose, phase) {
     basic.openCreateDocumentForm(driver, 'Тестовый шаблон комплексного маршурута', 's-wf:ComplexRouteTest', 1);
-    basic.execute(driver, "click", '#save.action', "****** PHASE#1 > Create task : ERROR = Cannot click on save button");
-    driver.sleep(basic.FAST_OPERATION * 3);
+    driver.findElement({css:'#save.action'}).click().thenCatch(function (e) {
+      errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Cannot click on save button")});
+    basic.isVisible(driver, 'span[about="v-s:SendTask"]', FAST_OPERATION * 2, 1);
     basic.execute(driver, "click", 'span[about="v-s:SendTask"]', "****** PHASE#1 > Create task : ERROR = Cannot click on SendTask button");
-    driver.sleep(basic.FAST_OPERATION);
+    basic.isVisible(driver, 'a[about="v-s:Instruction"]', FAST_OPERATION * 2, 1);
     basic.execute(driver, "click", 'a[about="v-s:Instruction"]', "****** PHASE#1 > Create task : ERROR = Cannot click on Instruction link");
-    driver.sleep(basic.FAST_OPERATION);
+    basic.isVisible(driver, 'div.modal-dialog.modal-lg', FAST_OPERATION * 2, 1);
     basic.chooseFromDropdown(driver, 'v-s:responsible', valueToSearch, valueToChoose, 1);
-    basic.execute(driver, "sendKeys", 'veda-control[property="rdfs:comment"] textarea[class="form-control"]',
+    basic.execute(driver, "sendKeys", 'veda-control[property="rdfs:comment"] textarea.form-control',
         "****** PHASE#1 > Create task : ERROR = Cannot fill Comment field", timeStamp);
+    basic.isEnabled(driver, 'div.modal-dialog.modal-lg button#send', FAST_OPERATION * 2, 1);
+    basic.execute(driver, "click", 'div.modal-dialog.modal-lg button#send', "****** PHASE#1 > Create task : ERROR = Cannot click on Send button");
     driver.sleep(basic.FAST_OPERATION * 3);
-    basic.execute(driver, "click", 'div[class="modal-dialog modal-lg"] button[id="send"]', "****** PHASE#1 > Create task : ERROR = Cannot click on Send button");
     basic.execute(driver, 'click', 'a[href="#/v-l:Welcome"]', "****** PHASE#1 > Create task : ERROR = Cannot click on 'Welcome' button");
 }
 
@@ -52,9 +54,9 @@ basic.getDrivers().forEach(function (drv) {
     basic.login(driver, 'ivanovrt', '123', '5', 'Администратор5', 0);
 
     //PHASE#1: Create task
-    sendTask(driver, 'Администратор3', 'Администратор3 : Программист');
-    sendTask(driver, 'Администратор5', 'Администратор5 : Аналитик');
-    sendTask(driver, 'Администратор5', 'Администратор5 : Коммерческий директор');
+    sendTask(driver, 'Администратор3', 'Администратор3 : Программист', 1);
+    sendTask(driver, 'Администратор5', 'Администратор5 : Аналитик', 1);
+    sendTask(driver, 'Администратор5', 'Администратор5 : Коммерческий директор', 1);
     basic.logout(driver, 1);
 
     //PHASE#2: Check tasks
