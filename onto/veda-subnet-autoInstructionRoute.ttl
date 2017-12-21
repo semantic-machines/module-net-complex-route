@@ -22,7 +22,7 @@ s-wf:subnet_autoinstruction_route a v-wf:Net;
     rdfs:label "Подсеть автопоручений"^^xsd:string;
     v-s:updateCounter "3"^^xsd:integer;
     v-wf:consistsOf d:rkqt78slxs4o8z8it6fgf47e, d:task_autoinstruction_subnet_journal, d:fszmffnqwfeqxxwr48vi9rq8, d:task_autoinstruction_to_release, d:a33jy1sb1inmegt5j9ncswprh, d:mu18gdzzvp99huwicvj1qkre, d:task_autoinstruction_to_release_link, d:o7ey2dszv23ykoqz5mra9r8o ;
-    v-wf:consistsOf d:bt9k3jv4npxhj74qh7bbxq15, d:task_autoinstruction_subnet_journal_hasFlow, d:p1xmw8wb8k9cjjzgl5zifa65, d:a4m2zxiha6f1rb5rgc4dg5qfj, d:avqe3hv87i5asi5kfcpu9oop, d:bq1fgy9pb3rbz0bj43x4n41q, d:rcw2c3a6efnmksft540vhdhj, task_autoinstruction_to_release_link_hasFlow ;
+    v-wf:consistsOf d:bt9k3jv4npxhj74qh7bbxq15, d:task_autoinstruction_subnet_journal_hasFlow, d:p1xmw8wb8k9cjjzgl5zifa65, d:a4m2zxiha6f1rb5rgc4dg5qfj, d:avqe3hv87i5asi5kfcpu9oop, d:bq1fgy9pb3rbz0bj43x4n41q, d:rcw2c3a6efnmksft540vhdhj, d:task_autoinstruction_to_release_link_hasFlow ;
     v-wf:inputVariable s-wf:var_doc_id, s-wf:var_journal_initiator ;
 .
 
