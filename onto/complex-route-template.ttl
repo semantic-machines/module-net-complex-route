@@ -2916,6 +2916,19 @@ if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
   routes['examination'][simple+'comment'] = [new String('Ознакомиться с заявкой')];
 }
 
+//----------------------------------Внутренние аудиты. Годовая программа-----------------------
+if (doc['rdf:type'][0].id === "mnd-s:AuditInternalAnnualPlan") {
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+  routes['sign'][simple+'visible'] = [true];
+  routes['sign'][simple+'editable'] = [true];
+  routes['approval'][simple+'visible'] = [true];
+  routes['approval'][simple+'editable'] = [true];
+  routes['review'][simple+'visible'] = [true];
+  routes['review'][simple+'editable'] = [true];
+}
 
 //---------------------------------------------------------Тестовый маршрут
 
