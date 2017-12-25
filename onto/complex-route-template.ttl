@@ -2930,6 +2930,19 @@ if (doc['rdf:type'][0].id === "mnd-s:AuditInternalAnnualPlan") {
   routes['review'][simple+'editable'] = [true];
 }
 
+//----------------------------------Аудит ИСМ. Годовая программа-----------------------
+if (doc['rdf:type'][0].id === "mnd-s:AuditQualityAnnualPlan") {
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination2'][simple+'visible'] = [true];
+  routes['coordination2'][simple+'editable'] = [true];
+  routes['sign'][simple+'visible'] = [true];
+  routes['sign'][simple+'editable'] = [true];
+  routes['approval'][simple+'visible'] = [true];
+  routes['approval'][simple+'editable'] = [true];
+  routes['review'][simple+'visible'] = [true];
+  routes['review'][simple+'editable'] = [true];
+}
 //---------------------------------------------------------Тестовый маршрут
 
 if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest") { //Тестовый маршрут
