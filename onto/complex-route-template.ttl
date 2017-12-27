@@ -16,8 +16,8 @@
 <http://semantic-machines.com/veda/complex-route-template>
   rdf:type owl:Ontology ;
   owl:imports <http://semantic-machines.com/veda/veda-workflow> ;
-  rdfs:label "complex-route-template"@en ;
   rdfs:label "шаблоны для комплексного маршрута "@ru ;
+  rdfs:label "complex-route-template"@en ;
   v-s:loadPriority 21 ;
 .
 
