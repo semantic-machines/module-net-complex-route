@@ -1632,7 +1632,7 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
     if (doc.hasValue("mnd-s:hasCriterionOfSimplifiedCoordination") && doc["mnd-s:hasCriterionOfSimplifiedCoordination"][0].id == "d:cdtmieltfglusb8ai0dhnqn6")
     {
       routes['examination'][simple+'visible'] = [true];
-      routes['examination'][simple+'editable'] = [false];
+      routes['examination'][simple+'editable'] = [true];
       routes['examination'][simple+'deadlineDays'] = [10];
       routes['examination'][simple+'comment'] = [new String('Ознакомиться с документом для дальнейшей работы')];
       routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['mnd-s:executorSpecialistOfContract']); // Исполнитель по контракту
@@ -1666,7 +1666,7 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
     } else {
       // ОЗНАКОМЛЕНИЕ
       routes['examination'][simple+'visible'] = [true];
-      routes['examination'][simple+'editable'] = [false];
+      routes['examination'][simple+'editable'] = [true];
       routes['examination'][simple+'deadlineDays'] = [10];
       routes['examination'][simple+'comment'] = [new String('Ознакомиться с документом для дальнейшей работы')];
       routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['mnd-s:executorSpecialistOfContract']); // Исполнитель по контракту
