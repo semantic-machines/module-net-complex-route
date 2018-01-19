@@ -1143,19 +1143,10 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
       )
     ) {
       routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71023848")); // Руководитель гр CAPEX ОТЗ
-    } else {
-      if (doc.hasValue('v-s:responsibleDepartment')) {
-        var dep = doc['v-s:responsibleDepartment'][0];
-        if (dep.hasValue('v-s:hasChief')) {
-          routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(dep["v-s:hasChief"]); // Руководитель ответственного подразделения
-        }
-      }
-      if (doc.hasValue('v-s:initiator')) {
-        var dep = doc['v-s:initiator'][0];
-        if (dep.hasValue('v-s:hasChief')) {
-          routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(dep["v-s:hasChief"]); // Руководитель подразделения заказчика
-        }
-      }
+    } else if ( doc.hasValue('v-s:responsibleDepartment') ){
+      var responsible ;
+      responsible = doc['v-s:responsibleDepartment'][0].getChief() ;
+      routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat( responsible ) ;
     }
 
   // СОГЛАСОВАНИЕ 2
@@ -1163,6 +1154,12 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
     routes['coordination2'][simple+'visible'] = [true];
     routes['coordination2'][simple+'editable'] = [true];
     routes['coordination2'][simple+'deadlineDays'] = [10];
+
+    if ( doc.hasValue('v-s:initiator') ){
+      var initiator ;
+      initiator = doc['v-s:initiator'][0].getChief() ;
+      routes['coordination2'][simple+'participant'] = routes['coordination2'][simple+'participant'].concat( initiator ) ;
+    }
     if (
       doc.hasValue('v-s:customer') && doc['v-s:customer'][0].id === 'd:org_RU1121003135'
       && doc.hasValue('v-s:hasBudgetCategory')
