@@ -2948,19 +2948,19 @@ if (doc['rdf:type'][0].id === "mnd-s:TechnicalDocument") {
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
 
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71026772")]; //Рук по организации ТО ПБ. Руководство производства бумаги
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71026773")]; //Рук по организации ТО ПЦ. Руководство производства целлюлозы
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71025564")]; //Начальник службы. Сл.организации ТО оборудования ЭП
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71012089")]; //Начальник службы-главный электрик. Руководство центр.электрической службы
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71000234")]; //Руковод. центральной службы-гл. метролог. Центральная служба автоматизации и метр
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013780")]; //Начальник  службы-главный механик. Руководство центральн.механ.службы
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71022798")]; //Начальник службы. Служба управления надежностью
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71000071")]; //Главный технолог. Технологическая служба
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017956")]; //Начальник управления. Управление промышленной безопасности
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71024364")]; //Главный эколог. Отдел охраны окружающей среды
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71025777")]; //Ведущий специалист. Отдел техн надзора центр. механ. службы
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71016923")]; //Ведущий инженер генплана. Проектно-конструкторский отд. УРиР
-  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017800")]; //Начальник управления. Руководство управления информац.процес
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026772")); //Рук по организации ТО ПБ. Руководство производства бумаги
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026773")); //Рук по организации ТО ПЦ. Руководство производства целлюлозы
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025564")); //Начальник службы. Сл.организации ТО оборудования ЭП
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71012089")); //Начальник службы-главный электрик. Руководство центр.электрической службы
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000234")); //Руковод. центральной службы-гл. метролог. Центральная служба автоматизации и метр
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71013780")); //Начальник  службы-главный механик. Руководство центральн.механ.службы
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71022798")); //Начальник службы. Служба управления надежностью
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); //Главный технолог. Технологическая служба
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017956")); //Начальник управления. Управление промышленной безопасности
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024364")); //Главный эколог. Отдел охраны окружающей среды
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025777")); //Ведущий специалист. Отдел техн надзора центр. механ. службы
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71016923")); //Ведущий инженер генплана. Проектно-конструкторский отд. УРиР
+  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017800")); //Начальник управления. Руководство управления информац.процес
   routes['coordination1'][simple+'comment'] = [new String('Прошу согласовать вложенную документацию')];
 
   routes['coordination2'][simple+'visible'] = [false];
