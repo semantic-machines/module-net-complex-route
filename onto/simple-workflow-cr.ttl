@@ -631,7 +631,7 @@ s-wf:rul_transform21_2
   v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c1')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -642,7 +642,7 @@ s-wf:rul_transform21_3
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c2')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -654,7 +654,7 @@ s-wf:rul_transform21_4
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination3')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -667,7 +667,7 @@ s-wf:rul_transform21_5
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination3')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination4')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -681,7 +681,7 @@ s-wf:rul_transform21_6
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination3')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination4')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination5')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -696,7 +696,7 @@ s-wf:rul_transform21_7
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination4')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination5')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination6')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -712,7 +712,7 @@ s-wf:rul_transform21_8
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination5')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination6')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoSign')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
@@ -729,7 +729,7 @@ s-wf:rul_transform21_9
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination6')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoSign')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoApproval')";
-  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
+#  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
 .
 
