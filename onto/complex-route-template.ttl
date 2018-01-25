@@ -2947,6 +2947,15 @@ if (doc['rdf:type'][0].id === "mnd-s:TechnicalDocument") {
   routes['introduction'][simple+'editable'] = [false];
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination1'][simple+'deadlineDays'] = [10];
+
+  var var_owner;
+  if ( doc.hasValue("v-s:hasProject") && doc["v-s:hasProject"][0].hasValue("v-s:owner") ) {
+    var_owner = doc["v-s:hasProject"][0]["v-s:owner"][0];
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(var_owner);
+  } else {
+    routes['coordination1'][simple+'participant'] = [];
+  }
 
   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026772")); //Рук по организации ТО ПБ. Руководство производства бумаги
   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026773")); //Рук по организации ТО ПЦ. Руководство производства целлюлозы
@@ -2977,6 +2986,15 @@ if (doc['rdf:type'][0].id === "mnd-s:TechnicalDocument") {
   routes['sign'][simple+'visible'] = [true];
   routes['sign'][simple+'editable'] = [true];
   routes['sign'][simple+'comment'] = [new String('Документация согласована')];
+  routes['sign'][simple+'deadlineDays'] = [1];
+
+  var var_projectManager;
+  if ( doc.hasValue("v-s:hasProject") && doc["v-s:hasProject"][0].hasValue("v-s:projectManager") ) {
+    var_projectManager = doc["v-s:hasProject"][0]["v-s:projectManager"][0];
+    routes['sign'][simple+'participant'] = [var_projectManager];
+  } else {
+    routes['sign'][simple+'participant'] = [];
+  }
 
   routes['approval'][simple+'visible'] = [false];
   routes['approval'][simple+'editable'] = [false];
