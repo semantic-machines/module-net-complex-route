@@ -2836,16 +2836,16 @@ if (doc['rdf:type'][0].id === "mnd-s:EngineeringRequest") {
   routes['sign'][simple+'editable'] = [false];
 
 // если Разработчик = d:mondi_department_50002627 (Проектно-конструкторский отд. УРиР)
-// то Рассматривающий - Начальник ПКО УРИР (d:mondi_position_71016920)
+// то Рассматривающий - Рассмотрение КЗ ПКО УРиР (d:3df23636-4fd3-43ff-a2ba-a0f8b0dc2a30)
 // если Разработчик = d:mondi_department_50001898 (Группа раб. проектиров.ПКО)
 // то подписывающий - Начальник службы-главный механик. Руководство центральн.механ.службы (d:mondi_position_71013780)
-//    рассматривающий - Руководитель группы. Группа раб. проектиров.ПКО (d:mondi_position_71013969)
+//    рассматривающий - Рассмотрение КЗ ГРП ПКО (d:70666c45-a806-4dac-9490-daad8ea05fcb)
   if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50002627'){
-   routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71016920")];
+   routes['review'][simple+'participant'] = [new veda.IndividualModel("d:3df23636-4fd3-43ff-a2ba-a0f8b0dc2a30")];
    } else
     if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50001898'){
     routes['sign'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013780")];
-    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013969")];
+    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:70666c45-a806-4dac-9490-daad8ea05fcb")];
     }
 
   routes['approval'][simple+'visible'] = [false];
