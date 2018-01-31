@@ -2941,69 +2941,103 @@ if (doc['rdf:type'][0].id === "mnd-s:AuditQualityAnnualPlan") {
   routes['review'][simple+'editable'] = [true];
 }
 
-//--------------------------------------------------------------------------------Технический документ-------
-if (doc['rdf:type'][0].id === "mnd-s:TechnicalDocument") {
-  routes['introduction'][simple+'visible'] = [false];
-  routes['introduction'][simple+'editable'] = [false];
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination1'][simple+'deadlineDays'] = [10];
+//--------------------------------------------------------------------------------Версия технического документа-------
+if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
 
-  var var_owner;
-  if ( doc.hasValue("v-s:hasProject") && doc["v-s:hasProject"][0].hasValue("v-s:owner") ) {
-    var_owner = doc["v-s:hasProject"][0]["v-s:owner"][0];
-    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(var_owner);
+
+
+
+  if ( (doc.hasValue('v-s:backwardTarget') && doc['v-s:backwardTarget'][0].hasValue('v-s:hasBudgetCategory')) &&
+      ((doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:a58764c7b-9730-2baa-68a4-da7b9fa36625') ||
+      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:a486cc102-8ec8-3f09-b326-6fabeec30882') ||
+      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:a0bfac3cc-ecf3-7847-59b2-5793ebd73879') ||
+      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:1dfe4525-5218-43eb-914b-096cabb93b76') ||
+      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:dtio5orzhqiee2ghmrg35ft8'))
+  ) {
+
+    routes['introduction'][simple+'visible'] = [false];
+    routes['introduction'][simple+'editable'] = [false];
+    routes['coordination1'][simple+'visible'] = [true];
+    routes['coordination1'][simple+'editable'] = [true];
+    routes['coordination1'][simple+'deadlineDays'] = [10];
+
+    var var_owner;
+    if ( doc.hasValue("v-s:hasProject") && doc["v-s:hasProject"][0].hasValue("v-s:owner") ) {
+      var_owner = doc["v-s:hasProject"][0]["v-s:owner"][0];
+      routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(var_owner);
+    } else {
+      routes['coordination1'][simple+'participant'] = [];
+    }
+
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026772")); //Рук по организации ТО ПБ. Руководство производства бумаги
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026773")); //Рук по организации ТО ПЦ. Руководство производства целлюлозы
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025564")); //Начальник службы. Сл.организации ТО оборудования ЭП
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71012089")); //Начальник службы-главный электрик. Руководство центр.электрической службы
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000234")); //Руковод. центральной службы-гл. метролог. Центральная служба автоматизации и метр
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71013780")); //Начальник  службы-главный механик. Руководство центральн.механ.службы
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71022798")); //Начальник службы. Служба управления надежностью
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); //Главный технолог. Технологическая служба
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017956")); //Начальник управления. Управление промышленной безопасности
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024364")); //Главный эколог. Отдел охраны окружающей среды
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025777")); //Ведущий специалист. Отдел техн надзора центр. механ. службы
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71016923")); //Ведущий инженер генплана. Проектно-конструкторский отд. УРиР
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017800")); //Начальник управления. Руководство управления информац.процес
+    routes['coordination1'][simple+'comment'] = [new String('Прошу согласовать вложенную документацию')];
+
+    routes['coordination2'][simple+'visible'] = [false];
+    routes['coordination2'][simple+'editable'] = [false];
+    routes['coordination3'][simple+'visible'] = [false];
+    routes['coordination3'][simple+'editable'] = [false];
+    routes['coordination4'][simple+'visible'] = [false];
+    routes['coordination4'][simple+'editable'] = [false];
+    routes['coordination5'][simple+'visible'] = [false];
+    routes['coordination5'][simple+'editable'] = [false];
+    routes['coordination6'][simple+'visible'] = [false];
+    routes['coordination6'][simple+'editable'] = [false];
+
+    routes['sign'][simple+'visible'] = [true];
+    routes['sign'][simple+'editable'] = [true];
+    routes['sign'][simple+'comment'] = [new String('Документация согласована')];
+    routes['sign'][simple+'deadlineDays'] = [1];
+
+    var var_projectManager;
+    if ( doc.hasValue("v-s:hasProject") && doc["v-s:hasProject"][0].hasValue("v-s:projectManager") ) {
+      var_projectManager = doc["v-s:hasProject"][0]["v-s:projectManager"][0];
+      routes['sign'][simple+'participant'] = [var_projectManager];
+    } else {
+      routes['sign'][simple+'participant'] = [];
+    }
+
+    routes['approval'][simple+'visible'] = [false];
+    routes['approval'][simple+'editable'] = [false];
+    routes['review'][simple+'visible'] = [false];
+    routes['review'][simple+'editable'] = [false];
+    routes['instruction'][simple+'visible'] = [false];
+    routes['instruction'][simple+'editable'] = [false];
   } else {
-    routes['coordination1'][simple+'participant'] = [];
+      routes['introduction'][simple+'visible'] = [false];
+      routes['introduction'][simple+'editable'] = [false];
+      routes['coordination1'][simple+'visible'] = [true];
+      routes['coordination1'][simple+'editable'] = [true];
+      routes['coordination2'][simple+'visible'] = [false];
+      routes['coordination2'][simple+'editable'] = [false];
+      routes['coordination3'][simple+'visible'] = [false];
+      routes['coordination3'][simple+'editable'] = [false];
+      routes['coordination4'][simple+'visible'] = [false];
+      routes['coordination4'][simple+'editable'] = [false];
+      routes['coordination5'][simple+'visible'] = [false];
+      routes['coordination5'][simple+'editable'] = [false];
+      routes['coordination6'][simple+'visible'] = [false];
+      routes['coordination6'][simple+'editable'] = [false];
+      routes['sign'][simple+'visible'] = [true];
+      routes['sign'][simple+'editable'] = [true];
+      routes['approval'][simple+'visible'] = [true];
+      routes['approval'][simple+'editable'] = [true];
+      routes['review'][simple+'visible'] = [true];
+      routes['review'][simple+'editable'] = [true];
+      routes['instruction'][simple+'visible'] = [true];
+      routes['instruction'][simple+'editable'] = [true];
   }
-
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026772")); //Рук по организации ТО ПБ. Руководство производства бумаги
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026773")); //Рук по организации ТО ПЦ. Руководство производства целлюлозы
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025564")); //Начальник службы. Сл.организации ТО оборудования ЭП
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71012089")); //Начальник службы-главный электрик. Руководство центр.электрической службы
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000234")); //Руковод. центральной службы-гл. метролог. Центральная служба автоматизации и метр
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71013780")); //Начальник  службы-главный механик. Руководство центральн.механ.службы
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71022798")); //Начальник службы. Служба управления надежностью
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071")); //Главный технолог. Технологическая служба
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017956")); //Начальник управления. Управление промышленной безопасности
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024364")); //Главный эколог. Отдел охраны окружающей среды
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025777")); //Ведущий специалист. Отдел техн надзора центр. механ. службы
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71016923")); //Ведущий инженер генплана. Проектно-конструкторский отд. УРиР
-  routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71017800")); //Начальник управления. Руководство управления информац.процес
-  routes['coordination1'][simple+'comment'] = [new String('Прошу согласовать вложенную документацию')];
-
-  routes['coordination2'][simple+'visible'] = [false];
-  routes['coordination2'][simple+'editable'] = [false];
-  routes['coordination3'][simple+'visible'] = [false];
-  routes['coordination3'][simple+'editable'] = [false];
-  routes['coordination4'][simple+'visible'] = [false];
-  routes['coordination4'][simple+'editable'] = [false];
-  routes['coordination5'][simple+'visible'] = [false];
-  routes['coordination5'][simple+'editable'] = [false];
-  routes['coordination6'][simple+'visible'] = [false];
-  routes['coordination6'][simple+'editable'] = [false];
-
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [true];
-  routes['sign'][simple+'comment'] = [new String('Документация согласована')];
-  routes['sign'][simple+'deadlineDays'] = [1];
-
-  var var_projectManager;
-  if ( doc.hasValue("v-s:hasProject") && doc["v-s:hasProject"][0].hasValue("v-s:projectManager") ) {
-    var_projectManager = doc["v-s:hasProject"][0]["v-s:projectManager"][0];
-    routes['sign'][simple+'participant'] = [var_projectManager];
-  } else {
-    routes['sign'][simple+'participant'] = [];
-  }
-
-  routes['approval'][simple+'visible'] = [false];
-  routes['approval'][simple+'editable'] = [false];
-  routes['review'][simple+'visible'] = [false];
-  routes['review'][simple+'editable'] = [false];
-
-  routes['instruction'][simple+'visible'] = [false];
-  routes['instruction'][simple+'editable'] = [false];
-
 }
 
 //---------------------------------------------------------Тестовый маршрут
