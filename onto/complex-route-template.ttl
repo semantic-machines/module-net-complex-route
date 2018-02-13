@@ -2952,8 +2952,8 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
       (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:a486cc102-8ec8-3f09-b326-6fabeec30882') ||
       (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:a0bfac3cc-ecf3-7847-59b2-5793ebd73879') ||
       (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:1dfe4525-5218-43eb-914b-096cabb93b76') ||
-      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:dtio5orzhqiee2ghmrg35ft8')) ||
-      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:add478ffd-4996-ca11-8d8c-51bf810357c7')
+      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:dtio5orzhqiee2ghmrg35ft8') ||
+      (doc["v-s:backwardTarget"][0]["v-s:hasBudgetCategory"][0].id === 'd:add478ffd-4996-ca11-8d8c-51bf810357c7'))
   ) {
 
     routes['introduction'][simple+'visible'] = [false];
