@@ -2972,7 +2972,7 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
 
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026772")); //Рук по организации ТО ПБ. Руководство производства бумаги
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026773")); //Рук по организации ТО ПЦ. Руководство производства целлюлозы
-    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025564")); //Начальник службы. Сл.организации ТО оборудования ЭП
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71026608")); //Руководитель по техобсл. оборудования. Энергетическое производство
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71012089")); //Начальник службы-главный электрик. Руководство центр.электрической службы
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000234")); //Руковод. центральной службы-гл. метролог. Центральная служба автоматизации и метр
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71013780")); //Начальник  службы-главный механик. Руководство центральн.механ.службы
