@@ -3277,9 +3277,9 @@ stages.forEach(function(stage) {
     </div>
   </div>
   <br>
-  <div class="actions clearfix">
-    <button type="button" class="action btn btn-warning pull-left" id="save_and_start_process" about="v-s:Send" property="rdfs:label"></button>
-    <div about="@" class="pull-left" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="cancel"></div>
+  <div class="actions">
+    <button type="button" class="action btn btn-warning" id="save_and_start_process" about="v-s:Send" property="rdfs:label"></button>
+    <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="cancel"></span>
   </div>
 </div>
   """ ;

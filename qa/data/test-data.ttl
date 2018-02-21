@@ -49,7 +49,7 @@ s-wf:ComplexRouteTest_Template
       </div>
     </div>
     <div class="panel-footer">
-      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel send task"></div>
+      <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel send task"></span>
     </div>
   </div>
 </div>
@@ -99,7 +99,7 @@ s-wf:ComplexRouteTest2_Template
       </div>
     </div>
     <div class="panel-footer">
-      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="send"></div>
+      <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="send"></span>
     </div>
   </div>
 </div>
@@ -131,7 +131,7 @@ s-wf:ComplexRouteTest3_Template
       </div>
     </div>
     <div class="panel-footer">
-      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="send"></div>
+      <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="send"></span>
     </div>
   </div>
 </div>
@@ -171,7 +171,7 @@ s-wf:ComplexRouteTest0_Template
       </div>
     </div>
     <div class="panel-footer">
-      <div about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel send task"></div>
+      <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel send task"></span>
     </div>
   </div>
 </div>
