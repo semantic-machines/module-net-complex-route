@@ -3041,6 +3041,30 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
   }
 }
 
+//---------------------------------------------------------Комплексный маршрут для анкет УВП
+//---------------------------------------------------------Анкета оценки УВП - mnd-s:ICSProcessRatingEvaluationForm
+if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") { 
+  //Согласование пусто
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  //Поручение
+  routes['instruction'][simple+'visible'] = [true];
+  routes['instruction'][simple+'editable'] = [true];
+  routes['instruction'][simple+'comment'] = [new String('Произвести оценку')];
+  routes['instruction'][simple+'controller'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
+}
+//---------------------------------------------------------Анкета просмотра УВП - mnd-s:ICSProcessRatingViewForm
+if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") { 
+  //Согласование пусто
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  //Поручение
+  routes['instruction'][simple+'visible'] = [true];
+  routes['instruction'][simple+'editable'] = [true];
+  routes['instruction'][simple+'comment'] = [new String('Предоставить обратную связь')];
+  routes['instruction'][simple+'controller'] = [doc["v-s:evaluatedProcess"][0]["v-s:processManager"][0]];
+}
+
 //---------------------------------------------------------Тестовый маршрут
 
 if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest") { //Тестовый маршрут
