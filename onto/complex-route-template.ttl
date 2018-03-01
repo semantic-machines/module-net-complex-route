@@ -139,13 +139,15 @@ if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
         routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(mwg['v-s:member']);
       });
     }
+    routes['sign'][simple+'participant'] = [new veda.IndividualModel('d:mondi_position_71017804'), new veda.IndividualModel('d:mondi_position_71018870')];
     routes['sign'][simple+'visible'] = [true];
     routes['sign'][simple+'editable'] = [true];
     routes['sign'][simple+'deadlineDays'] = [10];
 
-    routes['approval'][simple+'participant'] = [new veda.IndividualModel('d:mondi_position_71017804'), new veda.IndividualModel('d:mondi_position_71018870')];
+    routes['approval'][simple+'participant'] = [new veda.IndividualModel('d:mondi_appointment_00058240_71024477')];
     routes['approval'][simple+'visible'] = [true];
-    routes['approval'][simple+'editable'] = [true];
+    routes['approval'][simple+'editable'] = [false];
+    routes['approval'][simple+'comment'] = [new String('Уточнить сроки мероприятия')];
     routes['approval'][simple+'deadlineDays'] = [10];
   }
   //проверка чекбоксов на тру и подстановка людей в ознакомление
