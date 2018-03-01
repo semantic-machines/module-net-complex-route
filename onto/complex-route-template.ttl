@@ -217,10 +217,16 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractorCategoryRequest") {
   } else {
     if (doc.hasValue('mnd-s:contractorRiskDecisionToAccept') && doc['mnd-s:contractorRiskDecisionToAccept'][0] == false) {
       // НЕ оценка рисков
-      routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:dc50f0d3-0d1b-4505-874a-09c5a9c7333f")];
-      routes['coordination1'][simple+'visible'] = [true];
-      routes['coordination1'][simple+'editable'] = [false];
-      routes['coordination1'][simple+'deadlineDays'] = [3];
+      if ( doc.hasValue("mnd-s:hasContractorInteractionCategory", "d:eb16f1abb93f44d89ae0492710ad4631") ) {
+        routes['coordination1'][simple+'visible'] = [true];
+        routes['coordination1'][simple+'editable'] = [true];
+        routes['coordination1'][simple+'deadlineDays'] = [3];
+      } else {
+        routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:dc50f0d3-0d1b-4505-874a-09c5a9c7333f")];
+        routes['coordination1'][simple+'visible'] = [true];
+        routes['coordination1'][simple+'editable'] = [false];
+        routes['coordination1'][simple+'deadlineDays'] = [3];
+      }
 
       routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:39bd6fed-fad3-453e-bca4-e8ebd0e3cc73")];
       routes['coordination2'][simple+'visible'] = [true];
@@ -3043,7 +3049,7 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
 
 //---------------------------------------------------------Комплексный маршрут для анкет УВП
 //---------------------------------------------------------Анкета оценки УВП - mnd-s:ICSProcessRatingEvaluationForm
-if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") { 
+if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") {
   //Согласование пусто
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
@@ -3054,7 +3060,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") {
   routes['instruction'][simple+'controller'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
 }
 //---------------------------------------------------------Анкета просмотра УВП - mnd-s:ICSProcessRatingViewForm
-if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") { 
+if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") {
   //Согласование пусто
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
