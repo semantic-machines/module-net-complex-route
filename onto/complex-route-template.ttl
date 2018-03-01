@@ -3059,7 +3059,8 @@ if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") {
   routes['instruction'][simple+'visible'] = [true];
   routes['instruction'][simple+'editable'] = [true];
   routes['instruction'][simple+'comment'] = [new String('Произвести оценку')];
-  routes['instruction'][simple+'controller'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
+  routes['instruction'][simple+'participant'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
+  routes['instruction'][simple+'controller'] = veda.user['v-s:hasAppointment']
 }
 //---------------------------------------------------------Анкета просмотра УВП - mnd-s:ICSProcessRatingViewForm
 if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") {
@@ -3070,7 +3071,8 @@ if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") {
   routes['instruction'][simple+'visible'] = [true];
   routes['instruction'][simple+'editable'] = [true];
   routes['instruction'][simple+'comment'] = [new String('Предоставить обратную связь')];
-  routes['instruction'][simple+'controller'] = [doc["v-s:evaluatedProcess"][0]["v-s:processManager"][0]];
+  routes['instruction'][simple+'participant'] = [doc["v-s:evaluatedProcess"][0]["v-s:processManager"][0]];
+  routes['instruction'][simple+'controller'] = veda.user['v-s:hasAppointment'];
 }
 
 //---------------------------------------------------------Тестовый маршрут
