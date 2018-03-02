@@ -2019,7 +2019,7 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
     routes['coordination4'][simple+'editable'] = [true];
 
     //Утверждение
-    routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:61e1919e-2460-41ed-8692-042d2634542a")]; //Регистратор документов СЛПК
+    routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:i57xkn2c5241doh4ohgn90ej5n")]; //Регистратор командировок
     routes['approval'][simple+'visible'] = [true];
     routes['approval'][simple+'editable'] = [false];
     routes['approval'][simple+'comment'] = [new String('Зарегистрировать')];
