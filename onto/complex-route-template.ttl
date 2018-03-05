@@ -1979,9 +1979,7 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
     }
 
     // Подписание
-    if( doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00009992_71024618") // Дмитриева
-      || doc.hasValue("v-s:businessTripEmployee", "d:73ff1ce67c77f6815c56b697") // Дмитриева
-      || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00064206_71017819") // Бендер*
+    if( doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00064206_71017819") // Бендер*
       || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00068750_71017804") // Дружков*
       || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00010043_71018870") // Третьяков*
       || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00061421_71020115") // Рембе*
@@ -2601,8 +2599,10 @@ if (doc.hasValue('mnd-s:hasTrialOutputResponsible') && doc['mnd-s:hasTrialOutput
  }
 // Главный технолог
    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071"));
-// Руководитель группы. Группа технологического контроля ПЦ и ЭП
-   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024794"));
+// Руководитель группы. Группа технологического контроля ПЦ
+   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71027087"));
+// Руководитель группы. Группа технологического контроля ЭП
+   routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71027088"));
 // Руководитель группы. Группа технологического контроля ПБ
    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024795"));
 // Начальник лаборатории. Производств.лаборат.технолог.контроля
