@@ -2485,7 +2485,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ProjectCapex") {
     }
   routes['coordination3'][simple+'visible'] = [true] ;
   routes['coordination3'][simple+'editable'] = [true] ;
-  routes['coordination3'][simple+'participant'] = [ new veda.IndividualModel("d:mondi_position_70006692"), new veda.IndividualModel("d:mondi_appointment_00069970_71025163") ] ;
+  routes['coordination3'][simple+'participant'] = [ new veda.IndividualModel("d:mondi_position_70006692"), new veda.IndividualModel("d:mondi_appointment_00070377_71025158") ] ;//Главный бухгалтер. Руководство бухгалтерии и Беляева Кристина Игоревна
   routes['coordination4'][simple+'visible'] = [true] ;
   routes['coordination4'][simple+'editable'] = [true] ;
     if ( doc.hasValue("mnd-s:hasProjectCapexKind", "d:d0148fuotsjyd7yjalgy4j8u") || doc.hasValue("mnd-s:hasProjectCapexKind", "d:i205cve3glu4rcbs7kme8hjd") ) {
