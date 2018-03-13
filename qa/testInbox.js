@@ -16,8 +16,8 @@ function sendTask(driver, valueToSearch, valueToChoose, phase) {
       errrorHandlerFunction(e, "****** PHASE#" + phase + " : ERROR = Cannot click on save button")});
     basic.isVisible(driver, 'span[about="v-s:SendTask"]', basic.FAST_OPERATION * 2, 1);
     basic.execute(driver, "click", 'span[about="v-s:SendTask"]', "****** PHASE#1 > Create task : ERROR = Cannot click on SendTask button");
-    basic.isVisible(driver, 'a[about="v-s:Instruction"]', basic.FAST_OPERATION * 2, 1);
-    basic.execute(driver, "click", 'a[about="v-s:Instruction"]', "****** PHASE#1 > Create task : ERROR = Cannot click on Instruction link");
+    basic.isVisible(driver, 'a[about="v-wf:instructionRouteStartForm"]', basic.FAST_OPERATION * 2, 1);
+    basic.execute(driver, "click", 'a[about="v-wf:instructionRouteStartForm"]', "****** PHASE#1 > Create task : ERROR = Cannot click on Instruction link");
     basic.isVisible(driver, 'div.modal-dialog.modal-lg', basic.FAST_OPERATION * 2, 1);
     basic.chooseFromDropdown(driver, 'v-s:responsible', valueToSearch, valueToChoose, 1);
     basic.execute(driver, "sendKeys", 'veda-control[property="rdfs:comment"] textarea.form-control',
