@@ -3041,6 +3041,35 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
   }
 }
 
+//--------------------------------------------------------------------------------ЗАЯВКА ИТ-------
+if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
+
+      routes['introduction'][simple+'visible'] = [false];
+      routes['introduction'][simple+'editable'] = [false];
+      routes['coordination1'][simple+'visible'] = [true];
+      routes['coordination1'][simple+'editable'] = [true];
+      routes['coordination2'][simple+'visible'] = [false];
+      routes['coordination2'][simple+'editable'] = [false];
+      routes['coordination3'][simple+'visible'] = [false];
+      routes['coordination3'][simple+'editable'] = [false];
+      routes['coordination4'][simple+'visible'] = [false];
+      routes['coordination4'][simple+'editable'] = [false];
+      routes['coordination5'][simple+'visible'] = [false];
+      routes['coordination5'][simple+'editable'] = [false];
+      routes['coordination6'][simple+'visible'] = [false];
+      routes['coordination6'][simple+'editable'] = [false];
+      routes['sign'][simple+'visible'] = [true];
+      routes['sign'][simple+'editable'] = [true];
+      routes['approval'][simple+'visible'] = [false];
+      routes['approval'][simple+'editable'] = [false];
+      routes['review'][simple+'visible'] = [true];
+      routes['review'][simple+'editable'] = [true];
+      routes['instruction'][simple+'visible'] = [false];
+      routes['instruction'][simple+'editable'] = [false];
+}
+
+
+
 //---------------------------------------------------------Тестовый маршрут
 
 if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest") { //Тестовый маршрут
