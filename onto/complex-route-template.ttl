@@ -3076,6 +3076,34 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
       routes['instruction'][simple+'editable'] = [false];
 }
 
+//--------------------------------------------------------------------------------ЗАДАНИЕ ПО ЗАЯВКЕ ИТ-------
+if (doc['rdf:type'][0].id === "mnd-s:ItRequestAction") {
+
+      routes['introduction'][simple+'visible'] = [false];
+      routes['introduction'][simple+'editable'] = [false];
+      routes['coordination1'][simple+'visible'] = [false];
+      routes['coordination1'][simple+'editable'] = [false];
+      routes['coordination2'][simple+'visible'] = [false];
+      routes['coordination2'][simple+'editable'] = [false];
+      routes['coordination3'][simple+'visible'] = [false];
+      routes['coordination3'][simple+'editable'] = [false];
+      routes['coordination4'][simple+'visible'] = [false];
+      routes['coordination4'][simple+'editable'] = [false];
+      routes['coordination5'][simple+'visible'] = [false];
+      routes['coordination5'][simple+'editable'] = [false];
+      routes['coordination6'][simple+'visible'] = [false];
+      routes['coordination6'][simple+'editable'] = [false];
+      routes['sign'][simple+'visible'] = [false];
+      routes['sign'][simple+'editable'] = [false];
+      routes['approval'][simple+'visible'] = [false];
+      routes['approval'][simple+'editable'] = [false];
+      routes['review'][simple+'visible'] = [false];
+      routes['review'][simple+'editable'] = [false];
+      routes['instruction'][simple+'visible'] = [true];
+      routes['instruction'][simple+'editable'] = [true];
+      routes['instruction'][simple+'participant'] = routes['instruction'][simple+'participant'].concat(doc['v-s:responsible'][0]);
+}
+
 
 //---------------------------------------------------------Комплексный маршрут для анкет УВП
 //---------------------------------------------------------Анкета оценки УВП - mnd-s:ICSProcessRatingEvaluationForm
