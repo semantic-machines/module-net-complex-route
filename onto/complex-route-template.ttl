@@ -3066,14 +3066,25 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
       routes['coordination5'][simple+'editable'] = [false];
       routes['coordination6'][simple+'visible'] = [false];
       routes['coordination6'][simple+'editable'] = [false];
-      routes['sign'][simple+'visible'] = [true];
-      routes['sign'][simple+'editable'] = [true];
+      routes['sign'][simple+'visible'] = [false];
+      routes['sign'][simple+'editable'] = [false];
       routes['approval'][simple+'visible'] = [false];
       routes['approval'][simple+'editable'] = [false];
       routes['review'][simple+'visible'] = [true];
       routes['review'][simple+'editable'] = [true];
       routes['instruction'][simple+'visible'] = [false];
       routes['instruction'][simple+'editable'] = [false];
+
+  if (!doc.hasValue('mnd-s:hasItRequestAction')) {
+    // если [hasItRequestAction] пусто, то рассмотрение - Начальник УИП
+      routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017800")];
+  } else {
+    // если [hasItRequestAction] не пусто, то рассмотрение - [v-s:responsible]
+      routes['review'][simple+'participant'] = [];
+      doc['mnd-s:hasItRequestAction'].forEach(function(mwg) {
+        routes['review'][simple+'participant'] = routes['review'][simple+'participant'].concat(mwg['v-s:responsible']);
+      });
+    }
 }
 
 //--------------------------------------------------------------------------------ЗАДАНИЕ ПО ЗАЯВКЕ ИТ-------
