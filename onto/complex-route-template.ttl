@@ -2353,7 +2353,38 @@ var informingDecree ;
   routes['examination'][simple+'deadlineDays'] = [10];
   routes['examination'][simple+'comment'] = [new String('Ознакомиться с документом для дальнейшей работы')];
   routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['v-s:copyTo']); // Список ознакомления
-
+  
+  var triggered = false;
+  template.on("validate", function () {
+    var result = {};
+    var countParticipant=0;
+    countParticipant += routes['coordination1'][simple+'participant'].length;
+    countParticipant += routes['coordination2'][simple+'participant'].length;
+    countParticipant += routes['coordination3'][simple+'participant'].length;
+    countParticipant += routes['coordination4'][simple+'participant'].length;
+    var saveButton = $("#save_and_start_process", template);
+    if ( countParticipant > 4 ) {
+      triggered = true;
+      saveButton.popover({
+        placement: "top",
+        trigger: "manual",
+        content: "Количество согласующих суммарно на всех этапах не должно превышать 4"
+      });
+      saveButton.popover('show');
+      result[routes['coordination1'][simple+'participant']] = {
+        state: false,
+        cause: []
+      };
+      saveButton.attr('disabled','disabled');
+    } else {
+      if (triggered) {
+        saveButton.popover("destroy");
+        saveButton.removeAttr('disabled');
+        triggered = false;
+      }
+    };
+    template.trigger("validated", result);
+  });
 }
 
 //--------------------------------------------------------------------------------Заявка ОЗМ-------
