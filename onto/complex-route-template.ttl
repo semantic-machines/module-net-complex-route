@@ -428,7 +428,7 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfLocalRegulatoryDocument") {
   } else if ( doc["v-s:backwardTarget"][0].hasValue("v-s:owner") &&  doc["v-s:backwardTarget"][0]["v-s:owner"][0].id == 'd:mondi_department_50003642' ){
     var owner = doc["v-s:owner"][0];
     routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:6990c8e9-f6f4-423d-ac46-b892f64ff3df")];
-  } else if ( doc["v-s:backwardTarget"][0].hasValue("v-s:owner") &&  doc["v-s:backwardTarget"][0]["v-s:owner"][0].id == 'd:mondi_department_50002528' ){
+  } else if ( doc["v-s:backwardTarget"][0].hasValue("v-s:owner") &&  (doc["v-s:backwardTarget"][0]["v-s:owner"][0].id == 'd:mondi_department_50003642' ||doc["v-s:backwardTarget"][0]["v-s:owner"][0].id == 'd:mondi_department_50003643' ||doc["v-s:backwardTarget"][0]["v-s:owner"][0].id == 'd:mondi_department_50001709')){
     var owner = doc["v-s:owner"][0];
     routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:976ffdfe-7a2f-48a7-a64c-eddd4b32c7b6")];
   } else if ( doc["v-s:backwardTarget"][0].hasValue("v-s:owner") &&  doc["v-s:backwardTarget"][0]["v-s:owner"][0].id == 'd:mondi_department_50003527' ){
