@@ -26,7 +26,7 @@
 s-wf:ComplexRouteStartForm
   rdf:type rdfs:Class ;
   rdfs:subClassOf v-wf:StartForm ;
-  rdfs:label "Стартовая форма сети Комплексный маршрут"@ru ;
+  rdfs:label "Стартовая форма Комплексного маршрута"@ru ;
   rdfs:label "Complex route start form"@en ;
   rdfs:isDefinedBy s-wf: ;
   v-ui:hasTemplate s-wf:ComplexRouteStartForm_Template ;
@@ -2353,7 +2353,7 @@ var informingDecree ;
   routes['examination'][simple+'deadlineDays'] = [10];
   routes['examination'][simple+'comment'] = [new String('Ознакомиться с документом для дальнейшей работы')];
   routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(doc['v-s:copyTo']); // Список ознакомления
-  
+
   var triggered = false;
   template.on("validate", function () {
     var result = {};
