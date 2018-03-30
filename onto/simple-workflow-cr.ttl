@@ -735,13 +735,6 @@ s-wf:rul_transform21_9
 
 # --- end -------------------------- NET Complex Route ----------------------------------- end ---- #
 
-s-wf:ss2 a v-s:SavedSearch;
-  rdfs:isDefinedBy s-wfc: ;
-  v-s:author td:RomanKarpov;
-  v-s:query "'rdfs:isDefinedBy' == 's-wfc:'"^^xsd:string;
-  rdfs:label "Онтология комплексного маршрута монди"^^xsd:string;
-  v-s:created "2015-05-23T13:27:18.000Z"^^xsd:dateTime.
-
 #----------------------- трансформация для стартовой формы ПДР -------------------------------------------------
 
 s-wf:transformation2
