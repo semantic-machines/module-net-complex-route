@@ -248,7 +248,8 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractorCategoryRequest") {
       }
     } else {
       // Оценка рисков
-      routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:aaf889b74-6caa-8b21-5404-c6a9f91f8666")]; // ПУ
+      routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:aaf889b74-6caa-8b21-5404-c6a9f91f8666")); // ПУ
+      routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:fzhgfz0dis3u6w8lgr4v5v89iu")); // ОВА
       routes['coordination1'][simple+'visible'] = [true];
       routes['coordination1'][simple+'editable'] = [true];
       routes['coordination1'][simple+'deadlineDays'] = [3];
