@@ -3156,11 +3156,12 @@ if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") {
   routes['coordination1'][simple+'visible'] = [true];
   routes['coordination1'][simple+'editable'] = [true];
   //Поручение
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['instruction'][simple+'comment'] = [new String('Произвести оценку')];
-  routes['instruction'][simple+'participant'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
-  routes['instruction'][simple+'controller'] = veda.user['v-s:hasAppointment']
+  routes['sign'][simple+'visible'] = [true];
+  routes['sign'][simple+'editable'] = [true];
+  routes['sign']["v-wf:StartForm_canEdit"] = [true];
+  routes['sign'][simple+'comment'] = [new String('Произвести оценку')];
+  routes['sign'][simple+'participant'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
+  routes['sign'][simple+'controller'] = veda.user['v-s:hasAppointment']
 }
 //---------------------------------------------------------Анкета просмотра УВП - mnd-s:ICSProcessRatingViewForm
 if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") {
