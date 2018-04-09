@@ -2942,11 +2942,11 @@ if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
       default:
         break;
     }
-    routes['review'][simple+'participant'] = [new veda.IndividualModel(address)];
-    routes['review'][simple+'visible'] = [true];
-    routes['review'][simple+'editable'] = [true];
-    routes['review'][simple+'deadlineDays'] = [3];
-    routes['review'][simple+'comment'] = [new String('Рассмотреть заявку')];
+    routes['instruction2'][simple+'participant'] = [new veda.IndividualModel(address)];
+    routes['instruction2'][simple+'visible'] = [true];
+    routes['instruction2'][simple+'editable'] = [true];
+    routes['instruction2'][simple+'deadlineDays'] = [3];
+    routes['instruction2'][simple+'comment'] = [new String('Рассмотреть заявку')];
   }
 
   routes['examination'][simple+'visible'] = [true];
@@ -3453,6 +3453,12 @@ stages.forEach(function(stage) {
     <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="cancel"></span>
   </div>
 </div>
+<script>
+  var doc = individual['v-wf:processedDocument'][0];
+  if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
+    $('.instruction .checkbox_setStatus').show();
+  };  
+</script>
   """ ;
 .
 
