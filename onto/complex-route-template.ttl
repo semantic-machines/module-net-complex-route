@@ -3204,6 +3204,13 @@ if (doc['rdf:type'][0].id === "mnd-s:ExternalTechnicalDocument") {
   routes['instruction'][simple+'editable'] = [false];
 }
 
+//-------------------------------------------------------------------------------Организация-------
+if (doc['rdf:type'][0].id === "v-s:Organization") {
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination1'][simple+'comment'] = [new String('Скрининг организации')];
+  routes['coordination1'][simple+'participant'] = [new veda.IndividualModel("d:39bd6fed-fad3-453e-bca4-e8ebd0e3cc73")]; //Согласование досье СЭБ
+}
 
 //---------------------------------------------------------Тестовый маршрут
 
