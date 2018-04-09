@@ -1203,7 +1203,7 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
       }
     }
     if (doc.hasValue('v-s:supplier') && doc['v-s:supplier'][0].id == 'd:org_RU1121003135') {
-      if (doc.hasValue('v-s:initiator') && (new veda.IndividualModel(doc['v-s:initiator'][0].id)).isSubUnitOf("d:mondi_department_50003202")) {
+      if (doc.hasValue('v-s:initiator') && (new veda.IndividualModel(doc['v-s:initiator'][0].id)).  isSubUnitOf("d:mondi_department_50003202")) {
         routes['coordination2'][simple+'participant'] = routes['coordination2'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71020138")); // Гл инженер УЛО (Навратил С)
         routes['coordination2'][simple+'participant'] = routes['coordination2'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71025127")); // Зам директора УЛО (Кухоткин)
       }
@@ -3175,6 +3175,35 @@ if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") {
   routes['instruction'][simple+'participant'] = [doc["v-s:evaluatedProcess"][0]["v-s:processManager"][0]];
   routes['instruction'][simple+'controller'] = veda.user['v-s:hasAppointment'];
 }
+
+
+
+//-------------------------------------------------------------------------- Внешний технический документ
+if (doc['rdf:type'][0].id === "mnd-s:ExternalTechnicalDocument") {
+  routes['coordination1'][simple+'visible'] = [true];
+  routes['coordination1'][simple+'editable'] = [true];
+  routes['coordination2'][simple+'visible'] = [false];
+  routes['coordination2'][simple+'editable'] = [false];
+  routes['coordination3'][simple+'visible'] = [false];
+  routes['coordination3'][simple+'editable'] = [false];
+
+  routes['sign'][simple+'visible'] = [false];
+  routes['sign'][simple+'editable'] = [false];
+  routes['approval'][simple+'visible'] = [false];
+  routes['approval'][simple+'editable'] = [false];
+  routes['review'][simple+'visible'] = [true];
+  routes['review'][simple+'editable'] = [true];
+
+  if (doc["v-s:hasDocumentKind"][0].id === 'd:fl4fzamgqfnhgu8a2xnljiii'){
+    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_department_50001667")];
+    }
+
+  routes['examination'][simple+'visible'] = [true];
+  routes['examination'][simple+'editable'] = [true];
+  routes['instruction'][simple+'visible'] = [false];
+  routes['instruction'][simple+'editable'] = [false];
+}
+
 
 //---------------------------------------------------------Тестовый маршрут
 
