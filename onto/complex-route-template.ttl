@@ -2945,6 +2945,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
     routes['instruction2'][simple+'participant'] = [new veda.IndividualModel(address)];
     routes['instruction2'][simple+'visible'] = [true];
     routes['instruction2'][simple+'editable'] = [true];
+    routes['instruction2']['v-wf:StartForm_setStatus'] = [true];
     routes['instruction2'][simple+'deadlineDays'] = [3];
     routes['instruction2'][simple+'comment'] = [new String('Рассмотреть заявку')];
   }
