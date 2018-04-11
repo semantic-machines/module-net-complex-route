@@ -3456,7 +3456,7 @@ stages.forEach(function(stage) {
 <script>
   var doc = individual['v-wf:processedDocument'][0];
   if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
-    $('.instruction .checkbox_setStatus').show();
+    $('.instruction2 .checkbox_setStatus').show();
   };  
 </script>
   """ ;
