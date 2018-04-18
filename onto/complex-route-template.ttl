@@ -26,6 +26,8 @@
 s-wf:ComplexRouteStartForm
   rdf:type rdfs:Class ;
   rdfs:subClassOf v-wf:StartForm ;
+  rdfs:subClassOf v-s:AutomaticallyVersioned ;
+  rdfs:subClassOf v-s:Journaling ;
   rdfs:label "Стартовая форма Комплексного маршрута"@ru ;
   rdfs:label "Complex route start form"@en ;
   rdfs:isDefinedBy s-wf: ;
@@ -44,6 +46,7 @@ s-wf:ComplexRouteStartForm_Template
 if (this.hasValue("v-wf:isProcess")) {
   $('#save_and_start_process', template).remove();
 } else {
+  $("span.statusWorkflow", template).remove();
   $('#save_and_start_process', template).on('click', function () {
     stages.forEach(function(stage) {
       var routeid = complex+stage;
@@ -54,7 +57,7 @@ if (this.hasValue("v-wf:isProcess")) {
     });
     veda.Util.send(individual, template);
   });
-}
+};
 
 if (mode !== "edit") { return; }
 
@@ -89,6 +92,7 @@ if (!doc) { return; }
 stages.forEach(function(stage) {
   routes[stage] = new veda.IndividualModel();
   routes[stage]['rdf:type'] = [new veda.IndividualModel('s-wf:SimpleRouteStartForm')];
+  routes[stage]['v-wf:hasStatusWorkflow'] = [new veda.IndividualModel('v-wf:ToBeSent')];
 });
 
 // DEFAULT
@@ -3322,7 +3326,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 informing" rel="s-wf:ComplexRouteStartForm_informing" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_informing" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_informing" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-embedded="true" data-template="s-wf:SimpleRouteStartFormMinimal_Template"></div>
       </div>
@@ -3330,7 +3337,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 introduction" rel="s-wf:ComplexRouteStartForm_introduction" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_introduction" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_introduction" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3338,7 +3348,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 coordination1" rel="s-wf:ComplexRouteStartForm_coordination1" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_coordination1" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination1" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3346,7 +3359,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 coordination2" rel="s-wf:ComplexRouteStartForm_coordination2" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_coordination2" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination1" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3355,7 +3371,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 coordination3" rel="s-wf:ComplexRouteStartForm_coordination3" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_coordination3" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination3" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3363,7 +3382,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 coordination4" rel="s-wf:ComplexRouteStartForm_coordination4" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_coordination4" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination4" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3371,7 +3393,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 coordination5" rel="s-wf:ComplexRouteStartForm_coordination5" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_coordination5" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination5" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3379,7 +3404,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 coordination6" rel="s-wf:ComplexRouteStartForm_coordination6" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_coordination6" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination6" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3387,7 +3415,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 sign" rel="s-wf:ComplexRouteStartForm_sign" data-embedded="true">
       <div class="panel panel-warning">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_sign" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_sign" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3395,7 +3426,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 approval" rel="s-wf:ComplexRouteStartForm_approval" data-embedded="true">
       <div class="panel panel-warning">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_approval" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_approval" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3403,7 +3437,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 review" rel="s-wf:ComplexRouteStartForm_review" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_review" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_review" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3411,7 +3448,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 instruction" rel="s-wf:ComplexRouteStartForm_instruction" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3419,7 +3459,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 instruction2" rel="s-wf:ComplexRouteStartForm_instruction2" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3427,7 +3470,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 instruction3" rel="s-wf:ComplexRouteStartForm_instruction3" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3435,7 +3481,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 examination" rel="s-wf:ComplexRouteStartForm_examination" data-embedded="true">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_examination" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_examination" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3443,7 +3492,10 @@ stages.forEach(function(stage) {
     <div class="col-md-6 distribution" rel="s-wf:ComplexRouteStartForm_distribution" data-embedded="true">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title" about="s-wf:ComplexRouteStartForm_distribution" property="rdfs:label"></h3>
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_distribution" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
         </div>
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
@@ -3452,7 +3504,7 @@ stages.forEach(function(stage) {
   <br>
   <div class="actions">
     <button type="button" class="action btn btn-warning" id="save_and_start_process" about="v-s:Send" property="rdfs:label"></button>
-    <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="cancel"></span>
+    <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel"></span>
   </div>
 </div>
 <script>
@@ -3460,6 +3512,10 @@ stages.forEach(function(stage) {
   if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
     $('.instruction2 .checkbox_setStatus').show();
   };
+  if (!individual.hasValue("v-wf:isProcess")) {
+    $(".actions #save", template).remove();
+    $(".actions #edit", template).remove();
+  }
 </script>
   """ ;
 .
