@@ -3341,7 +3341,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 coordination1" rel="s-wf:ComplexRouteStartForm_coordination1" data-embedded="true">
@@ -3352,18 +3352,18 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 coordination2" rel="s-wf:ComplexRouteStartForm_coordination2" data-embedded="true">
       <div class="panel panel-success">
         <div class="panel-heading">
           <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination1" property="rdfs:label"></span>
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination2" property="rdfs:label"></span>
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
 
@@ -3375,7 +3375,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 coordination4" rel="s-wf:ComplexRouteStartForm_coordination4" data-embedded="true">
@@ -3386,7 +3386,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 coordination5" rel="s-wf:ComplexRouteStartForm_coordination5" data-embedded="true">
@@ -3397,7 +3397,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 coordination6" rel="s-wf:ComplexRouteStartForm_coordination6" data-embedded="true">
@@ -3408,7 +3408,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 sign" rel="s-wf:ComplexRouteStartForm_sign" data-embedded="true">
@@ -3419,7 +3419,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 approval" rel="s-wf:ComplexRouteStartForm_approval" data-embedded="true">
@@ -3430,7 +3430,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 review" rel="s-wf:ComplexRouteStartForm_review" data-embedded="true">
@@ -3441,7 +3441,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 instruction" rel="s-wf:ComplexRouteStartForm_instruction" data-embedded="true">
@@ -3452,7 +3452,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 instruction2" rel="s-wf:ComplexRouteStartForm_instruction2" data-embedded="true">
@@ -3463,7 +3463,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 instruction3" rel="s-wf:ComplexRouteStartForm_instruction3" data-embedded="true">
@@ -3474,7 +3474,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 examination" rel="s-wf:ComplexRouteStartForm_examination" data-embedded="true">
@@ -3485,7 +3485,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 distribution" rel="s-wf:ComplexRouteStartForm_distribution" data-embedded="true">
@@ -3496,7 +3496,7 @@ stages.forEach(function(stage) {
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:300px; height:300px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
   </div>
