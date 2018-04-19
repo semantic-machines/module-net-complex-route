@@ -3105,23 +3105,22 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
       routes['coordination5'][simple+'editable'] = [false];
       routes['coordination6'][simple+'visible'] = [false];
       routes['coordination6'][simple+'editable'] = [false];
-      routes['sign'][simple+'visible'] = [false];
-      routes['sign'][simple+'editable'] = [false];
-      routes['approval'][simple+'visible'] = [false];
-      routes['approval'][simple+'editable'] = [false];
-      routes['review'][simple+'visible'] = [true];
-      routes['review'][simple+'editable'] = [true];
-      routes['instruction'][simple+'visible'] = [false];
-      routes['instruction'][simple+'editable'] = [false];
+      routes['review'][simple+'visible'] = [false];
+      routes['review'][simple+'editable'] = [false];
+      routes['instruction2'][simple+'visible'] = [true];
+      routes['instruction2'][simple+'editable'] = [true];
+      routes['instruction2']['v-wf:StartForm_setStatus'] = [true];
+      routes['instruction2']['v-wf:StartForm_canEdit'] = [true];
+      routes['instruction2'][simple+'comment'] = [new String('Рассмотреть заявку')];
 
   if (!doc.hasValue('mnd-s:hasItRequestAction')) {
     // если [hasItRequestAction] пусто, то рассмотрение - Начальник УИП
-      routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017800")];
+      routes['instruction2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017800")];
   } else {
     // если [hasItRequestAction] не пусто, то рассмотрение - [v-s:responsible]
-      routes['review'][simple+'participant'] = [];
+      routes['instruction2'][simple+'participant'] = [];
       doc['mnd-s:hasItRequestAction'].forEach(function(mwg) {
-        routes['review'][simple+'participant'] = routes['review'][simple+'participant'].concat(mwg['v-s:responsible']);
+        routes['instruction2'][simple+'participant'] = routes['instruction2'][simple+'participant'].concat(mwg['v-s:responsible']);
       });
     }
 }
@@ -3511,6 +3510,10 @@ stages.forEach(function(stage) {
   var doc = individual['v-wf:processedDocument'][0];
   if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
     $('.instruction2 .checkbox_setStatus').show();
+  };
+  if ( doc['rdf:type'][0].id === "mnd-s:ItRequest" ) {
+    $('.instruction2 .checkbox_setStatus').show();
+    $('.instruction2 .checkbox_canEdit').show();
   };
   if (!individual.hasValue("v-wf:isProcess")) {
     $(".actions #save", template).remove();
