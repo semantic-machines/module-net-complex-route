@@ -621,7 +621,8 @@ s-wf:rul_transform21_1
   rdfs:isDefinedBy s-wfc: ;
   v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'initiator')" ;
   v-wf:segregateElement "contentName('v-wf:variableValue')" ;
-  v-wf:aggregate  "putValue ('v-wf:from')";
+  v-wf:aggregate  "putValueFrom ('v-wf:from', ['v-s:employee'])";
+  v-wf:aggregate  "putValueFrom ('v-wf:from', ['v-s:occupation'])";
   v-wf:grouping "1";
 .
 
