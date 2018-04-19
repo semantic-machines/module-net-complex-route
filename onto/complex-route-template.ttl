@@ -47,6 +47,7 @@ if (this.hasValue("v-wf:isProcess")) {
   $('#save_and_start_process', template).remove();
 } else {
   $("span.statusWorkflow", template).remove();
+  $("#on-document", template).remove();
   $('#save_and_start_process', template).on('click', function () {
     stages.forEach(function(stage) {
       var routeid = complex+stage;
@@ -94,7 +95,7 @@ stages.forEach(function(stage) {
   routes[stage]['rdf:type'] = [new veda.IndividualModel('s-wf:SimpleRouteStartForm')];
   routes[stage]['v-wf:hasStatusWorkflow'] = [new veda.IndividualModel('v-wf:ToBeSent')];
 });
-
+individual["v-s:onDocument"] = [doc];
 // DEFAULT
 routes['introduction'][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined')]")];
 routes['introduction'][simple+'task_label'] = veda.Util.mlstring("Ознакомление", "Introduction");
@@ -3294,6 +3295,7 @@ stages.forEach(function(stage) {
     }
   </style>
   <h2 about="s-wf:ComplexRouteStartForm" property="rdfs:label"></h2>
+  <h4 id="on-document" rel="v-s:onDocument" data-template="v-ui:ClassNameLabelLinkTemplate"></h4>
   <br>
 <!--
   <div class="row">
@@ -3320,7 +3322,6 @@ stages.forEach(function(stage) {
   </div>
   <hr />
 -->
-
   <div class="row">
     <div class="col-md-6 informing" rel="s-wf:ComplexRouteStartForm_informing" data-embedded="true">
       <div class="panel panel-info">
