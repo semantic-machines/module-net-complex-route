@@ -810,7 +810,7 @@ s-wf:rul_transform3_complex
 s-wf:map_msg_template_project
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('m-l:msg-template-optiflow')";
+  v-wf:mappingExpression  "newUri ('mnd-s:msg-template-optiflow')";
   rdfs:isDefinedBy s-wf: ;
 .
 
@@ -839,28 +839,28 @@ v-s:SendComplex
 s-wf:map_msg_template_4_SV_default_template_notification_approvalEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('m-l:msg-template-universal-notification_approvalEnd')";
+  v-wf:mappingExpression  "newUri ('mnd-s:msg-template-universal-notification_approvalEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_signEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('m-l:msg-template-universal-notification_signEnd')";
+  v-wf:mappingExpression  "newUri ('mnd-s:msg-template-universal-notification_signEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_coordinationEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('m-l:msg-template-universal-notification_coordinationEnd')";
+  v-wf:mappingExpression  "newUri ('mnd-s:msg-template-universal-notification_coordinationEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_reviewEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('m-l:msg-template-universal-notification_reviewEnd')";
+  v-wf:mappingExpression  "newUri ('mnd-s:msg-template-universal-notification_reviewEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 

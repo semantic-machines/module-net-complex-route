@@ -77,7 +77,7 @@ d:task_autoinstruction_to_release_link_hasFlow
     v-wf:predicate "true"^^xsd:string;
     v-wf:flowsInto d:o7ey2dszv23ykoqz5mra9r8o;
 .
-    
+
 d:bt9k3jv4npxhj74qh7bbxq15 a v-wf:Flow;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     rdfs:label ""^^xsd:string;
@@ -114,7 +114,7 @@ d:task_autoinstruction_subnet_journal_hasFlow
     v-wf:predicate "true"^^xsd:string;
     v-wf:flowsInto d:fszmffnqwfeqxxwr48vi9rq8 ;
 .
-    
+
 d:fszmffnqwfeqxxwr48vi9rq8 a v-wf:Task;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     rdfs:label "Установка статуса [Исполнение]"^^xsd:string;
@@ -132,7 +132,7 @@ d:p1xmw8wb8k9cjjzgl5zifa65 a v-wf:Flow;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     v-s:updateCounter "1"^^xsd:integer;
     v-wf:flowsInto d:task_autoinstruction_to_release;
-    v-wf:predicate "true"^^xsd:string;			
+    v-wf:predicate "true"^^xsd:string;
 .
 
 d:a33jy1sb1inmegt5j9ncswprh a v-wf:Task;
@@ -186,7 +186,7 @@ d:bq1fgy9pb3rbz0bj43x4n41q a v-wf:Flow;
     v-wf:flowsInto d:task_autoinstruction_to_release_link;
     v-wf:predicate "true"^^xsd:string;
 .
- 
+
 ###--- дополнительные сущности к сети
 
 d:map_autoinstruction_task_action
@@ -229,7 +229,7 @@ d:task_autoinstruction_map_controller
 s-wf:map_msg_template_autoinstruction-universal
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('m-l:msg-template-universal')";
+  v-wf:mappingExpression  "newUri ('mnd-s:msg-template-universal')";
   rdfs:isDefinedBy s-wf: ;
 .
 
