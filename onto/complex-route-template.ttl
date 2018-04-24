@@ -3114,6 +3114,22 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
 
       routes['introduction'][simple+'visible'] = [false];
       routes['introduction'][simple+'editable'] = [false];
+      if ( doc.hasValue("mnd-s:hasItRequestAction") ){
+        var x;
+        for (var i = 0; i < doc["mnd-s:hasItRequestAction"].length; i++) {
+          if ( doc["mnd-s:hasItRequestAction"][i]["v-s:responsible"][0].hasValue("v-s:occupation", "d:315a23af-c426-49d5-8601-a21ecdff483e") ){
+            x = "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6";
+          }
+        }
+        if (x == "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6"){
+          routes['coordination1'][simple+'visible'] = [true];
+          routes['coordination1'][simple+'editable'] = [true];
+          routes['coordination1'][simple+'participant'] = [new veda.IndividualModel(x)];
+        } else {
+          routes['coordination1'][simple+'visible'] = [true];
+          routes['coordination1'][simple+'editable'] = [true];
+        }
+      }
       routes['coordination1'][simple+'visible'] = [true];
       routes['coordination1'][simple+'editable'] = [true];
       routes['coordination2'][simple+'visible'] = [false];
