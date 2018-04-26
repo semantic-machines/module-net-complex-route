@@ -17,5 +17,12 @@ export default class basic {
       .click('#menu')
       .click('li[id="menu"] li[resource="v-s:Exit"]');
   }
+  async checkInbox(eql) {
+    await t
+      .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
+      .wait(5000)
+      .click('button.search-button')
+      .expect(Selector('div.result-heading small.stats-top.pull-right span.badge[property="v-fs:authorized"]').innerText).eql(eql);
+  }
 }
 
