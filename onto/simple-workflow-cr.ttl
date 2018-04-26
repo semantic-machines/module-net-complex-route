@@ -236,14 +236,14 @@ s-wf:executor_from_coordinator
 s-wf:map_coordinator_4_PLV_coordinator
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinator')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinator')" ;
   rdfs:label "Coordinator = process.input.coordinator" ;
 .
 
 s-wf:map_documentType
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_documentType ;
-  v-wf:mappingExpression  "task_result.getValue ('res')" ;
+  v-wf:mappingExpression "task_result.getValue ('res')" ;
   rdfs:label "documentType = task_result.getValue ('res')" ;
 .
 
@@ -259,7 +259,7 @@ s-wf:map_user_task_form_label
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression  "process.getInputVariable ('user_task_form_label')" ;
+  v-wf:mappingExpression "process.getInputVariable ('user_task_form_label')" ;
   rdfs:label "User_task_form_label=process.user_task_form_label" ;
 .
 
@@ -267,7 +267,7 @@ s-wf:map_user_task_form_label_coordination
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression  "newStr ('Согласовать документ')" ;
+  v-wf:mappingExpression "newStr ('Согласовать документ')" ;
   rdfs:label "User_task_form_label=согласование"@ru ;
 .
 
@@ -275,7 +275,7 @@ s-wf:map_user_task_form_label_instruction
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression  "newStr ('Исполнить поручение')" ;
+  v-wf:mappingExpression "newStr ('Исполнить поручение')" ;
   rdfs:label "User_task_form_label=поручение"@ru ;
 .
 
@@ -283,7 +283,7 @@ s-wf:map_user_task_form_label_remake
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression  "newStr ('Доработать документ')" ;
+  v-wf:mappingExpression "newStr ('Доработать документ')" ;
   rdfs:label "User_task_form_label=доработать"@ru ;
 .
 
@@ -291,7 +291,7 @@ s-wf:map_possible_decision_for_instruction
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:possible_decision ;
-  v-wf:mappingExpression  "[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect')]" ;
+  v-wf:mappingExpression "[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect')]" ;
   rdfs:label "Варианты ответа для исполнения"^^xsd:string;
 .
 
@@ -299,84 +299,84 @@ s-wf:map_coordinator1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinatorLevel1')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinatorLevel1')" ;
 .
 
 s-wf:map_coordinator1_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression  "newStr ('1')" ;
+  v-wf:mappingExpression "newStr ('1')" ;
 .
 
 s-wf:map_coordinator2
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinatorLevel2')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinatorLevel2')" ;
 .
 
 s-wf:map_coordinator2_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression  "newStr ('2')" ;
+  v-wf:mappingExpression "newStr ('2')" ;
 .
 
 s-wf:map_coordinator3
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinatorLevel3')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinatorLevel3')" ;
 .
 
 s-wf:map_coordinator3_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression  "newStr ('3')" ;
+  v-wf:mappingExpression "newStr ('3')" ;
 .
 
 s-wf:map_coordinator4
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinatorLevel4')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinatorLevel4')" ;
 .
 
 s-wf:map_coordinator4_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression  "newStr ('4')" ;
+  v-wf:mappingExpression "newStr ('4')" ;
 .
 
 s-wf:map_coordinator5
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinatorLevel5')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinatorLevel5')" ;
 .
 
 s-wf:map_coordinator5_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression  "newStr ('5')" ;
+  v-wf:mappingExpression "newStr ('5')" ;
 .
 
 s-wf:map_coordinator6
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordinator ;
-  v-wf:mappingExpression  "process.getInputVariable ('coordinatorLevel6')" ;
+  v-wf:mappingExpression "process.getInputVariable ('coordinatorLevel6')" ;
 .
 
 s-wf:map_coordinator6_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression  "newStr ('6')" ;
+  v-wf:mappingExpression "newStr ('6')" ;
 .
 # ------------- journal ------------------------
 
@@ -384,84 +384,84 @@ s-wf:map_jrn_msg_rd
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression  "newStr ('права были понижены')" ;
+  v-wf:mappingExpression "newStr ('права были понижены')" ;
 .
 
 s-wf:map_jrn_msg_rd_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression  "newUri ('v-wf:TaskCompleted')" ;
+  v-wf:mappingExpression "newUri ('v-wf:TaskCompleted')" ;
 .
 
 s-wf:map_jrn_msg_t3_b
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression  "get_properties_chain ( process.getExecutor(), [{$get:'s-wf:SimpleRouteStartForm_task_label'}])" ;
+  v-wf:mappingExpression "get_properties_chain ( process.getExecutor(), [{$get:'s-wf:SimpleRouteStartForm_task_label'}])" ;
 .
 
 s-wf:map_jrn_msg_t6_b
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression  "newStr ('отправлено на подписание')" ;
+  v-wf:mappingExpression "newStr ('отправлено на подписание')" ;
 .
 
 s-wf:map_jrn_msg_t3_b_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression  "newUri ('v-wf:TaskGiven')" ;
+  v-wf:mappingExpression "newUri ('v-wf:TaskGiven')" ;
 .
 
 s-wf:map_jrn_ev_type_4_TaskGiven
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression  "newUri ('v-wf:TaskGiven')" ;
+  v-wf:mappingExpression "newUri ('v-wf:TaskGiven')" ;
 .
 
 s-wf:map_jrn_msg_t3_e
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression  "newStr ('закончено согласование 1 уровень')" ;
+  v-wf:mappingExpression "newStr ('закончено согласование 1 уровень')" ;
 .
 
 s-wf:map_jrn_msg_t6_e
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression  "newStr ('закончено подписание')" ;
+  v-wf:mappingExpression "newStr ('закончено подписание')" ;
 .
 
 s-wf:map_jrn_msg_t3_e_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression  "newUri ('v-wf:TaskCompleted')" ;
+  v-wf:mappingExpression "newUri ('v-wf:TaskCompleted')" ;
 .
 
 s-wf:map_jrn_ev_type_4_TaskCompleted
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression  "newUri ('v-wf:TaskCompleted')" ;
+  v-wf:mappingExpression "newUri ('v-wf:TaskCompleted')" ;
 .
 
 s-wf:map_jrn_msg_t1e
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression  "newStr ('процесс запущен')" ;
+  v-wf:mappingExpression "newStr ('процесс запущен')" ;
 .
 
 s-wf:map_jrn_msg_t1e_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression  "newUri ('v-wf:ProcessStarted')" ;
+  v-wf:mappingExpression "newUri ('v-wf:ProcessStarted')" ;
 .
 #----------------------- трансформация для стартовой формы -------------------------------------------------
 
@@ -810,7 +810,7 @@ s-wf:rul_transform3_complex
 s-wf:map_msg_template_project
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-project')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-project')";
   rdfs:isDefinedBy s-wf: ;
 .
 
@@ -839,42 +839,42 @@ v-s:SendComplex
 s-wf:map_msg_template_4_SV_default_template_notification_approvalEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_approvalEnd')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_approvalEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_signEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_signEnd')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_signEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_coordinationEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_coordinationEnd')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_coordinationEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_reviewEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_reviewEnd')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_reviewEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_processStart
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_processStart')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_processStart')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_processEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression  "newUri ('s-wf:msg-template-universal-notification_processEnd')";
+  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_processEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
@@ -929,5 +929,5 @@ v-wf:DecisionGoCoordination6
 s-wf:map_documentType_4_TIV_DocId_documentType
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_documentType ;
-  v-wf:mappingExpression  "get_properties_chain (task.getInputVariable ('docId'), [{$get:'rdf:type'}])";
+  v-wf:mappingExpression "get_properties_chain (task.getInputVariable ('docId'), [{$get:'rdf:type'}])";
 .
