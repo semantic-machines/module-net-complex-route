@@ -21,10 +21,11 @@ s-wf:subnet_autoinstruction_route a v-wf:Net;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     rdfs:label "Подсеть автопоручений"^^xsd:string;
     v-s:updateCounter "3"^^xsd:integer;
-    v-wf:consistsOf d:rkqt78slxs4o8z8it6fgf47e, d:task_autoinstruction_subnet_journal, d:fszmffnqwfeqxxwr48vi9rq8, d:task_autoinstruction_to_release, d:a33jy1sb1inmegt5j9ncswprh, d:mu18gdzzvp99huwicvj1qkre, d:task_autoinstruction_to_release_link, d:o7ey2dszv23ykoqz5mra9r8o ;
-    v-wf:consistsOf d:bt9k3jv4npxhj74qh7bbxq15, d:task_autoinstruction_subnet_journal_hasFlow, d:p1xmw8wb8k9cjjzgl5zifa65, d:a4m2zxiha6f1rb5rgc4dg5qfj, d:avqe3hv87i5asi5kfcpu9oop, d:bq1fgy9pb3rbz0bj43x4n41q, d:rcw2c3a6efnmksft540vhdhj, d:task_autoinstruction_to_release_link_hasFlow ;
+    v-wf:consistsOf d:rkqt78slxs4o8z8it6fgf47e, d:task_autoinstruction_subnet_journal,  d:task_autoinstruction_to_release, d:o7ey2dszv23ykoqz5mra9r8o ;
+    v-wf:consistsOf d:bt9k3jv4npxhj74qh7bbxq15, d:task_autoinstruction_subnet_journal_hasFlow, d:task_autoinstruction_to_release_link_hasFlow ;
     v-wf:inputVariable s-wf:var_doc_id, s-wf:var_journal_initiator ;
 .
+# d:mu18gdzzvp99huwicvj1qkre, d:fszmffnqwfeqxxwr48vi9rq8, d:a33jy1sb1inmegt5j9ncswprh, d:task_autoinstruction_to_release_link
 
 d:rkqt78slxs4o8z8it6fgf47e a v-wf:InputCondition;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
@@ -41,34 +42,21 @@ d:o7ey2dszv23ykoqz5mra9r8o a v-wf:OutputCondition;
     v-wf:locationY "243"^^xsd:integer;
 .
 
-d:task_autoinstruction_to_release a v-wf:Task;
+d:task_autoinstruction_to_release 
+    a v-wf:Task;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     rdfs:label "Выдача задач"^^xsd:string;
     v-s:updateCounter "2"^^xsd:integer;
     v-wf:completedJournalMap s-wf:map_journal_msg_4_task_label_complete, s-wf:map_jrn_ev_type_4_TaskCompleted, s-wf:map_journal_doc_id, s-wf:map_journal_process_id;
     v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible;
     v-wf:executor d:executor_from_activity_responsible1;
-    v-wf:hasFlow d:a4m2zxiha6f1rb5rgc4dg5qfj, d:avqe3hv87i5asi5kfcpu9oop;
-    v-wf:join v-wf:None;
-    v-wf:locationX "323"^^xsd:integer;
-    v-wf:locationY "238"^^xsd:integer;
-    v-wf:split v-wf:None;
-    v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, d:map_autoinstraction_to_date, s-wf:map_initiator;
-    v-wf:subNet s-wf:net_coordination;
-.
-
-d:task_autoinstruction_to_release_link a v-wf:Task;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label "Обработка ответов"^^xsd:string;
-    v-s:updateCounter "1"^^xsd:integer;
-    v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible;
-    v-wf:executor d:executor_autoinstruction_notification_response;
     v-wf:hasFlow d:task_autoinstruction_to_release_link_hasFlow;
     v-wf:join v-wf:None;
-    v-wf:locationX "523"^^xsd:integer;
-    v-wf:locationY "238"^^xsd:integer;
+    v-wf:locationX "402"^^xsd:integer;
+    v-wf:locationY "247"^^xsd:integer;
     v-wf:split v-wf:None;
-    v-wf:startingMapping s-wf:map_doc_id, d:map_autoinstraction_notification_response;
+    v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, d:map_autoinstraction_to_date, s-wf:map_initiator, d:set_change_status_true;
+    v-wf:subNet s-wf:net_coordination;
 .
 
 d:task_autoinstruction_to_release_link_hasFlow
@@ -78,30 +66,24 @@ d:task_autoinstruction_to_release_link_hasFlow
     v-wf:flowsInto d:o7ey2dszv23ykoqz5mra9r8o;
 .
 
-d:bt9k3jv4npxhj74qh7bbxq15 a v-wf:Flow;
+d:bt9k3jv4npxhj74qh7bbxq15 
+    a v-wf:Flow;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     rdfs:label ""^^xsd:string;
     v-s:updateCounter "1"^^xsd:integer;
     v-wf:flowsInto d:task_autoinstruction_subnet_journal;
 .
 
-d:a4m2zxiha6f1rb5rgc4dg5qfj a v-wf:Flow;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label ""^^xsd:string;
-    v-s:updateCounter "7"^^xsd:integer;
-    v-wf:flowsInto d:a33jy1sb1inmegt5j9ncswprh;
-    v-wf:predicate "true"^^xsd:string, "getUri (get_properties_chain (process.getLocalVariable ('decision_of_set_responsible'), [{$get:'rdf:type'}])) != 'v-wf:DecisionAcceptMotivatedRefusal'"^^xsd:string;
-.
-
-d:task_autoinstruction_subnet_journal a v-wf:Task;
+d:task_autoinstruction_subnet_journal 
+    a v-wf:Task;
     rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
     rdfs:label "Журнал по мероприятиям"^^xsd:string;
     v-s:updateCounter "1"^^xsd:integer;
     v-wf:executor d:executor_subnet_journal;
     v-wf:hasFlow d:task_autoinstruction_subnet_journal_hasFlow;
     v-wf:join v-wf:None;
-    v-wf:locationX "147"^^xsd:integer;
-    v-wf:locationY "252"^^xsd:integer;
+    v-wf:locationX "187"^^xsd:integer;
+    v-wf:locationY "251"^^xsd:integer;
     v-wf:split v-wf:None;
     v-wf:startingMapping s-wf:map_doc_id, d:map_autoinstraction_notification_response;
 .
@@ -112,79 +94,7 @@ d:task_autoinstruction_subnet_journal_hasFlow
     rdfs:label ""^^xsd:string;
     v-s:updateCounter "2"^^xsd:integer;
     v-wf:predicate "true"^^xsd:string;
-    v-wf:flowsInto d:fszmffnqwfeqxxwr48vi9rq8 ;
-.
-
-d:fszmffnqwfeqxxwr48vi9rq8 a v-wf:Task;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label "Установка статуса [Исполнение]"^^xsd:string;
-    v-s:updateCounter "3"^^xsd:integer;
-    v-wf:executor s-wf:codelet_create_use_transformation;
-    v-wf:hasFlow d:p1xmw8wb8k9cjjzgl5zifa65;
-    v-wf:join v-wf:None;
-    v-wf:locationX "227"^^xsd:integer;
-    v-wf:locationY "349"^^xsd:integer;
-    v-wf:split v-wf:None;
-    v-wf:startingMapping s-wf:map_scr_uri_from_executor, d:map_transformation_setStatusExecution1;
-.
-
-d:p1xmw8wb8k9cjjzgl5zifa65 a v-wf:Flow;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    v-s:updateCounter "1"^^xsd:integer;
-    v-wf:flowsInto d:task_autoinstruction_to_release;
-    v-wf:predicate "true"^^xsd:string;
-.
-
-d:a33jy1sb1inmegt5j9ncswprh a v-wf:Task;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label "Установка статуса [Исполнено]"^^xsd:string;
-    v-s:updateCounter "3"^^xsd:integer;
-    v-wf:executor s-wf:codelet_create_use_transformation;
-    v-wf:hasFlow d:rcw2c3a6efnmksft540vhdhj;
-    v-wf:join v-wf:None;
-    v-wf:locationX "434"^^xsd:integer;
-    v-wf:locationY "352"^^xsd:integer;
-    v-wf:split v-wf:None;
-    v-wf:startingMapping s-wf:map_scr_uri_from_executor, d:map_transformation_setStatusExecuted1;
-.
-
-d:rcw2c3a6efnmksft540vhdhj a v-wf:Flow;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label ""^^xsd:string;
-    v-s:updateCounter "1"^^xsd:integer;
-    v-wf:flowsInto d:task_autoinstruction_to_release_link;
-    v-wf:predicate "true"^^xsd:string;
-.
-
-
-d:mu18gdzzvp99huwicvj1qkre a v-wf:Task;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label "Установка статуса [Отклонено]"^^xsd:string;
-    v-s:updateCounter "3"^^xsd:integer;
-    v-wf:executor s-wf:codelet_create_use_transformation;
-    v-wf:hasFlow d:bq1fgy9pb3rbz0bj43x4n41q;
-    v-wf:join v-wf:None;
-    v-wf:locationX "433"^^xsd:integer;
-    v-wf:locationY "127"^^xsd:integer;
-    v-wf:split v-wf:None;
-    v-wf:startingMapping s-wf:map_scr_uri_from_executor, d:map_transformation_setStatusRejected1;
-.
-
-d:avqe3hv87i5asi5kfcpu9oop a v-wf:Flow;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label ""^^xsd:string;
-    v-s:updateCounter "6"^^xsd:integer;
-    v-wf:flowsInto d:mu18gdzzvp99huwicvj1qkre;
-    v-wf:predicate "getUri (get_properties_chain (process.getLocalVariable ('decision_of_set_responsible'), [{$get:'rdf:type'}])) == 'v-wf:DecisionAcceptMotivatedRefusal'"^^xsd:string;
-.
-
-
-d:bq1fgy9pb3rbz0bj43x4n41q a v-wf:Flow;
-    rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
-    rdfs:label ""^^xsd:string;
-    v-s:updateCounter "2"^^xsd:integer;
-    v-wf:flowsInto d:task_autoinstruction_to_release_link;
-    v-wf:predicate "true"^^xsd:string;
+    v-wf:flowsInto d:task_autoinstruction_to_release ;
 .
 
 ###--- дополнительные сущности к сети
@@ -196,6 +106,11 @@ d:map_autoinstruction_task_action
   rdfs:label "Actor_task_action <- 'Исполнить поручение'"^^xsd:string ;
 .
 
+d:set_change_status_true
+    rdf:type v-wf:Mapping ;
+    v-wf:mapToVariable s-wf:var_set_status ;
+    v-wf:mappingExpression  "newBool (true);" ;
+.
 d:executor_autoinstruction_notification_response
   rdf:type v-s:Codelet ;
   v-s:script
