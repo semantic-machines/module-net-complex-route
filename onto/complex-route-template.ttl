@@ -53,7 +53,7 @@ if (this.hasValue("v-wf:isProcess")) {
       var routeid = complex+stage;
       var sub = individual[routeid][0];
       if (!sub || !sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
-        delete individual.properties[routeid];
+        if (stage != 'autoinstruction') delete individual.properties[routeid];
       }
     });
     veda.Util.send(individual, template);
@@ -79,7 +79,8 @@ var stages = [ // Default values fill
   'instruction3',
   'examination',    //Ознакомление
   'distribution',
-  'auto_instruction'
+  'auto_instruction',
+  'autoinstruction'
 ];
 var complex = 's-wf:ComplexRouteStartForm_';
 var simple = 's-wf:SimpleRouteStartForm_';
@@ -119,9 +120,12 @@ routes['instruction3'][simple+'task_label'] = veda.Util.mlstring("Ознаком
 routes['examination'][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
 routes['examination'][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Examine");
 
+
+
 // CUSTOM
 //-------------------------------------------------------------------------------------------------------------------------------------Акт расследования аварии
 if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
+
   if (!doc.hasValue('v-s:hasAction')) {
     // если [action] пусто, то согласование 1 открыто пусто, поручение - [manager] "Провести необходимое расследование"
     routes['coordination1'][simple+'visible'] = [true];
@@ -136,6 +140,13 @@ if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
     routes['instruction'][simple+'controller'] = [new veda.IndividualModel("d:mondi_appointment_00058240_71024477")];
   } else {
     // если [action] не пусто, то согласование 1 - [member] + [chief], подписание - пусто, утверждение - Технический директор + Директор по производству
+    var actionPredicate='v-s:hasAction';
+    routes['autoinstruction']['rdfs:label']=['Поручения на основе блока "' + new veda.IndividualModel(actionPredicate)['rdfs:label'][0] + '"'];
+    routes['autoinstruction'][simple+'visible'] = [true];
+    routes['autoinstruction'][simple+'editable'] = [false];
+    routes['autoinstruction'][simple+'actions'] = doc[actionPredicate];
+
+
     routes['coordination1'][simple+'visible'] = [true];
     routes['coordination1'][simple+'editable'] = [true];
     if (doc.hasValue('v-s:hasMemberOfWorkGroup')) {
@@ -3310,7 +3321,7 @@ if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest3") { //Тестовый м�
 
 stages.forEach(function(stage) {
   var routeid = complex+stage;
-  individual[routeid] = [routes[stage]];
+  individual[routeid] = [routes[stage]];  
   var sub = individual[routeid][0];
   if (!sub.hasValue(simple+'visible') || sub[simple+'visible'][0] == false) {
     $('.'+stage, template).hide();
@@ -3536,6 +3547,17 @@ stages.forEach(function(stage) {
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
+
+    <div class="col-md-12 autoinstruction" rel="s-wf:ComplexRouteStartForm_autoinstruction" data-embedded="true">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="@" property="rdfs:label"></span>
+          </h3>
+        </div>
+        <div class="panel-body" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></div>
+      </div>
+    </div>
   </div>
   <br>
   <div class="actions">
@@ -3556,6 +3578,7 @@ stages.forEach(function(stage) {
     $(".actions #save", template).remove();
     $(".actions #edit", template).remove();
   }
+  
 </script>
   """ ;
 .
@@ -3699,6 +3722,15 @@ s-wf:ComplexRouteStartForm_distribution
   rdf:type rdf:Property ;
   rdfs:label "Рассылка уведомлений"@ru ;
   rdfs:label "Distribution"@en ;
+  rdfs:domain s-wf:ComplexRouteStartForm ;
+  rdfs:range s-wf:SimpleRouteStartForm ;
+  rdfs:isDefinedBy s-wf: ;
+.
+
+s-wf:ComplexRouteStartForm_autoinstruction
+  rdf:type rdf:Property ;
+  rdfs:label "Поручения v-s:Action"@ru ;
+  rdfs:label "Instruction for actions"@en ;
   rdfs:domain s-wf:ComplexRouteStartForm ;
   rdfs:range s-wf:SimpleRouteStartForm ;
   rdfs:isDefinedBy s-wf: ;
