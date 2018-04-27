@@ -132,7 +132,6 @@ if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
     routes['coordination1'][simple+'editable'] = [true];
     routes['coordination1'][simple+'deadlineDays'] = [10];
 
-    routes['instruction'][simple+'participant'] = doc["mnd-s:actFailureManager"];
     routes['instruction'][simple+'visible'] = [true];
     routes['instruction'][simple+'editable'] = [true];
     routes['instruction'][simple+'deadlineDays'] = [10];
@@ -2030,6 +2029,7 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
       || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00069811_71017956") // Сабо
       || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00063711_71017961") // Ардашова
       || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00071167_71024480") // Соколов С.С.
+      || doc.hasValue("v-s:businessTripEmployee", "d:mondi_appointment_00071279_71015289") // Уханов Д.
     ) {
       routes['sign'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_70013758")];//Генеральный директор
       routes['sign'][simple+'visible'] = [true];
@@ -3159,8 +3159,11 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
       routes['instruction2'][simple+'editable'] = [true];
       routes['instruction2']['v-wf:StartForm_setStatus'] = [true];
       routes['instruction2']['v-wf:StartForm_canEdit'] = [true];
-      routes['instruction2'][simple+'comment'] = [new String('Рассмотреть заявку')];
 
+      if (doc.hasValue("v-s:content")){
+        var content = doc["v-s:content"][0] ;
+        routes['instruction2'][simple+'comment'] = [ content ];
+      }
   if (!doc.hasValue('mnd-s:hasItRequestAction')) {
     // если [hasItRequestAction] пусто, то рассмотрение - Начальник УИП
       routes['instruction2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017800")];
@@ -3248,7 +3251,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ExternalTechnicalDocument") {
   routes['review'][simple+'editable'] = [true];
 
   if (doc["v-s:hasDocumentKind"][0].id === 'd:fl4fzamgqfnhgu8a2xnljiii'){
-    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:mondi_department_50001667")];
+    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:251f0b6c-9985-4c42-a4b8-d7f766a302ac")];
     }
 
   routes['examination'][simple+'visible'] = [true];
@@ -3321,7 +3324,7 @@ if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest3") { //Тестовый м�
 
 stages.forEach(function(stage) {
   var routeid = complex+stage;
-  individual[routeid] = [routes[stage]];  
+  individual[routeid] = [routes[stage]];
   var sub = individual[routeid][0];
   if (!sub.hasValue(simple+'visible') || sub[simple+'visible'][0] == false) {
     $('.'+stage, template).hide();
@@ -3578,7 +3581,7 @@ stages.forEach(function(stage) {
     $(".actions #save", template).remove();
     $(".actions #edit", template).remove();
   }
-  
+
 </script>
   """ ;
 .
