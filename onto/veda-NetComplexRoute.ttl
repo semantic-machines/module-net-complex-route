@@ -843,4 +843,4 @@ s-wf:autoActionProcess
 s-wf:crf_a_to_aap a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:flowsInto s-wf:autoActionProcess;
-  v-wf:predicate "(task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionApprove')) == true) && get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0"^^xsd:string.
+  v-wf:predicate "(task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionApprove')) == true) && ( get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0 || get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}]).length > 0 ) "^^xsd:string.
