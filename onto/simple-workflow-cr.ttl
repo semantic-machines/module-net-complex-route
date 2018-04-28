@@ -211,7 +211,7 @@ s-wf:executor_examination
 s-wf:executor_autoinstruction
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}])" ;
+  v-wf:executorExpression "(get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0)? get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]) : get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}])" ;
 .
 
 s-wf:executor_distribution
