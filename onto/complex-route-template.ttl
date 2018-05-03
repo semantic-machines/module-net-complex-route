@@ -83,6 +83,7 @@ var stages = [ // Default values fill
   'instruction',
   'instruction2',
   'instruction3',
+  'instruction4',
   'examination',    //Ознакомление
   'distribution',
   'auto_instruction',
@@ -123,6 +124,8 @@ routes['instruction2'][simple+'possible_decisions'] = [new String("[newUri ('v-w
 routes['instruction2'][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
 routes['instruction3'][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
 routes['instruction3'][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Execute task");
+routes['instruction4'][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+routes['instruction4'][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
 routes['examination'][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
 routes['examination'][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Examine");
 
@@ -160,16 +163,21 @@ if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
         routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(mwg['v-s:member']);
       });
     }
-    routes['sign'][simple+'participant'] = [new veda.IndividualModel('d:mondi_position_71017804'), new veda.IndividualModel('d:mondi_position_71018870')];
+
     routes['sign'][simple+'visible'] = [true];
     routes['sign'][simple+'editable'] = [true];
-    routes['sign'][simple+'deadlineDays'] = [10];
 
-    routes['approval'][simple+'participant'] = [new veda.IndividualModel('d:mondi_appointment_00058240_71024477')];
+    routes['approval'][simple+'participant'] = [new veda.IndividualModel('d:mondi_position_71017804'), new veda.IndividualModel('d:mondi_position_71018870')];
     routes['approval'][simple+'visible'] = [true];
-    routes['approval'][simple+'editable'] = [false];
-    routes['approval'][simple+'comment'] = [new String('Уточнить сроки мероприятия')];
+    routes['approval'][simple+'editable'] = [true];
     routes['approval'][simple+'deadlineDays'] = [10];
+
+    routes['instruction4'][simple+'participant'] = [new veda.IndividualModel('d:mondi_appointment_00058240_71024477')];
+    routes['instruction4'][simple+'visible'] = [true];
+    routes['instruction4'][simple+'editable'] = [false];
+    routes['instruction4'][simple+'comment'] = [new String('Уточнить сроки мероприятия')];
+    routes['instruction4'][simple+'deadlineDays'] = [10];
+    routes['instruction4']['v-wf:StartForm_canEdit'] = [true];
   }
   //проверка чекбоксов на тру и подстановка людей в ознакомление
   if ( doc["mnd-s:isAFrequiredPurchase"][0] === true && doc["mnd-s:isAFrequiredProject"][0] === true){
@@ -3534,6 +3542,17 @@ stages.forEach(function(stage) {
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
+    <div class="col-md-6 instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
+        </div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+      </div>
+    </div>
     <div class="col-md-6 examination" rel="s-wf:ComplexRouteStartForm_examination" data-embedded="true">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -3719,6 +3738,15 @@ s-wf:ComplexRouteStartForm_instruction2
 .
 
 s-wf:ComplexRouteStartForm_instruction3
+  rdf:type rdf:Property ;
+  rdfs:label "Поручение"@ru ;
+  rdfs:label "Instruction"@en ;
+  rdfs:domain s-wf:ComplexRouteStartForm ;
+  rdfs:range s-wf:SimpleRouteStartForm ;
+  rdfs:isDefinedBy s-wf: ;
+.
+
+s-wf:ComplexRouteStartForm_instruction4
   rdf:type rdf:Property ;
   rdfs:label "Поручение"@ru ;
   rdfs:label "Instruction"@en ;
