@@ -2082,8 +2082,9 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
     routes['review'][simple+'deadlineDays'] =[doc["v-s:dateFrom"][0]];
 
     //Исполнение
+    var data;
     if( doc.hasValue("v-s:dateTo")){
-      var data=new Date(doc["v-s:dateTo"][0].toISOString())
+      data = new Date(doc["v-s:dateTo"][0].toISOString());
       data.setDate(data.getDate() + 3);
     } else {data=[];}
     routes['instruction'][simple+'participant'] =[doc["v-s:creator"][0]];
