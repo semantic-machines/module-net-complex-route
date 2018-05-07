@@ -24,5 +24,13 @@ export default class basic {
       .click('button.search-button')
       .expect(Selector('div.result-heading small.stats-top.pull-right span.badge[property="v-fs:authorized"]').innerText).eql(eql);
   }
+  async sendInbox() {
+    await t
+      .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
+      .wait(5000)
+      .click('button.search-button')
+      .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
+      .click('button#send')
+  }
 }
 
