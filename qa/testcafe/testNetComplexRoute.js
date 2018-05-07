@@ -1,9 +1,9 @@
 import Basic from './basic';
 import { Selector, t } from 'testcafe';
-  fixture `test Delegation Task`
+  fixture `test Net Complex Route`
     .page `http://localhost:8080/`;
   const basic = new Basic();
-  test('testDelegationTask', async t => {
+  test('testNetComplexRoute', async t => {
     basic.login('karpovrt', '123');
       await t
         //создаём и отправляем тестовый маршрут
