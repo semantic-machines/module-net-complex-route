@@ -55,7 +55,7 @@ if (this.hasValue("v-wf:isProcess")) {
       if (sub) {
         if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
           if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
-            delete individual.properties[routeid];  
+            delete individual.properties[routeid];
           }
         }
       } else {
@@ -3141,16 +3141,16 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
       routes['introduction'][simple+'visible'] = [false];
       routes['introduction'][simple+'editable'] = [false];
       if ( doc.hasValue("mnd-s:hasItRequestAction") ){
-        var x;
+        var reliability;
         for (var i = 0; i < doc["mnd-s:hasItRequestAction"].length; i++) {
-          if ( doc["mnd-s:hasItRequestAction"][i]["v-s:responsible"][0].hasValue("v-s:occupation", "d:315a23af-c426-49d5-8601-a21ecdff483e") ){
-            x = "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6";
+          if ( doc["mnd-s:hasItRequestAction"][i].hasValue("v-s:responsible", "d:315a23af-c426-49d5-8601-a21ecdff483e") ){
+            reliability = "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6";
           }
         }
-        if (x == "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6"){
+        if (reliability == "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6"){
           routes['coordination1'][simple+'visible'] = [true];
           routes['coordination1'][simple+'editable'] = [true];
-          routes['coordination1'][simple+'participant'] = [new veda.IndividualModel(x)];
+          routes['coordination1'][simple+'participant'] = [new veda.IndividualModel(reliability)];
         } else {
           routes['coordination1'][simple+'visible'] = [true];
           routes['coordination1'][simple+'editable'] = [true];
