@@ -396,7 +396,7 @@ if (doc['rdf:type'][0].id === "mnd-s:InternalAccountingDocument") {
   routes['review'][simple+'visible'] = [true];
   routes['review'][simple+'editable'] = [true];
   routes['review'][simple+'deadlineDays'] = [3];
-  if ( (doc.hasValue("v-s:hasDocumentKind", "d:837027d7e8b04305a5b632224f0d2716")) || (doc.hasValue("v-s:hasDocumentKind", "d:90209600a3a44baa9e185809e4ecd866"))){
+  if ( (doc.hasValue("v-s:hasDocumentKind", "d:837027d7e8b04305a5b632224f0d2716")) || (doc.hasValue("v-s:hasDocumentKind", "d:90209600a3a44baa9e185809e4ecd866")) || (doc.hasValue("v-s:hasDocumentKind", "d:fshcwiesmrjt3friq9s7y4h8ve")) ){
     routes['review'][simple+'participant'] = [new veda.IndividualModel("d:2ee64753-2e4c-4e33-8a30-b14d1ab45854")];
   } else if ( doc.hasValue("v-s:hasDocumentKind", "d:a7c3b20d5dc243c9ad078947ede1bb18") ){
     routes['review'][simple+'participant'] = [new veda.IndividualModel("d:4ec0c188-45cb-437b-97c2-3d87251f9594")];
