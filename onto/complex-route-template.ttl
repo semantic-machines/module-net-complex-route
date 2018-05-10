@@ -514,34 +514,6 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfLocalRegulatoryDocument") {
   }
 }
 
-//-----------------------------------------------------------------Заявка на энергоресурсы-------
-
-if (doc['rdf:type'][0].id === "mnd-s:EnergyResourceRequest") {
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination2'][simple+'visible'] = [true];
-  routes['coordination2'][simple+'editable'] = [true];
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [true];
-  routes['approval'][simple+'visible'] = [true];
-  routes['approval'][simple+'editable'] = [false];
-  routes['approval'][simple+'deadlineDays'] = [5];
-  routes['approval'][simple+'participant'] =  [new veda.IndividualModel("d:SYK-NSMEN-PP_appointment")];
-  routes['review'][simple+'visible'] = [true];
-  routes['review'][simple+'editable'] = [false];
-  routes['review'][simple+'deadlineDays'] = [3];
-  routes['review'][simple+'participant'] =  [new veda.IndividualModel("d:SYK-NSMEN-KTC1_appointment")];
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [true];
-  routes['examination'][simple+'participant'] =  [new veda.IndividualModel("d:mondi_position_71026420")];
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['distribution'][simple+'visible'] = [true];
-  routes['distribution'][simple+'editable'] = [true];
-
-
-}
-
 //--------------------------------------------------------------------------------Демонтаж-------
 if (doc['rdf:type'][0].id === "mnd-s:DismantlingProject") {
   var chief, owner;
@@ -1906,63 +1878,6 @@ if (doc['rdf:type'][0].id === "mnd-s:AccountingDoc") {
   routes['examination'][simple+'deadlineDays'] = [3];
 }
 
-//----------------------------------------------------------------------------------------------------------------------------------Заявка на cброс сточных вод
-if (doc['rdf:type'][0].id === "mnd-s:RequestWasteWaterDischarge") {
-  // #COORDINATION1---------------------------------------------------------------------------------------------------------------------------------------
-  routes['coordination1'][simple+'participant'] = [
-    new veda.IndividualModel("d:mondi_appointment_00046884_71015702"), // Дмитрий Злобин : Начальник управления
-    new veda.IndividualModel("d:mondi_appointment_00058098_71024364") // Дмитрий Очеретенко : Главный эколог
-  ];
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [false];
-  routes['coordination1'][simple+'deadlineDays'] = [10];
-  // #EXAMINATION-----------------------------------------------------------------------------------------------------------------------------------------
-  routes['examination'][simple+'participant'] = [
-    new veda.IndividualModel("d:mondi_appointment_00049652_71000049"), // Вячеслав Луппов : Начальник
-    new veda.IndividualModel("d:mondi_appointment_00027183_71015712"), // Александр Разумов : Начальник цеха
-    new veda.IndividualModel("d:mondi_appointment_00066961_71024365"), // Дмитрий Караваев : Заместитель главного эколога
-    new veda.IndividualModel("d:mondi_appointment_00016254_71019236"), // Сергей Щербаков : Заместитель начальника участка
-    new veda.IndividualModel("d:mondi_appointment_00008542_71020127"), // Елена Ивашова : Инженер-технолог 1 категории
-    new veda.IndividualModel("d:mondi_appointment_00056698_71019099"), // Елена Астраханова : Ведущий инженер
-    new veda.IndividualModel("d:mondi_appointment_00057709_71011432"), // Наталья Пронько : Ведущий инженер
-    new veda.IndividualModel("d:SYK-SMEN-WATR_appointment"), // Сотрудник. Мастер УВКХ
-    new veda.IndividualModel("d:SYK-MASTERS-OPDH_appointment"), // Мастерам УПХ ВОЦ (SYK-Masters-OPDH)
-    new veda.IndividualModel("d:GLAV_DISP_appointment")
-  ];
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [false];
-  routes['examination'][simple+'deadlineDays'] = [10];
-  // #INSTRUCTION-----------------------------------------------------------------------------------------------------------------------------------------
-  routes['instruction'][simple+'participant'] = doc['v-s:creator'].concat([new veda.IndividualModel("d:SYK-SMEN-WATR_appointment")]); // Сотрудник. Мастер УВКХ
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [false];
-  routes['instruction'][simple+'deadlineDays'] = [10];
-  routes['instruction'][simple+'comment'] = [new String('Заполнить отчёт')];
-
-  // #INSTRUCTION2----------------------------------------------------------------------------------------------------------------------------------------
-  routes['instruction2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_appointment_00056698_71019099")]; // Елена Астраханова : Ведущий инженер
-  routes['instruction2'][simple+'visible'] = [true];
-  routes['instruction2'][simple+'editable'] = [false];
-  routes['instruction2'][simple+'deadlineDays'] = [10];
-  routes['instruction2'][simple+'comment'] = [new String('Проверить результаты')];
-
-  // #INSTRUCTION3----------------------------------------------------------------------------------------------------------------------------------------
-  routes['instruction3'][simple+'participant'] = [new veda.IndividualModel("d:mondi_appointment_00058098_71024364")]; // Дмитрий Очеретенко : Главный эколог
-  routes['instruction3'][simple+'visible'] = [true];
-  routes['instruction3'][simple+'editable'] = [false];
-  routes['instruction3'][simple+'deadlineDays'] = [10];
-  routes['instruction3'][simple+'comment'] = [new String('Ознакомиться с результатами')];
-
-  // #informing----------------------------------------------------------------------------------------------------------------------------------------
-  routes['introduction'][simple+'participant'] = [new veda.IndividualModel("d:SYK-SMEN-WATR_appointment")]; // Сотрудник. Мастер УВКХ
-  routes['introduction'][simple+'visible'] = [true];
-  routes['introduction'][simple+'editable'] = [false];
-  routes['introduction'][simple+'deadlineDays'] = [10];
-  routes['introduction'][simple+'comment'] = [new String('Для принятия решений')];
-
-
-
-}
 //----------------------------------------------------------------------------------------------------------------------------------Письмо
 // Входящее письмо
 if (doc['rdf:type'][0].id === "mnd-s:IncomingLetter") {
@@ -2141,42 +2056,6 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
       routes['review'][simple+'comment'] = [new String('Изменение сроков')];
     }
   }
-}
-
-//--------------------------------------------------------ЗАЯВКА-НА-ПРОПУСК
-
-if (doc['rdf:type'][0].id === "mnd-s:PassRequest") {
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination1'][simple+'deadlineDays'] = [10];
-  routes['coordination1'][simple+'comment'] = [new String('Согласовать заявку на пропуск')];
-
-  if ( (doc.hasValue("mnd-s:hasPassRequestGoal", "d:ac519d730b3347069f86f38673522918")) || (doc.hasValue("mnd-s:hasPassRequestGoal", "d:b8186a3dd9254a048c4a26044518b129")) || (doc.hasValue("mnd-s:hasPassRequestGoal", "d:9d99778155314394abbf36e54a091677"))){
-    //проверяем есть ли в массиве пропусков хотя бы один с заполненным полем v-s:correspondentPersonDescription
-    var corPerDes = doc["mnd-s:hasPass"] ;
-    var logic = corPerDes.some(function (request){return request.hasValue("v-s:correspondentPersonDescription")});
-    console.log( logic );
-    //проверяем массив пропусков на наличие "временный на человека" || "электронный пропуск" || "изменение уровня доступа" || "разовый на человека"
-    var hasPassKind = corPerDes.some(function (request){return request.hasValue("mnd-s:hasPassKind", "d:a149d268628b46ae8d40c6ea0ac7f3dd") || request.hasValue("mnd-s:hasPassKind", "d:ece7e741557e406bb996809163810c6e") || request.hasValue("mnd-s:hasPassKind", "d:621eee85422448d8994242641def3e5e") || request.hasValue("mnd-s:hasPassKind", "d:228e15d5afe544c099c337ceafa47ea6")});
-    console.log( hasPassKind );
-    if (doc.hasValue("mnd-s:hasPass") && logic && hasPassKind){
-      routes['coordination2'][simple+'visible'] = [true];
-      routes['coordination2'][simple+'editable'] = [false];
-      routes['coordination2'][simple+'comment'] = [new String('Согласовать заявку на пропуск')];
-      routes['coordination2'][simple+'participant'] = [new veda.IndividualModel("d:js1nnk9i8lnlfsai1tl6ks5t")];
-    }
-  }
-
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [true];
-
-  routes['approval'][simple+'participant'] = [new veda.IndividualModel("d:7af25dfb-5319-466f-afca-0c0289f2557c")]; //Руководитель ОООИ СЭБ
-  routes['approval'][simple+'visible'] = [true];
-  routes['approval'][simple+'editable'] = [true];
-  routes['approval'][simple+'comment'] = [new String('Зарегистрировать')];
-
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [true];
 }
 
 //---------------------------------------------------------ПРЕДСТАВИТЕЛЬСКИЕ-РАСХОДЫ
@@ -2470,45 +2349,6 @@ var informingDecree ;
   });
 }
 
-//--------------------------------------------------------------------------------Заявка ОЗМ-------
-if (doc['rdf:type'][0].id === "mnd-s:MaterialRequest") {
-  routes['introduction'][simple+'visible'] = [false];
-  routes['introduction'][simple+'editable'] = [false];
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination2'][simple+'visible'] = [false];
-  routes['coordination2'][simple+'editable'] = [false];
-  routes['coordination3'][simple+'visible'] = [false];
-  routes['coordination3'][simple+'editable'] = [false];
-  routes['sign'][simple+'visible'] = [false];
-  routes['sign'][simple+'editable'] = [false];
-  routes['approval'][simple+'visible'] = [false];
-  routes['approval'][simple+'editable'] = [false];
-  routes['review'][simple+'visible'] = [true];
-  routes['review'][simple+'editable'] = [true];
-  routes['review'][simple+'deadlineDays'] =[10];
-
-  if (doc["mnd-s:hasMaterialRequestKind"][0].id === 'd:688f20468e1b4fbd8fb8e4e8c7b05e5f'){
-      routes['review'][simple+'comment'] = [new String('Создание ОЗМ')];
-
-    } else if (doc["mnd-s:hasMaterialRequestKind"][0].id === 'd:3ae657fee4ea41308acd5e239660976f'){
-      routes['review'][simple+'comment'] = [new String('Изменение ОЗМ')];
-
-    } else if (doc["mnd-s:hasMaterialRequestKind"][0].id === 'd:1d53b0e615ef446bb25c877cdbe1a0e4'){
-      routes['review'][simple+'comment'] = [new String('Удаление ОЗМ')];
-    }
-
-  if(doc.hasValue('mnd-s:hasMaterialGroup')){
-    var mrp_contr = new veda.IndividualModel(doc['mnd-s:hasMaterialGroup'][0].id);
-    if (mrp_contr.hasValue('mnd-s:controllerMRP')){
-      routes['review'][simple+'participant'] = routes['instruction'][simple+'participant'].concat(mrp_contr["mnd-s:controllerMRP"]); // MRP контроллер группы материалов
-    }
-  }
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [true];
-}
-
-
 //--------------------------------------------------------------------------------Доверенность-------
 if (doc['rdf:type'][0].id === "mnd-s:PowerOfAttorney") {
   routes['introduction'][simple+'visible'] = [false];
@@ -2552,19 +2392,6 @@ if (doc['rdf:type'][0].id === "mnd-s:PowerOfAttorney") {
   routes['instruction'][simple+'editable'] = [false];
   routes['instruction'][simple+'participant'] = [new veda.IndividualModel("d:61e1919e-2460-41ed-8692-042d2634542a")]; //Регистратор документов СЛПК
   routes['instruction'][simple+'comment'] = [new String('Отсканировать и направить на ознакомление')];
-
-}
-
-//--------------------------------------------------------------------------------Акт уничтожения СИЗ-------
-if (doc['rdf:type'][0].id === "mnd-s:PpeDestructionRequest") {
-  routes['coordination1'][simple+'participant'] = doc["v-s:member"];
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['instruction'][simple+'participant'] = [new veda.IndividualModel("d:3833560e-5211-4097-850d-72311be239e0")];
-  routes['instruction'][simple+'comment'] = [new String('Исполнить поручение')];
 
 }
 
@@ -2935,108 +2762,6 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
 //  routes['review'][simple+'editable'] = [false];
 //}
 
-//--------------------------------------------------------------------------------Конструкторская_заявка-------
-if (doc['rdf:type'][0].id === "mnd-s:EngineeringRequest") {
-  routes['introduction'][simple+'visible'] = [false];
-  routes['introduction'][simple+'editable'] = [false];
-
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  if (doc.hasValue('v-s:initiator') && doc['v-s:initiator'][0].hasValue('v-s:parentUnit')) {
-   var parentUnitName = doc['v-s:initiator'][0]['v-s:parentUnit'][0];
-     var chief = parentUnitName.getChief();
-   routes['coordination1'][simple+'participant'] = [chief]; // Руководитель подразделения Ответственного лица
-   }
-
-  routes['coordination2'][simple+'visible'] = [true];
-  routes['coordination2'][simple+'editable'] = [true];
-
-  routes['coordination3'][simple+'visible'] = [false];
-  routes['coordination3'][simple+'editable'] = [false];
-
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [false];
-
-// если Разработчик = d:mondi_department_50002627 (Проектно-конструкторский отд. УРиР)
-// то Рассматривающий - Рассмотрение КЗ ПКО УРиР (d:3df23636-4fd3-43ff-a2ba-a0f8b0dc2a30)
-// если Разработчик = d:mondi_department_50001898 (Группа раб. проектиров.ПКО)
-// то подписывающий - Начальник службы-главный механик. Руководство центральн.механ.службы (d:mondi_position_71013780)
-//    рассматривающий - Рассмотрение КЗ ГРП ПКО (d:70666c45-a806-4dac-9490-daad8ea05fcb)
-  if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50002627'){
-   routes['review'][simple+'participant'] = [new veda.IndividualModel("d:3df23636-4fd3-43ff-a2ba-a0f8b0dc2a30")];
-   } else
-    if (doc["mnd-s:engineeringRequestDeveloper"][0].id === 'd:mondi_department_50001898'){
-    routes['sign'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71013780")];
-    routes['review'][simple+'participant'] = [new veda.IndividualModel("d:70666c45-a806-4dac-9490-daad8ea05fcb")];
-    }
-
-  routes['approval'][simple+'visible'] = [false];
-  routes['approval'][simple+'editable'] = [false];
-  routes['review'][simple+'visible'] = [true];
-  routes['review'][simple+'editable'] = [false];
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [true];
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['distribution'][simple+'visible'] = [true];
-  routes['distribution'][simple+'editable'] = [true];
-}
-
-
-//---------------------------------------------------------Заявка на услуги сторонних организаций
-if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
-
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination1'][simple+'deadlineDays'] = [3];
-  routes['coordination1'][simple+'comment'] = [new String('Согласовать заявку')];
-
-  routes['coordination2'][simple+'visible'] = [true];
-  routes['coordination2'][simple+'editable'] = [true];
-  routes['coordination2'][simple+'deadlineDays'] = [3];
-  routes['coordination2'][simple+'comment'] = [new String('Согласовать заявку')];
-
-  if (doc.hasValue("v-s:supplier")){
-    let address="";
-    switch (doc["v-s:supplier"][0].id){
-      case "d:org_RU1121013750":
-        address = "d:hhqbdw2moap8q67q3wf984sg";
-        break;
-      case "d:a7zkeogdmcr00idlvb8fdeu1b":
-        address = "d:sv2flbts3fh3etbfbm95pavv";
-        break;
-      case "d:org_RU1121009144":
-        address = "d:bfzgev0929gfk1z5shlrrgc0";
-        break;
-      case "d:org_RU7826035384":
-        address = "d:frq48nsftbkbmo3zk4vy07ix";
-        break;
-      case "d:org_RU1121017628":
-        address = "d:a7b2p052weud8yowjkjwbmgkx";
-        break;
-      case "d:org_RU112100014401":
-        address = "d:pbfg63kgy6ijste3ue149hf7";
-        break;
-      case "d:org_RU1121011810":
-        address = "d:v70q7kln7jionsxkuow0ugzl";
-        break;
-      default:
-        break;
-    }
-    routes['instruction2'][simple+'participant'] = [new veda.IndividualModel(address)];
-    routes['instruction2'][simple+'visible'] = [true];
-    routes['instruction2'][simple+'editable'] = [true];
-    routes['instruction2']['v-wf:StartForm_setStatus'] = [true];
-    routes['instruction2'][simple+'deadlineDays'] = [3];
-    routes['instruction2'][simple+'comment'] = [new String('Исполнить заявку')];
-    routes['instruction2'][simple+'controller'] = veda.user['v-s:hasAppointment'];
-  }
-
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [true];
-  routes['examination'][simple+'comment'] = [new String('Ознакомиться с заявкой')];
-}
-
 //----------------------------------Внутренние аудиты. Годовая программа-----------------------
 if (doc['rdf:type'][0].id === "mnd-s:AuditInternalAnnualPlan") {
   routes['coordination1'][simple+'visible'] = [true];
@@ -3164,121 +2889,6 @@ if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
       routes['instruction'][simple+'editable'] = [true];
   }
 }
-
-//--------------------------------------------------------------------------------ЗАЯВКА ИТ-------
-if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
-
-      routes['introduction'][simple+'visible'] = [false];
-      routes['introduction'][simple+'editable'] = [false];
-      if ( doc.hasValue("mnd-s:hasItRequestAction") ){
-        var reliability;
-        for (var i = 0; i < doc["mnd-s:hasItRequestAction"].length; i++) {
-          if ( doc["mnd-s:hasItRequestAction"][i].hasValue("v-s:responsible", "d:315a23af-c426-49d5-8601-a21ecdff483e") ){
-            reliability = "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6";
-            break;
-          }
-        }
-        if (reliability == "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6"){
-          routes['coordination1'][simple+'visible'] = [true];
-          routes['coordination1'][simple+'editable'] = [true];
-          routes['coordination1'][simple+'participant'] = [new veda.IndividualModel(reliability)];
-        } else {
-          routes['coordination1'][simple+'visible'] = [true];
-          routes['coordination1'][simple+'editable'] = [true];
-        }
-      }
-      routes['coordination1'][simple+'visible'] = [true];
-      routes['coordination1'][simple+'editable'] = [true];
-      routes['coordination2'][simple+'visible'] = [false];
-      routes['coordination2'][simple+'editable'] = [false];
-      routes['coordination3'][simple+'visible'] = [false];
-      routes['coordination3'][simple+'editable'] = [false];
-      routes['coordination4'][simple+'visible'] = [false];
-      routes['coordination4'][simple+'editable'] = [false];
-      routes['coordination5'][simple+'visible'] = [false];
-      routes['coordination5'][simple+'editable'] = [false];
-      routes['coordination6'][simple+'visible'] = [false];
-      routes['coordination6'][simple+'editable'] = [false];
-      routes['review'][simple+'visible'] = [false];
-      routes['review'][simple+'editable'] = [false];
-      routes['instruction2'][simple+'visible'] = [true];
-      routes['instruction2'][simple+'editable'] = [true];
-      routes['instruction2']['v-wf:StartForm_setStatus'] = [true];
-      routes['instruction2']['v-wf:StartForm_canEdit'] = [true];
-
-      if (doc.hasValue("v-s:content")){
-        var content = doc["v-s:content"][0] ;
-        routes['instruction2'][simple+'comment'] = [ content ];
-      }
-  if (!doc.hasValue('mnd-s:hasItRequestAction')) {
-    // если [hasItRequestAction] пусто, то рассмотрение - Начальник УИП
-      routes['instruction2'][simple+'participant'] = [new veda.IndividualModel("d:mondi_position_71017800")];
-  } else {
-    // если [hasItRequestAction] не пусто, то рассмотрение - [v-s:responsible]
-      routes['instruction2'][simple+'participant'] = [];
-      doc['mnd-s:hasItRequestAction'].forEach(function(mwg) {
-        routes['instruction2'][simple+'participant'] = routes['instruction2'][simple+'participant'].concat(mwg['v-s:responsible']);
-      });
-    }
-}
-
-//--------------------------------------------------------------------------------ЗАДАНИЕ ПО ЗАЯВКЕ ИТ-------
-if (doc['rdf:type'][0].id === "mnd-s:ItRequestAction") {
-
-      routes['introduction'][simple+'visible'] = [false];
-      routes['introduction'][simple+'editable'] = [false];
-      routes['coordination1'][simple+'visible'] = [false];
-      routes['coordination1'][simple+'editable'] = [false];
-      routes['coordination2'][simple+'visible'] = [false];
-      routes['coordination2'][simple+'editable'] = [false];
-      routes['coordination3'][simple+'visible'] = [false];
-      routes['coordination3'][simple+'editable'] = [false];
-      routes['coordination4'][simple+'visible'] = [false];
-      routes['coordination4'][simple+'editable'] = [false];
-      routes['coordination5'][simple+'visible'] = [false];
-      routes['coordination5'][simple+'editable'] = [false];
-      routes['coordination6'][simple+'visible'] = [false];
-      routes['coordination6'][simple+'editable'] = [false];
-      routes['sign'][simple+'visible'] = [false];
-      routes['sign'][simple+'editable'] = [false];
-      routes['approval'][simple+'visible'] = [false];
-      routes['approval'][simple+'editable'] = [false];
-      routes['review'][simple+'visible'] = [false];
-      routes['review'][simple+'editable'] = [false];
-      routes['instruction'][simple+'visible'] = [true];
-      routes['instruction'][simple+'editable'] = [true];
-      routes['instruction'][simple+'participant'] = routes['instruction'][simple+'participant'].concat(doc['v-s:responsible'][0]);
-}
-
-
-//---------------------------------------------------------Комплексный маршрут для анкет УВП
-//---------------------------------------------------------Анкета оценки УВП - mnd-s:ICSProcessRatingEvaluationForm
-if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingEvaluationForm") {
-  //Согласование пусто
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  //Поручение
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['instruction']["v-wf:StartForm_canEdit"] = [true];
-  routes['instruction'][simple+'comment'] = [new String('Произвести оценку')];
-  routes['instruction'][simple+'participant'] = [doc["v-s:evaluatingProcess"][0]["v-s:processManager"][0]];
-  routes['instruction'][simple+'controller'] = veda.user['v-s:hasAppointment']
-}
-//---------------------------------------------------------Анкета просмотра УВП - mnd-s:ICSProcessRatingViewForm
-if (doc['rdf:type'][0].id === "mnd-s:ICSProcessRatingViewForm") {
-  //Согласование пусто
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  //Поручение
-  routes['instruction'][simple+'visible'] = [true];
-  routes['instruction'][simple+'editable'] = [true];
-  routes['instruction'][simple+'comment'] = [new String('Предоставить обратную связь')];
-  routes['instruction'][simple+'participant'] = [doc["v-s:evaluatedProcess"][0]["v-s:processManager"][0]];
-  routes['instruction'][simple+'controller'] = veda.user['v-s:hasAppointment'];
-}
-
-
 
 //-------------------------------------------------------------------------- Внешний технический документ
 if (doc['rdf:type'][0].id === "mnd-s:ExternalTechnicalDocument") {
