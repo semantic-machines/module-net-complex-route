@@ -3175,6 +3175,7 @@ if (doc['rdf:type'][0].id === "mnd-s:ItRequest") {
         for (var i = 0; i < doc["mnd-s:hasItRequestAction"].length; i++) {
           if ( doc["mnd-s:hasItRequestAction"][i].hasValue("v-s:responsible", "d:315a23af-c426-49d5-8601-a21ecdff483e") ){
             reliability = "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6";
+            break;
           }
         }
         if (reliability == "d:ag10xvzp-ua7j-ua7j-dlxm-f5b6lieemxh6"){
@@ -3611,7 +3612,7 @@ if (this.hasValue("v-wf:isProcess")) {
       var sub = individual[routeid][0];
       if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
         if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
-          delete individual.properties[routeid];  
+          delete individual.properties[routeid];
         }
       };
     });
