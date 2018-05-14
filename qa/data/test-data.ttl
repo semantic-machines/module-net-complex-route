@@ -1,5 +1,4 @@
 @prefix d: <http://semantic-machines.com/veda/veda-data/> .
-@prefix : <http://semantic-machines.com/veda/test-data/> .
 @prefix td: <http://semantic-machines.com/veda/test-data/> .
 @prefix v-wf: <http://semantic-machines.com/veda/veda-workflow/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -8,7 +7,6 @@
 @prefix v-s: <http://semantic-machines.com/veda/veda-schema/> .
 @prefix v-ui: <http://semantic-machines.com/veda/veda-ui/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix v-fs: <http://semantic-machines.com/veda/veda-search/> .
 @prefix s-wf: <http://semantic-machines.com/veda/simple-workflow/> .
 @prefix cfg: <http://semantic-machines.com/veda/config/> .
 
