@@ -2682,8 +2682,10 @@ if (doc['rdf:type'][0].id === "mnd-s:TrialOutputReport") {
 
     //Главный технолог
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71000071"));
-    // Руководитель группы. Группа технологического контроля ПЦ и ЭП
-    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024794"));
+    // Руководитель группы. Группа технологического контроля ПЦ
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71027087"));
+    // Руководитель группы. Группа технологического контроля ЭП
+    routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71027088")); 
     // Руководитель группы. Группа технологического контроля ПБ
     routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(new veda.IndividualModel("d:mondi_position_71024795"));
     // Начальник лаборатории. Производств.лаборат.технолог.контроля
