@@ -1128,9 +1128,6 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
         doc.hasValue('mnd-s:hasContractDirection')
         && doc['mnd-s:hasContractDirection'][0].id === 'd:d4cf39d06aec4a9aafcd4663f7996125'
       ) {
-        if (doc.hasValue('v-s:customer') && doc['v-s:customer'][0].id === 'd:org_RU1121003135') {
-          routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:4ec5dead-aab6-4789-bdd1-94e036ae4a16')); // Специалист ОТО имп
-        }
         if (doc.hasValue('v-s:supplier') && doc['v-s:supplier'][0].id === 'd:org_RU1121003135') {
           routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:SYK-CCDG_position')); // Специалист ОТО эксп
         }
@@ -1431,9 +1428,6 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
       doc.hasValue('mnd-s:hasContractDirection')
       && doc['mnd-s:hasContractDirection'][0].id === 'd:d4cf39d06aec4a9aafcd4663f7996125'
     ) {
-      if (doc.hasValue('v-s:customer') && doc['v-s:customer'][0].id === 'd:org_RU1121003135') {
-        routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:4ec5dead-aab6-4789-bdd1-94e036ae4a16')); // Специалист ОТО имп
-      }
       if (doc.hasValue('v-s:supplier') && doc['v-s:supplier'][0].id === 'd:org_RU1121003135') {
         routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:SYK-CCDG_position')); // Специалист ОТО эксп
       }
@@ -1680,9 +1674,6 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
         doc.hasValue('mnd-s:hasContractDirection')
         && doc['mnd-s:hasContractDirection'][0].id === 'd:d4cf39d06aec4a9aafcd4663f7996125'
       ) {
-        if (doc.hasValue('v-s:customer') && doc['v-s:customer'][0].id === 'd:org_RU1121003135') {
-          routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:4ec5dead-aab6-4789-bdd1-94e036ae4a16')); // Специалист ОТО имп
-        }
         if (doc.hasValue('v-s:supplier') && doc['v-s:supplier'][0].id === 'd:org_RU1121003135') {
           routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:SYK-CCDG_position')); // Специалист ОТО эксп
         }
@@ -1714,9 +1705,6 @@ if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd
         doc.hasValue('mnd-s:hasContractDirection')
         && doc['mnd-s:hasContractDirection'][0].id === 'd:d4cf39d06aec4a9aafcd4663f7996125'
       ) {
-        if (doc.hasValue('v-s:customer') && doc['v-s:customer'][0].id === 'd:org_RU1121003135') {
-          routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:4ec5dead-aab6-4789-bdd1-94e036ae4a16')); // Специалист ОТО имп
-        }
         if (doc.hasValue('v-s:supplier') && doc['v-s:supplier'][0].id === 'd:org_RU1121003135') {
           routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel('d:SYK-CCDG_position')); // Специалист ОТО эксп
         }
