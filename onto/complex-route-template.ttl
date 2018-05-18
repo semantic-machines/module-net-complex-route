@@ -322,11 +322,12 @@ if (doc['rdf:type'][0].id === "mnd-s:ContractorCategoryRequest") {
       routes['instruction'][simple+'deadlineDays'] = [3];
 
       if (veda.user && veda.user.hasValue('v-s:hasAppointment')) {
-        routes['instruction2'][simple+'participant'] = veda.user['v-s:hasAppointment'];
-        routes['instruction2'][simple+'visible'] = [true];
-        routes['instruction2'][simple+'editable'] = [true];
-        routes['instruction2'][simple+'deadlineDays'] = [3];
-        routes['instruction2'][simple+'comment'] = [new String('Оценка рисков произведена')];
+        routes['examination'][simple+'participant'] = veda.user['v-s:hasAppointment'];
+        routes['examination'][simple+'participant'] = routes['examination'][simple+'participant'].concat(new veda.IndividualModel("d:39bd6fed-fad3-453e-bca4-e8ebd0e3cc73")); // Согласование досье СЭБ
+        routes['examination'][simple+'visible'] = [true];
+        routes['examination'][simple+'editable'] = [true];
+        routes['examination'][simple+'deadlineDays'] = [3];
+        routes['examination'][simple+'comment'] = [new String('Оценка рисков произведена')];
       }
     }
   }
