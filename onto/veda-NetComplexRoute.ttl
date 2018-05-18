@@ -8,6 +8,7 @@
 @prefix td: <http://semantic-machines.com/veda/test-data/>.
 @prefix d: <http://semantic-machines.com/veda/veda-data/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix cfg: <http://semantic-machines.com/veda/config/> .
 
 <http://semantic-machines.com/veda/net_complex_route>
   rdf:type owl:Ontology ;
@@ -25,7 +26,7 @@ s-wf:net_complex_route a v-wf:Net;
   v-s:edited "2017-06-06T07:45:34.000Z"^^xsd:dateTime;
   v-s:lastEditor cfg:AdministratorAppointment;
   v-s:updateCounter "16"^^xsd:integer;
-  v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp, s-wf:cr_join_point, s-wf:crf_jp_to_rework, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i4, s-wf:crf_a_to_r, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_instruction4, s-wf:crf_i4_to_i, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
+  v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp, s-wf:cr_join_point, s-wf:cr_join_point2, s-wf:crf_i4_to_jp2, s-wf:crf_jp_to_rework, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i4, s-wf:crf_a_to_r, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_instruction4, s-wf:crf_i4_to_i, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
   v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap, s-wf:cr_informing5, s-wf:crf_r_to_i5 ;
   v-wf:inputVariable s-wf:var_doc_id, s-wf:var_startForm_id, s-wf:var_journal_initiator;
   v-wf:localVariable s-wf:var_right_1.
@@ -152,7 +153,7 @@ s-wf:crf_c1_to_c2 a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_c2;
-  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true"^^xsd:string.
+  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionRevokeTask')) == true"^^xsd:string.
 s-wf:crf_c1_to_jp a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -185,7 +186,7 @@ s-wf:crf_c2_to_c3 a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_c3;
-  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true"^^xsd:string.
+  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionRevokeTask')) == true"^^xsd:string.
 s-wf:crf_c2_to_jp a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -218,7 +219,7 @@ s-wf:crf_c3_to_c4 a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_c4;
-  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true"^^xsd:string.
+  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionRevokeTask')) == true"^^xsd:string.
 s-wf:crf_c3_to_jp a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -251,7 +252,7 @@ s-wf:crf_c4_to_c5 a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_c5;
-  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true"^^xsd:string.
+  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionRevokeTask')) == true"^^xsd:string.
 s-wf:crf_c4_to_jp a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -284,7 +285,7 @@ s-wf:crf_c5_to_c6 a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_c6;
-  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true"^^xsd:string.
+  v-wf:predicate "task_result.is_exists_result (task_result) == false || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionNoAgreed')) == true || task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionRevokeTask')) == true"^^xsd:string.
 s-wf:crf_c5_to_jp a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -326,6 +327,14 @@ s-wf:cr_join_point a v-wf:Condition;
   v-wf:hasFlow s-wf:crf_jp_to_rework;
   v-wf:locationX "590"^^xsd:integer;
   v-wf:locationY "385"^^xsd:integer.
+s-wf:cr_join_point2 a v-wf:Condition;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  rdfs:label ""^^xsd:string;
+  v-s:updateCounter "1"^^xsd:integer;
+  v-wf:belongsTo s-wf:net_complex_route;
+  v-wf:hasFlow s-wf:crf_i4_to_i, s-wf:crf_a_to_aap, s-wf:crf_a_to_r;
+  v-wf:locationX "1449"^^xsd:integer;
+  v-wf:locationY "117"^^xsd:integer.
 s-wf:crf_jp_to_rework a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -529,8 +538,8 @@ s-wf:cr_instruction a v-wf:Task;
   v-wf:executor s-wf:executor_instruction;
   v-wf:hasFlow s-wf:crf_i_to_i2;
   v-wf:join v-wf:None;
-  v-wf:locationX "1500"^^xsd:integer;
-  v-wf:locationY "200"^^xsd:integer;
+  v-wf:locationX "1482"^^xsd:integer;
+  v-wf:locationY "195"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startDecisionTransform s-wf:tr_instruct_form;
   v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
@@ -568,8 +577,8 @@ s-wf:cr_review a v-wf:Task;
   v-wf:completeDecisionTransform s-wf:tr_taken_decision;
   v-wf:executor s-wf:executor_review;
   v-wf:hasFlow s-wf:crf_r_to_i2, s-wf:crf_r_to_i5;
-  v-wf:locationX "1500"^^xsd:integer;
-  v-wf:locationY "50"^^xsd:integer;
+  v-wf:locationX "1557"^^xsd:integer;
+  v-wf:locationY "104"^^xsd:integer;
   v-wf:startDecisionTransform s-wf:tr_review_form;
   v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
   v-wf:split v-wf:OR;
@@ -593,8 +602,8 @@ s-wf:cr_informing5 a v-wf:Task;
   v-s:lastEditor cfg:AdministratorAppointment;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:join v-wf:None;
-  v-wf:locationX "1602"^^xsd:integer;
-  v-wf:locationY "-32"^^xsd:integer;
+  v-wf:locationX "1641"^^xsd:integer;
+  v-wf:locationY "-30"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template_notification_reviewEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_0_initiator;
   v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl;
@@ -664,18 +673,20 @@ s-wf:cr_instruction4 a v-wf:Task;
   rdfs:label "Поручение"^^xsd:string;
   v-wf:completeDecisionTransform s-wf:tr_taken_decision;
   v-wf:executor s-wf:executor_instruction4;
-  v-wf:hasFlow s-wf:crf_i4_to_i, s-wf:crf_a_to_aap, s-wf:crf_a_to_r;
-  v-wf:locationX "1350"^^xsd:integer;
-  v-wf:locationY "200"^^xsd:integer;
+  v-wf:hasFlow s-wf:crf_i4_to_jp2;
+  v-wf:locationX "1347"^^xsd:integer;
+  v-wf:locationY "197"^^xsd:integer;
   v-wf:startDecisionTransform s-wf:tr_instruct_form;
   v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
   v-wf:subNet s-wf:InterlayerNet.
 s-wf:crf_i4_to_i a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
-  v-s:updateCounter "17"^^xsd:integer;
   v-wf:flowsInto s-wf:cr_instruction;
   v-wf:predicate "true"^^xsd:string.
-
+s-wf:crf_i4_to_jp2 a v-wf:Flow;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  v-wf:flowsInto s-wf:cr_join_point2;
+  v-wf:predicate "true"^^xsd:string.
 
 s-wf:cr_distribution a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -852,8 +863,8 @@ s-wf:autoActionProcess
   v-wf:join v-wf:None;
   v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible;
   v-wf:executor s-wf:executor_autoinstruction;
-  v-wf:locationX "1433"^^xsd:integer;
-  v-wf:locationY "-31"^^xsd:integer;
+  v-wf:locationX "1336"^^xsd:integer;
+  v-wf:locationY "-30"^^xsd:integer;
   rdfs:label "Автопоручения"^^xsd:string;
   v-s:updateCounter "1"^^xsd:integer;
   v-wf:completedJournalMap s-wf:map_journal_msg_4_task_label_complete, s-wf:map_jrn_ev_type_4_TaskCompleted, s-wf:map_journal_doc_id, s-wf:map_journal_process_id.
