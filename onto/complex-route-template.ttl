@@ -2013,18 +2013,18 @@ if (doc['rdf:type'][0].id === "mnd-s:BusinessTrip") {
     routes['review'][simple+'participant'] = routes['review'][simple+'participant'].concat(new veda.IndividualModel('d:f90f75d3-0718-45a6-a696-74a8aa24d35c')); // Специалист ОК по командировкам
     routes['review'][simple+'visible'] = [true];
     routes['review'][simple+'editable'] = [false];
-    routes['review'][simple+'deadlineDays'] =[doc["v-s:dateFrom"][0]];
+    routes['review'][simple+'deadlineDate'] =[doc["v-s:dateFrom"][0]];
 
     //Исполнение
-    var data;
-    if( doc.hasValue("v-s:dateTo")){
-      data = new Date(doc["v-s:dateTo"][0].toISOString());
-      data.setDate(data.getDate() + 3);
-    } else {data=[];}
+    // var data;
+    // if( doc.hasValue("v-s:dateTo")){
+    //   data = new Date(doc["v-s:dateTo"][0].toISOString());
+    //   data.setDate(data.getDate() + 3);
+    // } else {data=[];}
     routes['instruction'][simple+'participant'] =[doc["v-s:creator"][0]];
     routes['instruction'][simple+'visible'] = [true];
     routes['instruction'][simple+'editable'] = [false];
-    routes['instruction'][simple+'deadlineDays'] =[data];
+    routes['instruction'][simple+'deadlineDays'] =[3];
     routes['instruction'][simple+'comment'] = [new String('Подготовить отчет о командировке')];
 
   } else {
