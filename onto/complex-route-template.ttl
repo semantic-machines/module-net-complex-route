@@ -162,69 +162,8 @@ routes['examination'][simple+'task_label'] = veda.Util.mlstring("Ознаком�
 
 
 // CUSTOM
-//-------------------------------------------------------------------------------------------------------------------------------------Акт расследования аварии
-if (doc['rdf:type'][0].id === "mnd-s:ActFailure") {
 
-  if (!doc.hasValue('v-s:hasAction')) {
-    // если [action] пусто, то согласование 1 открыто пусто, поручение - [manager] "Провести необходимое расследование"
-    routes['coordination1'][simple+'visible'] = [true];
-    routes['coordination1'][simple+'editable'] = [true];
-    routes['coordination1'][simple+'deadlineDays'] = [10];
-
-    routes['instruction'][simple+'visible'] = [true];
-    routes['instruction'][simple+'editable'] = [true];
-    routes['instruction'][simple+'deadlineDays'] = [10];
-    routes['instruction'][simple+'comment'] = [new String('Провести необходимое расследование')];
-    routes['instruction'][simple+'controller'] = [new veda.IndividualModel("d:mondi_appointment_00058240_71024477")];
-  } else {
-    // если [action] не пусто, то согласование 1 - [member] + [chief], подписание - пусто, утверждение - Технический директор + Директор по производству
-    var actionPredicate='v-s:hasAction';
-    routes['autoinstruction']['rdfs:label']=['Поручения на основе блока "' + new veda.IndividualModel(actionPredicate)['rdfs:label'][0] + '"'];
-    routes['autoinstruction'][simple+'visible'] = [true];
-    routes['autoinstruction'][simple+'editable'] = [false];
-    routes['autoinstruction'][simple+'actions'] = doc[actionPredicate];
-
-
-    routes['coordination1'][simple+'visible'] = [true];
-    routes['coordination1'][simple+'editable'] = [true];
-    if (doc.hasValue('v-s:hasMemberOfWorkGroup')) {
-      routes['coordination1'][simple+'participant'] = [];
-      doc['v-s:hasMemberOfWorkGroup'].forEach(function(mwg) {
-        routes['coordination1'][simple+'participant'] = routes['coordination1'][simple+'participant'].concat(mwg['v-s:member']);
-      });
-    }
-
-    routes['sign'][simple+'visible'] = [true];
-    routes['sign'][simple+'editable'] = [true];
-
-    routes['approval'][simple+'participant'] = [new veda.IndividualModel('d:mondi_position_71017804'), new veda.IndividualModel('d:mondi_position_71018870')];
-    routes['approval'][simple+'visible'] = [true];
-    routes['approval'][simple+'editable'] = [true];
-    routes['approval'][simple+'deadlineDays'] = [10];
-
-    routes['instruction4'][simple+'participant'] = [new veda.IndividualModel('d:mondi_appointment_00058240_71024477')];
-    routes['instruction4'][simple+'visible'] = [true];
-    routes['instruction4'][simple+'editable'] = [false];
-    routes['instruction4'][simple+'comment'] = [new String('Уточнить сроки мероприятия')];
-    routes['instruction4'][simple+'deadlineDays'] = [10];
-    routes['instruction4']['v-wf:StartForm_canEdit'] = [true];
-  }
-  //проверка чекбоксов на тру и подстановка людей в ознакомление
-  if ( doc["mnd-s:isAFrequiredPurchase"][0] === true && doc["mnd-s:isAFrequiredProject"][0] === true){
-    routes['examination'][simple+'visible'] = [true];
-    routes['examination'][simple+'editable'] = [true];
-    routes['examination'][simple+'participant'] = [ new veda.IndividualModel('d:mondi_position_71018045'), new veda.IndividualModel('d:mondi_position_71021843') ] ;
-  } else if ( doc["mnd-s:isAFrequiredPurchase"][0] === true && ( doc["mnd-s:isAFrequiredProject"][0] === false || doc["mnd-s:isAFrequiredProject"][0] === undefined ) ){
-    routes['examination'][simple+'visible'] = [true];
-    routes['examination'][simple+'editable'] = [true];
-    routes['examination'][simple+'participant'] = [ new veda.IndividualModel('d:mondi_position_71018045') ] ;
-  } else if ( ( doc["mnd-s:isAFrequiredPurchase"][0] === false || doc["mnd-s:isAFrequiredPurchase"][0] === undefined ) && doc["mnd-s:isAFrequiredProject"][0] === true ){
-    routes['examination'][simple+'visible'] = [true];
-    routes['examination'][simple+'editable'] = [true];
-    routes['examination'][simple+'participant'] = [ new veda.IndividualModel('d:mondi_position_71021843') ] ;
-  }
-}
-//---------------------------------------------------------------------------------------------------------------------------Запрос на согласование контрагента
+//--------------------------------------------------Запрос на согласование контрагента
 if (doc['rdf:type'][0].id === "mnd-s:ContractorCategoryRequest") {
 
   if (doc.hasValue('mnd-s:hasContractorInteractionCategory') && doc['mnd-s:hasContractorInteractionCategory'][0].id == 'd:a188a7057-11d1-ce95-4e3c-3c4712b754f0') {
@@ -2492,34 +2431,6 @@ if (doc['rdf:type'][0].id === "mnd-s:ProjectCapexRequestChange") {
 //  routes['review'][simple+'visible'] = [false];
 //  routes['review'][simple+'editable'] = [false];
 //}
-
-//----------------------------------Внутренние аудиты. Годовая программа-----------------------
-if (doc['rdf:type'][0].id === "mnd-s:AuditInternalAnnualPlan") {
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination2'][simple+'visible'] = [true];
-  routes['coordination2'][simple+'editable'] = [true];
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [true];
-  routes['approval'][simple+'visible'] = [true];
-  routes['approval'][simple+'editable'] = [true];
-  routes['review'][simple+'visible'] = [true];
-  routes['review'][simple+'editable'] = [true];
-}
-
-//----------------------------------Аудит ИСМ. Годовая программа-----------------------
-if (doc['rdf:type'][0].id === "mnd-s:AuditQualityAnnualPlan") {
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination2'][simple+'visible'] = [true];
-  routes['coordination2'][simple+'editable'] = [true];
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [true];
-  routes['approval'][simple+'visible'] = [true];
-  routes['approval'][simple+'editable'] = [true];
-  routes['review'][simple+'visible'] = [true];
-  routes['review'][simple+'editable'] = [true];
-}
 
 //--------------------------------------------------------------------------------Версия технического документа-------
 if (doc['rdf:type'][0].id === "mnd-s:VersionOfTechnicalDocument") {
