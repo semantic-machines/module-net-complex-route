@@ -115,9 +115,9 @@ s-wf:cr_informing_task a v-wf:Task;
   v-wf:inputVariable s-wf:var_to ;
   v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator, s-wf:map_to_1_informing_task;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_processStart, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_var_wf_to_task_to;
-  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl, s-wf:map_wf_from_4_TIV_initiator;
-  v-wf:startingMessageMap s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_var_to_task_to, s-wf:map_documentType_4_TIV_DocId_documentType;
-    .
+  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_wf_from_4_TIV_initiator;
+  v-wf:startingMessageMap s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_to, s-wf:map_var_to_task_to, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_to, s-wf:map_doc_url_4_appUrl_of_to;
+.
 
 s-wf:cr_introduction a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -362,7 +362,7 @@ s-wf:cr_rework a v-wf:Task;
   v-wf:startDecisionTransform s-wf:tr_refine_form;
   v-wf:startingExecutorJournalMap s-wf:map_jrn_msg_nc_t2_b_remake, s-wf:map_jrn_msg_nc_t2_b_ev, s-wf:map_journal_to_4_PLV_responsible, s-wf:map_journal_doc_id, s-wf:map_journal_process_id;
   v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
-  v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_O_executor, s-wf:map_comment_4_TIV_actor_task_rework, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl, s-wf:map_wf_from_4_TIV_initiator, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType.
+  v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_O_executor, s-wf:map_comment_4_TIV_actor_task_rework, s-wf:map_wf_from_4_TIV_initiator, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_executor, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_executor, s-wf:map_doc_url_4_appUrl_of_executor.
 s-wf:crf_rework_to_c1 a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -606,8 +606,8 @@ s-wf:cr_informing5 a v-wf:Task;
   v-wf:locationY "-30"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template_notification_reviewEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_0_initiator;
-  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl;
-  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType;
+  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType;
+  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_initiator, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_initiator, s-wf:map_doc_url_4_appUrl_of_initiator;
   v-wf:startingMapping s-wf:map_doc_id;
 .
 s-wf:crf_r_to_i5 a v-wf:Flow;
@@ -699,8 +699,8 @@ s-wf:cr_distribution a v-wf:Task;
   v-wf:inputVariable s-wf:var_to ;
   v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator, s-wf:map_to_1_distribution_task;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_processEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_var_wf_to_task_to;
-  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl, s-wf:map_wf_from_4_TIV_initiator;
-  v-wf:startingMessageMap s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_var_to_task_to, s-wf:map_documentType_4_TIV_DocId_documentType;
+  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_wf_from_4_TIV_initiator;
+  v-wf:startingMessageMap s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_to, s-wf:map_var_to_task_to, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_to, s-wf:map_doc_url_4_appUrl_of_to;
     .
 
 s-wf:crf_d_to_rr a v-wf:Flow;
@@ -754,8 +754,8 @@ s-wf:cr_informing2 a v-wf:Task;
   v-wf:locationY "335"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template_notification_approvalEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_0_initiator;
-  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl;
-  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType;
+  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType;
+  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_initiator, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_initiator, s-wf:map_doc_url_4_appUrl_of_initiator;
   v-wf:startingMapping s-wf:map_doc_id;
 .
 s-wf:crf_a_to_i2 a v-wf:Flow;
@@ -781,8 +781,8 @@ s-wf:cr_informing3 a v-wf:Task;
   v-wf:locationY "335"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template_notification_signEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_0_initiator;
-  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl;
-  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType;
+  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType;
+  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_initiator, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_initiator, s-wf:map_doc_url_4_appUrl_of_initiator;
   v-wf:startingMapping s-wf:map_doc_id;
 .
 
@@ -809,8 +809,8 @@ s-wf:cr_informing4 a v-wf:Task;
   v-wf:locationY "335"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template_notification_coordinationEnd, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_0_initiator;
-  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType, s-wf:map_inbox_url_4_vedaInfo_appInboxUrl, s-wf:map_doc_url_4_vedaInfo_appUrl;
-  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType;
+  v-wf:startingMessageMap s-wf:map_comment_4_TIV_actor_task_action, s-wf:map_comment_4_TIV_actor_task_comment, s-wf:map_rdf_type_4_TIV_documentType;
+  v-wf:startingMessageMap s-wf:map_wf_from_4_TIV_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_initiator, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_initiator, s-wf:map_doc_url_4_appUrl_of_initiator;
   v-wf:startingMapping s-wf:map_doc_id;
 .
 s-wf:crf_c6_to_i4 a v-wf:Flow;
