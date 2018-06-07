@@ -162,23 +162,6 @@ routes['examination'][simple+'task_label'] = veda.Util.mlstring("Ознаком�
 
 
 // CUSTOM
-//--------------------------------------------------------------------------------------------------------------------------------Выбор поставщика
-if (doc['rdf:type'][0].id === "mnd-s:TenderProcedure") {
-  routes['examination'][simple+'visible'] = [true];
-  routes['examination'][simple+'editable'] = [true];
-  routes['coordination1'][simple+'visible'] = [true];
-  routes['coordination1'][simple+'editable'] = [true];
-  routes['coordination2'][simple+'visible'] = [true];
-  routes['coordination2'][simple+'editable'] = [true];
-  routes['coordination3'][simple+'visible'] = [true];
-  routes['coordination3'][simple+'editable'] = [true];
-  routes['coordination4'][simple+'visible'] = [true];
-  routes['coordination4'][simple+'editable'] = [true];
-  routes['sign'][simple+'visible'] = [true];
-  routes['sign'][simple+'editable'] = [true];
-  routes['approval'][simple+'visible'] = [true];
-  routes['approval'][simple+'editable'] = [true];
-}
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------Контракт / Дополнительное соглашение
 if (doc['rdf:type'][0].id === "mnd-s:Contract" || doc['rdf:type'][0].id === "mnd-s:AdditionalAgreement") {
