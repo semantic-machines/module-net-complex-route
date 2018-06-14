@@ -31,7 +31,7 @@ s-wf:ComplexRouteStartForm
   rdfs:label "Стартовая форма Комплексного маршрута"@ru ;
   rdfs:label "Complex route start form"@en ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate s-wf:ComplexRouteStartForm_Template ;
+  v-ui:hasTemplate s-wf:ComplexRouteStartForm_Common_Template ;
   v-ui:hasModel s-wf:ComplexRouteStartForm_Model ;
 .
 
@@ -64,276 +64,6 @@ s-wf:ComplexRouteStartForm_Model
   """ ;
 .
 
-s-wf:ComplexRouteStartForm_Template
-  rdf:type v-ui:ClassTemplate ;
-  rdfs:isDefinedBy s-wf: ;
-  rdfs:label "Шаблон стартовых данных Комплексного маршрута"@ru ;
-  rdfs:label "Complex route start form template"@en ;
-  v-ui:forClass s-wf:ComplexRouteStartForm ;
-  v-ui:template """
-<script>
-
-if (this.hasValue("v-wf:isProcess")) {
-  $('#save_and_start_process', template).remove();
-} else {
-  $("span.statusWorkflow", template).remove();
-  $("#on-document", template).remove();
-  $('#save_and_start_process', template).on('click', function () {
-    stages.forEach(function(stage) {
-      var routeid = complex+stage;
-      var sub = individual[routeid][0];
-      if (sub) {
-        if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
-          if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
-            delete individual.properties[routeid];
-          }
-        }
-      } else {
-        delete individual.properties[routeid];
-      }
-    });
-    veda.Util.send(individual, template);
-  });
-};
-
-if (mode !== "edit") { return; }
-
-//# sourceURL=s-wf:ComplexRouteStartForm_Template_pre
-</script>
-<div class="container sheet">
-  <style scoped>
-    .col-md-6 {
-      min-height: 0px;
-    }
-  </style>
-  <h2 about="s-wf:ComplexRouteStartForm" property="rdfs:label"></h2>
-  <h4 id="on-document" rel="v-s:onDocument" data-template="v-ui:ClassNameLabelLinkTemplate"></h4>
-  <br>
-  <div class="row">
-    <div class="col-md-6 informing" rel="s-wf:ComplexRouteStartForm_informing" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_informing" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-embedded="true" data-template="s-wf:SimpleRouteStartFormMinimal_Template"></div>
-      </div>
-    </div>
-    <div class="col-md-6 introduction" rel="s-wf:ComplexRouteStartForm_introduction" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_introduction" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 coordination1" rel="s-wf:ComplexRouteStartForm_coordination1" data-embedded="true">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination1" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 coordination2" rel="s-wf:ComplexRouteStartForm_coordination2" data-embedded="true">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination2" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-
-    <div class="col-md-6 coordination3" rel="s-wf:ComplexRouteStartForm_coordination3" data-embedded="true">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination3" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 coordination4" rel="s-wf:ComplexRouteStartForm_coordination4" data-embedded="true">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination4" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 coordination5" rel="s-wf:ComplexRouteStartForm_coordination5" data-embedded="true">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination5" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 coordination6" rel="s-wf:ComplexRouteStartForm_coordination6" data-embedded="true">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_coordination6" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 sign" rel="s-wf:ComplexRouteStartForm_sign" data-embedded="true">
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_sign" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 approval" rel="s-wf:ComplexRouteStartForm_approval" data-embedded="true">
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_approval" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 review" rel="s-wf:ComplexRouteStartForm_review" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_review" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 instruction" rel="s-wf:ComplexRouteStartForm_instruction" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 instruction2" rel="s-wf:ComplexRouteStartForm_instruction2" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 instruction3" rel="s-wf:ComplexRouteStartForm_instruction3" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 examination" rel="s-wf:ComplexRouteStartForm_examination" data-embedded="true">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_examination" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 distribution" rel="s-wf:ComplexRouteStartForm_distribution" data-embedded="true">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_distribution" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-
-    <div class="col-md-12 autoinstruction" rel="s-wf:ComplexRouteStartForm_autoinstruction" data-embedded="true">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="@" property="rdfs:label"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="actions">
-    <button type="button" class="action btn btn-warning" id="save_and_start_process" about="v-s:Send" property="rdfs:label"></button>
-    <span about="@" data-template="v-ui:StandardButtonsTemplate" data-embedded="true" data-buttons="edit save cancel"></span>
-  </div>
-</div>
-<script>
-  var doc = individual['v-wf:processedDocument'][0];
-  if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
-    $('.instruction2 .checkbox_setStatus').show();
-  };
-  if ( doc['rdf:type'][0].id === "mnd-s:ItRequest" ) {
-    $('.instruction2 .checkbox_setStatus').show();
-    $('.instruction2 .checkbox_canEdit').show();
-  };
-  if (!individual.hasValue("v-wf:isProcess")) {
-    $(".actions #save", template).remove();
-    $(".actions #edit", template).remove();
-  }
-
-</script>
-  """ ;
-.
-
 s-wf:ComplexRouteStartForm_Common_Template
   rdf:type v-ui:ClassTemplate ;
   rdfs:isDefinedBy s-wf: ;
@@ -342,114 +72,114 @@ s-wf:ComplexRouteStartForm_Common_Template
   v-ui:forClass s-wf:ComplexRouteStartForm_Common ;
   v-ui:template """
 <script>
-console.log("This is COMMON ComplexRouteStartForm template");
-if (this.hasValue("v-wf:isProcess")) {
-  $('#save_and_start_process', template).remove();
-  return;
-} else {
-  $("span.statusWorkflow", template).remove();
-  $("#on-document", template).remove();
-  $('#save_and_start_process', template).on('click', function () {
-    stages.forEach(function(stage) {
-      var routeid = complex+stage;
-      var sub = individual[routeid][0];
-      if (sub) {
-        if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
-          if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
-            delete individual.properties[routeid];
-          }
-        };  
-      } else {
-        delete individual.properties[routeid];
-      };
+  console.log("This is COMMON ComplexRouteStartForm template");
+  if (this.hasValue("v-wf:isProcess")) {
+    $('#save_and_start_process', template).remove();
+    return;
+  } else {
+    $("span.statusWorkflow", template).remove();
+    $("#on-document", template).remove();
+    $('#save_and_start_process', template).on('click', function () {
+      stages.forEach(function(stage) {
+        var routeid = complex+stage;
+        var sub = individual[routeid][0];
+        if (sub) {
+          if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
+            if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
+              delete individual.properties[routeid];
+            }
+          };  
+        } else {
+          delete individual.properties[routeid];
+        };
+      });
+      veda.Util.send(individual, template);
     });
-    veda.Util.send(individual, template);
-  });
-};
-var stages = [];
-var complex = 's-wf:ComplexRouteStartForm_';
-var simple = 's-wf:SimpleRouteStartForm_';
-
-var doc = individual['v-wf:processedDocument'][0];
-if (!doc) { return; }
-individual["v-s:onDocument"] = [doc];
-
-for (var i = 1; i <= 6; i++) {
-  if (individual.hasValue(complex+"coordination"+i)){
-    individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAgreed'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionNoAgreed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'coordination'+i][0][simple+'task_label'] = veda.Util.mlstring("Согласовать", "Coordinate");
-    stages.push("coordination"+i);
-    individual[complex+'coordination'+i][0]['v-s:parent'] = [individual];
   };
-}
-if (individual.hasValue(complex+"introduction")) {
-  individual[complex+'introduction'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined')]")];
-  individual[complex+'introduction'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомление", "Introduction");
-  stages.push("introduction");
-  individual[complex+'introduction'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"sign")) {
-  individual[complex+'sign'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionSign'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'sign'][0][simple+'task_label'] = veda.Util.mlstring("Подписать", "Sign");
-  stages.push("sign");
-  individual[complex+'sign'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"approval")) {
-  individual[complex+'approval'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionApprove'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'approval'][0][simple+'task_label'] = veda.Util.mlstring("Утвердить", "Approve");
-  stages.push("approval");
-  individual[complex+'approval'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"review")) {
-  individual[complex+'review'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionReview'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'review'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Review");
-  stages.push("review");
-  individual[complex+'review'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"instruction")) {
-  individual[complex+'instruction'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'instruction'][0][simple+'task_label'] = veda.Util.mlstring("Исполнить поручение", "Execute task");
-  stages.push("instruction");
-  individual[complex+'instruction'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"instruction2")) {
-  individual[complex+'instruction2'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'instruction2'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
-  stages.push("instruction2");
-  individual[complex+'instruction2'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"instruction3")) {
-  individual[complex+'instruction3'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'instruction3'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Execute task");
-  stages.push("instruction3");
-  individual[complex+'instruction3'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"instruction4")) {
-  individual[complex+'instruction4'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'instruction4'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
-  stages.push("instruction4");
-  individual[complex+'instruction4'][0]['v-s:parent'] = [individual];
-}
-if (individual.hasValue(complex+"examination")) {
-  individual[complex+'examination'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
-  individual[complex+'examination'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Examine");
-  stages.push("examination");
-  individual[complex+'examination'][0]['v-s:parent'] = [individual];
-}
+  var stages = [];
+  var complex = 's-wf:ComplexRouteStartForm_';
+  var simple = 's-wf:SimpleRouteStartForm_';
 
-stages.forEach(function(stage) {
-  var routeid = complex+stage;
-  var sub = individual[routeid][0];
-  if (!sub.hasValue(simple+'visible') || sub[simple+'visible'][0] == false) {
-    $('.'+stage, template).hide();
+  var doc = individual['v-wf:processedDocument'][0];
+  if (!doc) { return; }
+  individual["v-s:onDocument"] = [doc];
+
+  for (var i = 1; i <= 6; i++) {
+    if (individual.hasValue(complex+"coordination"+i)){
+      individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAgreed'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionNoAgreed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+      individual[complex+'coordination'+i][0][simple+'task_label'] = veda.Util.mlstring("Согласовать", "Coordinate");
+      stages.push("coordination"+i);
+      individual[complex+'coordination'+i][0]['v-s:parent'] = [individual];
+    };
   }
-  if (!sub.hasValue(simple+'editable') || sub[simple+'editable'][0] == false) {
-    $('.'+stage, template).attr('about', '@');
-    $('.'+stage, template).removeAttr('data-embedded');
-    $('veda-control[rel="s-wf:ComplexRouteStartForm_'+stage+'"]', template).remove();
-    sub.save();
+  if (individual.hasValue(complex+"introduction")) {
+    individual[complex+'introduction'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined')]")];
+    individual[complex+'introduction'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомление", "Introduction");
+    stages.push("introduction");
+    individual[complex+'introduction'][0]['v-s:parent'] = [individual];
   }
-});
+  if (individual.hasValue(complex+"sign")) {
+    individual[complex+'sign'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionSign'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'sign'][0][simple+'task_label'] = veda.Util.mlstring("Подписать", "Sign");
+    stages.push("sign");
+    individual[complex+'sign'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"approval")) {
+    individual[complex+'approval'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionApprove'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'approval'][0][simple+'task_label'] = veda.Util.mlstring("Утвердить", "Approve");
+    stages.push("approval");
+    individual[complex+'approval'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"review")) {
+    individual[complex+'review'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionReview'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'review'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Review");
+    stages.push("review");
+    individual[complex+'review'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"instruction")) {
+    individual[complex+'instruction'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'instruction'][0][simple+'task_label'] = veda.Util.mlstring("Исполнить поручение", "Execute task");
+    stages.push("instruction");
+    individual[complex+'instruction'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"instruction2")) {
+    individual[complex+'instruction2'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'instruction2'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
+    stages.push("instruction2");
+    individual[complex+'instruction2'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"instruction3")) {
+    individual[complex+'instruction3'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'instruction3'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Execute task");
+    stages.push("instruction3");
+    individual[complex+'instruction3'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"instruction4")) {
+    individual[complex+'instruction4'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'instruction4'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
+    stages.push("instruction4");
+    individual[complex+'instruction4'][0]['v-s:parent'] = [individual];
+  }
+  if (individual.hasValue(complex+"examination")) {
+    individual[complex+'examination'][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionExamined'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
+    individual[complex+'examination'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Examine");
+    stages.push("examination");
+    individual[complex+'examination'][0]['v-s:parent'] = [individual];
+  }
+
+  stages.forEach(function(stage) {
+    var routeid = complex+stage;
+    var sub = individual[routeid][0];
+    if (!sub.hasValue(simple+'visible') || sub[simple+'visible'][0] == false) {
+      $('.'+stage, template).hide();
+    }
+    if (!sub.hasValue(simple+'editable') || sub[simple+'editable'][0] == false) {
+      $('.'+stage, template).attr('about', '@');
+      $('.'+stage, template).removeAttr('data-embedded');
+      $('veda-control[rel="s-wf:ComplexRouteStartForm_'+stage+'"]', template).remove();
+      sub.save();
+    }
+  });
 //# sourceURL=s-wf:ComplexRouteStartForm_Template_pre
 </script>
 <div class="container sheet">
@@ -467,7 +197,6 @@ stages.forEach(function(stage) {
         <div class="panel-heading">
           <h3 class="panel-title clearfix">
             <span class="pull-left" about="s-wf:ComplexRouteStartForm_informing" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
         <div class="panel-body" about="@" data-embedded="true" data-template="s-wf:SimpleRouteStartFormMinimal_Template"></div>
