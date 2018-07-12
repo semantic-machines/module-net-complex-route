@@ -104,6 +104,10 @@ s-wf:ComplexRouteStartForm_Common_Template
   if (!doc) { return; }
   individual["v-s:onDocument"] = [doc];
 
+  if (individual.hasValue(complex+"informing")) {
+    stages.push("informing");
+    individual[complex+'informing'][0]['v-s:parent'] = [individual];
+  }
   for (var i = 1; i <= 6; i++) {
     if (individual.hasValue(complex+"coordination"+i)){
       individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new String("[newUri ('v-wf:DecisionAgreed'), newUri('v-wf:DecisionDeclined'), newUri('v-wf:DecisionNoAgreed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]")];
