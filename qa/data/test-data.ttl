@@ -53,9 +53,45 @@ s-wf:ComplexRouteTest_Template
 </div>
 <script>
   $('#send.action', template).on('click', function () {
-    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform', undefined, 's-wf:Test_ComplexRouteStartForm_Template');
   });
 </script>
+""" ;
+.
+
+s-wf:Test_ComplexRouteStartForm_Template
+  rdf:type v-ui:ClassTemplate ;
+  rdfs:label "Шаблон стартовых данных комплексного тестового маршрута"@ru ;
+  rdfs:label "Test complex route start form template"@en ;
+  v-ui:template """
+<script>
+  var stages = ["coordination1", "coordination2", "review", "instruction", "examination", "instruction2"];
+  var complex = "s-wf:ComplexRouteStartForm_";
+  var simple = "s-wf:SimpleRouteStartForm_";
+  if (mode!=="edit") return;
+
+  var doc = individual['v-wf:processedDocument'][0];
+  if (!doc) { return; }
+
+  individual.addSimpleStartForm(stages, complex);
+
+  individual[complex+'coordination1'][0][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1"), new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'coordination1'][0][simple+'visible'] = [true];
+  individual[complex+'coordination2'][0][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1"), new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'coordination2'][0][simple+'visible'] = [true];
+  individual[complex+'review'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'review'][0][simple+'visible'] = [true];
+  individual[complex+'instruction'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'instruction'][0][simple+'visible'] = [true];
+  individual[complex+'examination'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'examination'][0][simple+'visible'] = [true];
+  individual[complex+'instruction2'][0][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
+  individual[complex+'instruction2'][0][simple+'visible'] = [true];
+  individual[complex+'instruction2'][0][simple+'controller'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
+
+//# sourceURL=s-wf:Test_ComplexRouteStartForm_Template_pre
+</script>
+<div about="@" data-embedded="true" data-template="s-wf:ComplexRouteStartForm_Common_Template" class="view edit"></div>
 """ ;
 .
 
@@ -103,11 +139,37 @@ s-wf:ComplexRouteTest2_Template
 </div>
 <script>
   $('#send.action', template).on('click', function () {
-    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform', undefined, 's-wf:Test2_ComplexRouteStartForm_Template');
   });
 </script>
 """ ;
 .
+
+s-wf:Test2_ComplexRouteStartForm_Template
+  rdf:type v-ui:ClassTemplate ;
+  rdfs:label "Шаблон стартовых данных комплексного тестового маршрута 2"@ru ;
+  rdfs:label "Test2 complex route start form template"@en ;
+  v-ui:template """
+<script>
+  var stages = ["coordination1"];
+  var complex = "s-wf:ComplexRouteStartForm_";
+  var simple = "s-wf:SimpleRouteStartForm_";
+  if (mode!=="edit") return;
+
+  var doc = individual['v-wf:processedDocument'][0];
+  if (!doc) { return; }
+
+  individual.addSimpleStartForm(stages, complex);
+
+  individual[complex+'coordination1'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'coordination1'][0][simple+'visible'] = [true];
+
+//# sourceURL=s-wf:Test2_ComplexRouteStartForm_Template_pre
+</script>
+<div about="@" data-embedded="true" data-template="s-wf:ComplexRouteStartForm_Common_Template" class="view edit"></div>
+""" ;
+.
+
 
 s-wf:ComplexRouteTest3_Template
   rdf:type v-ui:ClassTemplate ;
@@ -135,9 +197,34 @@ s-wf:ComplexRouteTest3_Template
 </div>
 <script>
   $('#send.action', template).on('click', function () {
-    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform', undefined, 's-wf:Test3_ComplexRouteStartForm_Template');
   });
 </script>
+""" ;
+.
+
+s-wf:Test3_ComplexRouteStartForm_Template
+  rdf:type v-ui:ClassTemplate ;
+  rdfs:label "Шаблон стартовых данных комплексного тестового маршрута 3"@ru ;
+  rdfs:label "Test3 complex route start form template"@en ;
+  v-ui:template """
+<script>
+  var stages = ["coordination1"];
+  var complex = "s-wf:ComplexRouteStartForm_";
+  var simple = "s-wf:SimpleRouteStartForm_";
+  if (mode!=="edit") return;
+
+  var doc = individual['v-wf:processedDocument'][0];
+  if (!doc) { return; }
+
+  individual.addSimpleStartForm(stages, complex);
+
+  individual[complex+'coordination1'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreySidorov-Analyst2")];
+  individual[complex+'coordination1'][0][simple+'visible'] = [true];
+
+//# sourceURL=s-wf:Test3_ComplexRouteStartForm_Template_pre
+</script>
+<div about="@" data-embedded="true" data-template="s-wf:ComplexRouteStartForm_Common_Template" class="view edit"></div>
 """ ;
 .
 
@@ -175,12 +262,47 @@ s-wf:ComplexRouteTest0_Template
 </div>
 <script>
   $('#send.action', template).on('click', function () {
-    veda.Util.send(individual, template, 's-wf:complexRouteTransform');
+    veda.Util.send(individual, template, 's-wf:complexRouteTransform', undefined, 's-wf:Test0_ComplexRouteStartForm_Template');
   });
 </script>
   """ ;
 .
 
+s-wf:Test0_ComplexRouteStartForm_Template
+  rdf:type v-ui:ClassTemplate ;
+  rdfs:label "Шаблон стартовых данных комплексного тестового маршрута 0"@ru ;
+  rdfs:label "Test0 complex route start form template"@en ;
+  v-ui:template """
+<script>
+  var stages = ["coordination1", "coordination2", "review", "instruction", "examination", "instruction2"];
+  var complex = "s-wf:ComplexRouteStartForm_";
+  var simple = "s-wf:SimpleRouteStartForm_";
+  if (mode!=="edit") return;
+
+  var doc = individual['v-wf:processedDocument'][0];
+  if (!doc) { return; }
+
+  individual.addSimpleStartForm(stages, complex);
+
+  individual[complex+'coordination1'][0][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1"), new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'coordination1'][0][simple+'visible'] = [true];
+  individual[complex+'coordination2'][0][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1"), new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'coordination2'][0][simple+'visible'] = [true];
+  individual[complex+'review'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'review'][0][simple+'visible'] = [true];
+  individual[complex+'instruction'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'instruction'][0][simple+'visible'] = [true];
+  individual[complex+'examination'][0][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
+  individual[complex+'examination'][0][simple+'visible'] = [true];
+  individual[complex+'instruction2'][0][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
+  individual[complex+'instruction2'][0][simple+'visible'] = [true];
+  individual[complex+'instruction2'][0][simple+'controller'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
+
+//# sourceURL=s-wf:Test0_ComplexRouteStartForm_Template_pre
+</script>
+<div about="@" data-embedded="true" data-template="s-wf:ComplexRouteStartForm_Common_Template" class="view edit"></div>
+""" ;
+.
 
 # -------- стартовая форма маршрута ----------------
 td:ComplexRouteStartForm1
@@ -406,57 +528,3 @@ td:AndreyJoe-Analyst2
   v-s:official "true"^^xsd:boolean ;
   v-s:origin "Internal User" ;
 .
-
-//---------------------------------------------------------Тестовый маршрут
-
-if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest") { //Тестовый маршрут
-    routes['coordination1'][simple+'participant'] = [
-                 new veda.IndividualModel("td:RomanKarpov-Analyst1"),
-                 new veda.IndividualModel("td:AndreyBychin-Analyst2")];
-    routes['coordination1'][simple+'visible'] = [true];
-    routes['coordination2'][simple+'participant'] = [
-                 new veda.IndividualModel("td:RomanKarpov-Analyst1"),
-                 new veda.IndividualModel("td:AndreyBychin-Analyst2")];
-    routes['coordination2'][simple+'visible'] = [true];;
-    routes['review'][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
-    routes['review'][simple+'visible'] = [true];
-    routes['instruction'][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
-    routes['instruction'][simple+'visible'] = [true];
-    routes['examination'][simple+'participant'] = [new veda.IndividualModel("td:AndreyBychin-Analyst2")];
-    routes['examination'][simple+'visible'] = [true];
-    routes['instruction2'][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
-    routes['instruction2'][simple+'visible'] = [true];
-    routes['instruction2'][simple+'controller'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
-}
-
-if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest0") { //Тестовый маршрут 0
-    routes['coordination1'][simple+'participant'] = [
-                 new veda.IndividualModel("td:RomanKarpov-Analyst1"),
-                 new veda.IndividualModel("td:AndreyJoe-Analyst2")];
-    routes['coordination1'][simple+'visible'] = [true];
-    routes['coordination2'][simple+'participant'] = [
-                 new veda.IndividualModel("td:RomanKarpov-Analyst1"),
-                 new veda.IndividualModel("td:AndreyJoe-Analyst2")];
-    routes['coordination2'][simple+'visible'] = [true];;
-    routes['review'][simple+'participant'] = [new veda.IndividualModel("td:AndreyJoe-Analyst2")];
-    routes['review'][simple+'visible'] = [true];
-    routes['instruction'][simple+'participant'] = [new veda.IndividualModel("td:AndreyJoe-Analyst2")];
-    routes['instruction'][simple+'visible'] = [true];
-    routes['examination'][simple+'participant'] = [new veda.IndividualModel("td:AndreyJoe-Analyst2")];
-    routes['examination'][simple+'visible'] = [true];
-    routes['instruction2'][simple+'participant'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
-    routes['instruction2'][simple+'visible'] = [true];
-    routes['instruction2'][simple+'controller'] = [new veda.IndividualModel("td:RomanKarpov-Analyst1")];
-}
-
-if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest2") { //Тестовый маршрут2
-    routes['coordination1'][simple+'participant'] = [
-                 new veda.IndividualModel("td:AndreyBychin-Analyst2")]
-    routes['coordination1'][simple+'visible'] = [true];
-}
-
-if (doc['rdf:type'][0].id === "s-wf:ComplexRouteTest3") { //Тестовый маршрут3
-    routes['coordination1'][simple+'participant'] = [
-                 new veda.IndividualModel("td:AndreySidorov-Analyst2")]
-    routes['coordination1'][simple+'visible'] = [true];
-}
