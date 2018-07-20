@@ -35,7 +35,7 @@ test('testInbox', async t => {
   basic.login('bushenevvt', '123');
     await t
       .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
-      .click('table.table-condensed.table-bordered.table-striped tbody.result-container a.glyphicon.glyphicon-search')
+      .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
       .click('button#send')
   basic.checkInbox('0');
   basic.logout();
@@ -43,7 +43,7 @@ test('testInbox', async t => {
     await t
       .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
       .expect(Selector('div.result-heading small.stats-top.pull-right span.badge[property="v-fs:authorized"]').innerText).eql('2')
-      .click('table.table-condensed.table-bordered.table-striped tbody.result-container a.glyphicon.glyphicon-search')
+      .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
       .click('button#send')
   basic.checkInbox('1');
   basic.logout();
@@ -53,7 +53,7 @@ test('testInbox', async t => {
   basic.login('ivanovrt', '123');
     await t
       .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
-      .click('table.table-condensed.table-bordered.table-striped tbody.result-container a.glyphicon.glyphicon-search')
+      .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
       .click('button#send')
   basic.checkInbox('0');
     await t
