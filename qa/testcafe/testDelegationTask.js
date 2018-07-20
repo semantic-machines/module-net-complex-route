@@ -22,7 +22,7 @@ import { Selector, t } from 'testcafe';
         .click('button.search-button')
         .expect(Selector('div.result-heading small.stats-top.pull-right span.badge[property="v-fs:authorized"]').innerText).eql('1')
     basic.logout();
-    basic.login('bychina', '123');
+    basic.login('khvostiat', '123');
       await t
         .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
         .expect(Selector('div.result-heading small.stats-top.pull-right span.badge[property="v-fs:authorized"]').innerText).eql('0')
@@ -41,17 +41,17 @@ import { Selector, t } from 'testcafe';
         .pressKey('ctrl+a delete')
         .typeText('veda-control[property="v-s:dateTo"]', '01.01.2034')
         .click('div#positions div.checkbox label span.position-label')
-        .typeText('veda-control[rel="v-s:delegate"]', 'Андрей Бычин')
-        .click('div.suggestions div.suggestion[resource="d:RU1121001280_employee_2"]')
+        .typeText('veda-control[rel="v-s:delegate"]', 'Администратор1')
+        .click('div.suggestions div.suggestion[resource="td:AleksandraKhvostikova"]')
         .click('button#save')
     basic.logout();
-    basic.login('bychina', '123');
+    basic.login('khvostiat', '123');
       await t
         //проверяем появилась ли задача и отвечаем на неё
         .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
         .click('ul.nav.nav-pills li span.actor[about="td:Analyst1"]')
         .expect(Selector('div.result-heading small.stats-top.pull-right span.badge[property="v-fs:authorized"]').innerText).eql('1')
-        .click('table.table-condensed.table-bordered.table-striped tbody.result-container a.glyphicon.glyphicon-search')
+        .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
         .click('button#send')
         .wait(5000)
         .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
