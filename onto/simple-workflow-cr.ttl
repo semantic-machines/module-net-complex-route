@@ -38,7 +38,7 @@ s-wf:crf_a_to_jp a v-wf:Flow;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_join_point;
-  v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', newUri ('v-wf:DecisionApprove')) == false";
+  v-wf:predicate "task_result.is_exists_result (task_result) == true && task_result.is_all_executors_taken_decision ('result', veda.Util.newUri ('v-wf:DecisionApprove')) == false";
 .
 
 s-wf:crf_e_to_i2 a v-wf:Flow;
@@ -273,7 +273,7 @@ s-wf:map_user_task_form_label_coordination
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression "newStr ('Согласовать документ')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('Согласовать документ')" ;
   rdfs:label "User_task_form_label=согласование"@ru ;
 .
 
@@ -281,7 +281,7 @@ s-wf:map_user_task_form_label_instruction
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression "newStr ('Исполнить поручение')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('Исполнить поручение')" ;
   rdfs:label "User_task_form_label=поручение"@ru ;
 .
 
@@ -289,7 +289,7 @@ s-wf:map_user_task_form_label_remake
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:user_task_form_label ;
-  v-wf:mappingExpression "newStr ('Доработать документ')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('Доработать документ')" ;
   rdfs:label "User_task_form_label=доработать"@ru ;
 .
 
@@ -297,7 +297,7 @@ s-wf:map_possible_decision_for_instruction
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:possible_decision ;
-  v-wf:mappingExpression "[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect')]" ;
+  v-wf:mappingExpression "[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect')]" ;
   rdfs:label "Варианты ответа для исполнения"^^xsd:string;
 .
 
@@ -312,7 +312,7 @@ s-wf:map_coordinator1_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression "newStr ('1')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('1')" ;
 .
 
 s-wf:map_coordinator2
@@ -326,7 +326,7 @@ s-wf:map_coordinator2_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression "newStr ('2')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('2')" ;
 .
 
 s-wf:map_coordinator3
@@ -340,7 +340,7 @@ s-wf:map_coordinator3_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression "newStr ('3')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('3')" ;
 .
 
 s-wf:map_coordinator4
@@ -354,7 +354,7 @@ s-wf:map_coordinator4_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression "newStr ('4')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('4')" ;
 .
 
 s-wf:map_coordinator5
@@ -368,7 +368,7 @@ s-wf:map_coordinator5_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression "newStr ('5')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('5')" ;
 .
 
 s-wf:map_coordinator6
@@ -382,7 +382,7 @@ s-wf:map_coordinator6_1
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
-  v-wf:mappingExpression "newStr ('6')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('6')" ;
 .
 # ------------- journal ------------------------
 
@@ -390,14 +390,14 @@ s-wf:map_jrn_msg_rd
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression "newStr ('права были понижены')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('права были понижены')" ;
 .
 
 s-wf:map_jrn_msg_rd_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression "newUri ('v-wf:TaskCompleted')" ;
+  v-wf:mappingExpression "veda.Util.newUri ('v-wf:TaskCompleted')" ;
 .
 
 s-wf:map_jrn_msg_t3_b
@@ -411,63 +411,63 @@ s-wf:map_jrn_msg_t6_b
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression "newStr ('отправлено на подписание')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('отправлено на подписание')" ;
 .
 
 s-wf:map_jrn_msg_t3_b_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression "newUri ('v-wf:TaskGiven')" ;
+  v-wf:mappingExpression "veda.Util.newUri ('v-wf:TaskGiven')" ;
 .
 
 s-wf:map_jrn_ev_type_4_TaskGiven
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression "newUri ('v-wf:TaskGiven')" ;
+  v-wf:mappingExpression "veda.Util.newUri ('v-wf:TaskGiven')" ;
 .
 
 s-wf:map_jrn_msg_t3_e
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression "newStr ('закончено согласование 1 уровень')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('закончено согласование 1 уровень')" ;
 .
 
 s-wf:map_jrn_msg_t6_e
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression "newStr ('закончено подписание')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('закончено подписание')" ;
 .
 
 s-wf:map_jrn_msg_t3_e_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression "newUri ('v-wf:TaskCompleted')" ;
+  v-wf:mappingExpression "veda.Util.newUri ('v-wf:TaskCompleted')" ;
 .
 
 s-wf:map_jrn_ev_type_4_TaskCompleted
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression "newUri ('v-wf:TaskCompleted')" ;
+  v-wf:mappingExpression "veda.Util.newUri ('v-wf:TaskCompleted')" ;
 .
 
 s-wf:map_jrn_msg_t1e
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression "newStr ('процесс запущен')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('процесс запущен')" ;
 .
 
 s-wf:map_jrn_msg_t1e_ev
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_ev_type ;
-  v-wf:mappingExpression "newUri ('v-wf:ProcessStarted')" ;
+  v-wf:mappingExpression "veda.Util.newUri ('v-wf:ProcessStarted')" ;
 .
 #----------------------- трансформация для стартовой формы -------------------------------------------------
 
@@ -605,15 +605,15 @@ s-wf:rul_transform21_0
   v-wf:aggregate  "putValue ('v-wf:onDocument')";
 #  v-wf:aggregate  "putExecutor ('v-wf:to')";
   v-wf:aggregate  """
-    if ( getUri(get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
-      putUri ('v-wf:to', getUri(get_properties_chain(executor, [{$get: 'v-s:employee'}], [executor])));
+    if ( veda.Util.getUri(get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
+      putUri ('v-wf:to', veda.Util.getUri(get_properties_chain(executor, [{$get: 'v-s:employee'}], [executor])));
     } else {
       putExecutor ('v-wf:to');
     }
   """;
   v-wf:aggregate  """
-    if ( getUri(get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
-      putUri ('v-wf:to', getUri(get_properties_chain(executor, [{$get: 'v-s:occupation'}], [executor])));
+    if ( veda.Util.getUri(get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
+      putUri ('v-wf:to', veda.Util.getUri(get_properties_chain(executor, [{$get: 'v-s:occupation'}], [executor])));
     }
   """;
   v-wf:aggregate  "putWorkOrder ('v-wf:onWorkOrder')";
@@ -816,7 +816,7 @@ s-wf:rul_transform3_complex
 s-wf:map_msg_template_project
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-project')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-project')";
   rdfs:isDefinedBy s-wf: ;
 .
 
@@ -845,42 +845,42 @@ v-s:SendComplex
 s-wf:map_msg_template_4_SV_default_template_notification_approvalEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_approvalEnd')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal-notification_approvalEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_signEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_signEnd')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal-notification_signEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_coordinationEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_coordinationEnd')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal-notification_coordinationEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_default_template_notification_reviewEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_reviewEnd')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal-notification_reviewEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_processStart
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_processStart')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal-notification_processStart')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 s-wf:map_msg_template_4_SV_processEnd
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal-notification_processEnd')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal-notification_processEnd')";
   rdfs:isDefinedBy s-wf: ;
 .
 

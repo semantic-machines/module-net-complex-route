@@ -102,14 +102,14 @@ d:task_autoinstruction_subnet_journal_hasFlow
 d:map_autoinstruction_task_action
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_actor_task_action ;
-  v-wf:mappingExpression "newStr ('Исполнить поручение')" ;
+  v-wf:mappingExpression "veda.Util.newStr ('Исполнить поручение')" ;
   rdfs:label "Actor_task_action <- 'Исполнить поручение'"^^xsd:string ;
 .
 
 d:set_change_status_true
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_set_status ;
-  v-wf:mappingExpression  "newBool (true);" ;
+  v-wf:mappingExpression  "veda.Util.newBool (true);" ;
 .
 d:executor_autoinstruction_notification_response
   rdf:type v-s:Codelet ;
@@ -118,9 +118,9 @@ d:executor_autoinstruction_notification_response
   (function () {
     var mer = get_individual(task.ticket, process.getExecutor()[0].data);
     mer['v-wf:takenDecision'] = process.getLocalVariable ('decision_of_set_responsible');
-    mer['v-s:dateFact'] = newDate(Date.now());
+    mer['v-s:dateFact'] = veda.Util.newDate(Date.now());
     put_individual(task.ticket, mer, _event_id);
-    return [get_new_variable('res', newStr('OK'))];
+    return [get_new_variable('res', veda.Util.newStr('OK'))];
     }());
   """;
   rdfs:label "Ответ из формы решения пользователя"@ru ;
@@ -144,22 +144,22 @@ d:task_autoinstruction_map_controller
 s-wf:map_msg_template_autoinstruction-universal
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_msg_template ;
-  v-wf:mappingExpression "newUri ('s-wf:msg-template-universal')";
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:msg-template-universal')";
   rdfs:isDefinedBy s-wf: ;
 .
 
 d:task_autoinstraction_decision_for_instruction
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:possible_decision ;
-  v-wf:mappingExpression "[newUri ('v-wf:DecisionAchieved'), newUri('v-wf:DecisionRejected'), newUri('v-wf:DecisionNotPerformed'), newUri('v-wf:DecisionRedirect'), newUri('v-wf:DecisionNotForMe')]" ;
+  v-wf:mappingExpression "[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]" ;
   rdfs:label "Варианты ответа для исполнения"^^xsd:string;
 .
 
 d:map_decision_form_type_autoinstruction
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_decision_form_type ;
-  v-wf:mappingExpression "newUri ('s-wf:UserTaskForm')";
-  rdfs:label "Map decision_form_type = newUri ('s-wf:UserTaskForm')"@ru ;
+  v-wf:mappingExpression "veda.Util.newUri ('s-wf:UserTaskForm')";
+  rdfs:label "Map decision_form_type = veda.Util.newUri ('s-wf:UserTaskForm')"@ru ;
 .
 
 d:map_autoinstraction_to_date
@@ -179,17 +179,17 @@ d:map_autoinstraction_notification_response
 d:map_transformation_setStatusExecution1
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:transformation_uri ;
-  v-wf:mappingExpression "newUri('mnd-s:set_StatusExecution')" ;
+  v-wf:mappingExpression "veda.Util.newUri('mnd-s:set_StatusExecution')" ;
 .
 
 d:map_transformation_setStatusExecuted1
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:transformation_uri ;
-  v-wf:mappingExpression "newUri('mnd-s:set_StatusExecuted')" ;
+  v-wf:mappingExpression "veda.Util.newUri('mnd-s:set_StatusExecuted')" ;
 .
 
 d:map_transformation_setStatusRejected1
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:transformation_uri ;
-  v-wf:mappingExpression "newUri('mnd-s:set_StatusRejected')" ;
+  v-wf:mappingExpression "veda.Util.newUri('mnd-s:set_StatusRejected')" ;
 .
