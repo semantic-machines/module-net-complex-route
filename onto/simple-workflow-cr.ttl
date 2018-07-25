@@ -121,109 +121,109 @@ s-wf:var_distribution_recipient
 s-wf:executor_informing
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_informing'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_informing'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
 .
 
 s-wf:executor_introduction
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_introduction'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_introduction'}])" ;
 .
 
 s-wf:executor_coordination1
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination1'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination1'}])" ;
 .
 
 s-wf:executor_coordination2
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination2'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination2'}])" ;
 .
 
 s-wf:executor_coordination3
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination3'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination3'}])" ;
 .
 
 s-wf:executor_coordination4
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination4'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination4'}])" ;
 .
 
 s-wf:executor_coordination5
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination5'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination5'}])" ;
 .
 
 s-wf:executor_coordination6
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination6'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination6'}])" ;
 .
 
 s-wf:executor_sign
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_sign'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_sign'}])" ;
 .
 
 s-wf:executor_approval
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_approval'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_approval'}])" ;
 .
 
 s-wf:executor_instruction
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction'}])" ;
 .
 
 s-wf:executor_instruction2
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction2'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction2'}])" ;
 .
 
 s-wf:executor_instruction3
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction3'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction3'}])" ;
 .
 
 s-wf:executor_instruction4
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction4'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction4'}])" ;
 .
 
 s-wf:executor_review
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_review'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_review'}])" ;
 .
 
 s-wf:executor_examination
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_examination'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_examination'}])" ;
 .
 
 s-wf:executor_autoinstruction
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "(get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0)? get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]) : get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}])" ;
+  v-wf:executorExpression "(veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0)? veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]) : veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}])" ;
 .
 
 s-wf:executor_distribution
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:executorExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_distribution'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_distribution'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
 .
 s-wf:executor_4m_PLV_coordinator
   rdf:type v-wf:ExecutorDefinition ;
@@ -404,7 +404,7 @@ s-wf:map_jrn_msg_t3_b
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_journal_msg ;
-  v-wf:mappingExpression "get_properties_chain ( process.getExecutor(), [{$get:'s-wf:SimpleRouteStartForm_task_label'}])" ;
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'s-wf:SimpleRouteStartForm_task_label'}])" ;
 .
 
 s-wf:map_jrn_msg_t6_b
@@ -605,15 +605,15 @@ s-wf:rul_transform21_0
   v-wf:aggregate  "putValue ('v-wf:onDocument')";
 #  v-wf:aggregate  "putExecutor ('v-wf:to')";
   v-wf:aggregate  """
-    if ( veda.Util.getUri(get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
-      putUri ('v-wf:to', veda.Util.getUri(get_properties_chain(executor, [{$get: 'v-s:employee'}], [executor])));
+    if ( veda.Util.getUri(veda.Workflow.get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
+      putUri ('v-wf:to', veda.Util.getUri(veda.Workflow.get_properties_chain(executor, [{$get: 'v-s:employee'}], [executor])));
     } else {
       putExecutor ('v-wf:to');
     }
   """;
   v-wf:aggregate  """
-    if ( veda.Util.getUri(get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
-      putUri ('v-wf:to', veda.Util.getUri(get_properties_chain(executor, [{$get: 'v-s:occupation'}], [executor])));
+    if ( veda.Util.getUri(veda.Workflow.get_properties_chain(executor, [{$get: 'rdf:type'}], [executor])) === 'v-s:Appointment' ) {
+      putUri ('v-wf:to', veda.Util.getUri(veda.Workflow.get_properties_chain(executor, [{$get: 'v-s:occupation'}], [executor])));
     }
   """;
   v-wf:aggregate  "putWorkOrder ('v-wf:onWorkOrder')";
@@ -935,5 +935,5 @@ v-wf:DecisionGoCoordination6
 s-wf:map_documentType_4_TIV_DocId_documentType
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_documentType ;
-  v-wf:mappingExpression "get_properties_chain (task.getInputVariable ('docId'), [{$get:'rdf:type'}])";
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain (task.getInputVariable ('docId'), [{$get:'rdf:type'}])";
 .

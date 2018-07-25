@@ -99,7 +99,7 @@ s-wf:crf_dr_to_i a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_informing_task;
-  v-wf:predicate "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_informing'}]).length > 0"^^xsd:string.
+  v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_informing'}]).length > 0"^^xsd:string.
 
 s-wf:cr_informing_task a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -666,7 +666,7 @@ s-wf:crf_r_to_i5 a v-wf:Flow;
   v-s:lastEditor cfg:AdministratorAppointment1;
   v-s:updateCounter "19"^^xsd:integer;
   v-wf:flowsInto s-wf:cr_informing5;
-  v-wf:predicate "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_review'}]).length > 0"^^xsd:string.
+  v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_review'}]).length > 0"^^xsd:string.
 
 s-wf:cr_instruction2 a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -814,7 +814,7 @@ s-wf:crf_a_to_i2 a v-wf:Flow;
   v-s:lastEditor cfg:AdministratorAppointment;
   v-s:updateCounter "19"^^xsd:integer;
   v-wf:flowsInto s-wf:cr_informing2;
-  v-wf:predicate "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_approval'}]).length > 0"^^xsd:string.
+  v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_approval'}]).length > 0"^^xsd:string.
 
 s-wf:cr_informing3 a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -842,7 +842,7 @@ s-wf:crf_s_to_i3 a v-wf:Flow;
   v-s:lastEditor cfg:AdministratorAppointment;
   v-s:updateCounter "12"^^xsd:integer;
   v-wf:flowsInto s-wf:cr_informing3;
-  v-wf:predicate "get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_sign'}]).length > 0"^^xsd:string.
+  v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_sign'}]).length > 0"^^xsd:string.
 
 s-wf:cr_informing4 a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
@@ -869,7 +869,7 @@ s-wf:crf_c6_to_i4 a v-wf:Flow;
   v-s:lastEditor cfg:AdministratorAppointment;
   v-s:updateCounter "7"^^xsd:integer;
   v-wf:flowsInto s-wf:cr_informing4;
-  v-wf:predicate "(get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination1'}]).length > 0) || (get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination2'}]).length > 0) || (get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination3'}]).length > 0) || (get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination4'}]).length > 0) || (get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination5'}]).length > 0) || (get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination6'}]).length > 0)"^^xsd:string.
+  v-wf:predicate "(veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination1'}]).length > 0) || (veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination2'}]).length > 0) || (veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination3'}]).length > 0) || (veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination4'}]).length > 0) || (veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination5'}]).length > 0) || (veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_coordination6'}]).length > 0)"^^xsd:string.
 
 s-wf:crf_dr_to_e  a v-wf:Flow;
   v-s:created "2017-06-06T07:45:34.689Z"^^xsd:dateTime;
@@ -890,7 +890,7 @@ s-wf:map_to_1_informing_task
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_to ;
-  v-wf:mappingExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_informing'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_informing'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
   rdfs:label "map_to_1_informing_task" ;
 .
 
@@ -898,7 +898,7 @@ s-wf:map_to_1_distribution_task
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_to ;
-  v-wf:mappingExpression "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_distribution'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_distribution'}, {$get:'s-wf:SimpleRouteStartForm_participant'}])" ;
   rdfs:label "map_to_2_informing_task" ;
 .
 
@@ -920,4 +920,4 @@ s-wf:autoActionProcess
 s-wf:crf_a_to_aap a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:flowsInto s-wf:autoActionProcess;
-  v-wf:predicate "get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0 || get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}]).length > 0"^^xsd:string.
+  v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0 || veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}]).length > 0"^^xsd:string.

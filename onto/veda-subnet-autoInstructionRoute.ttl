@@ -120,7 +120,7 @@ d:executor_autoinstruction_notification_response
     mer['v-wf:takenDecision'] = process.getLocalVariable ('decision_of_set_responsible');
     mer['v-s:dateFact'] = veda.Util.newDate(Date.now());
     put_individual(task.ticket, mer, _event_id);
-    return [get_new_variable('res', veda.Util.newStr('OK'))];
+    return [veda.Workflow.get_new_variable('res', veda.Util.newStr('OK'))];
     }());
   """;
   rdfs:label "Ответ из формы решения пользователя"@ru ;
@@ -130,7 +130,7 @@ d:executor_from_activity_responsible1
   rdf:type v-wf:ExecutorDefinition ;
   v-wf:executorExpression
   """
-  get_properties_chain ( process.getExecutor(), [{$get:'v-s:responsible'}])
+  veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'v-s:responsible'}])
   """;
   rdfs:label "Исполнители из формы решения пользователя"@ru ;
 .
@@ -138,7 +138,7 @@ d:executor_from_activity_responsible1
 d:task_autoinstruction_map_controller
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_controller ;
-  v-wf:mappingExpression "get_properties_chain ( process.getExecutor(), [{$get:'v-s:controller'}])" ;
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'v-s:controller'}])" ;
 .
 
 s-wf:map_msg_template_autoinstruction-universal
@@ -165,7 +165,7 @@ d:map_decision_form_type_autoinstruction
 d:map_autoinstraction_to_date
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_actor_task_date_to ;
-  v-wf:mappingExpression "get_properties_chain (process.getExecutor(), [{$get:'v-s:dateTo'}])" ;
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain (process.getExecutor(), [{$get:'v-s:dateTo'}])" ;
   rdfs:label "Контрольный срок"^^xsd:string ;
 .
 
