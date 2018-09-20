@@ -5,8 +5,6 @@ language: node_js
 node_js: "stable"
 
 before_install:
-  - chmod +x ./install.sh
-  - ./install.sh&>install.log
   - stty cols 80
   - sudo apt-get install nodejs-legacy
   - npm install -g grunt-cli
@@ -26,9 +24,9 @@ addons:
 
 # Build
 install:
-  - ./control-install.sh&>install.log 
+  - chmod +x ./install.sh
+  - ./install.sh&>install.log
   - source $HOME/.cargo/env
-  - dub -v fetch vibe-d --version=0.7.30
 #  - npm install --save-dev testcafe-browser-provider-saucelabs
   - npm install --save-dev testcafe
   - go version
@@ -45,11 +43,6 @@ before_script:
 
 script:
   - travis_wait 20 grunt test --stack --verbose
-  - testcafe chromium qa/testcafe/testInbox.js
-  - testcafe chromium qa/testcafe/testRepeatComplexRoute.js
-  - testcafe chromium qa/testcafe/testNetComplexRoute.js
-  - testcafe chromium qa/testcafe/testDelegationDocument.js
-  - testcafe chromium qa/testcafe/testDelegationTask.js
 
 after_script:
   - ./control-stop.sh
