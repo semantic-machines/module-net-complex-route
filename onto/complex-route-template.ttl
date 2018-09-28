@@ -73,9 +73,18 @@ s-wf:ComplexRouteStartForm_Common_Template
   v-ui:template """
 <script>
   console.log("This is COMMON ComplexRouteStartForm template");
+
+  var stages = [];
+  var complex = 's-wf:ComplexRouteStartForm_';
+  var simple = 's-wf:SimpleRouteStartForm_';
+
   if (this.hasValue("v-wf:isProcess")) {
     $('#save_and_start_process', template).remove();
-    return;
+    for(var key in individual.properties) {
+      if (key.indexOf(complex) != -1) {
+        stages.push(key.split('_')[1]);
+      }
+    };
   } else {
     $("span.statusWorkflow", template).remove();
     $("#on-document", template).remove();
@@ -95,82 +104,82 @@ s-wf:ComplexRouteStartForm_Common_Template
       });
       veda.Util.send(individual, template);
     });
+
+    var doc = individual['v-wf:processedDocument'][0];
+    if (!doc) { return; }
+    individual["v-s:onDocument"] = [doc];
+
+    if (individual.hasValue(complex+"informing")) {
+      stages.push("informing");
+      individual[complex+'informing'][0]['v-s:parent'] = [individual];
+    }
+    for (var i = 1; i <= 6; i++) {
+      if (individual.hasValue(complex+"coordination"+i)){
+        individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAgreed'), 
+          new veda.IndividualModel('v-wf:DecisionDeclined'), 
+          new veda.IndividualModel('v-wf:DecisionNoAgreed'), 
+          new veda.IndividualModel('v-wf:DecisionRedirect'), 
+          new veda.IndividualModel('v-wf:DecisionNotForMe')];
+        individual[complex+'coordination'+i][0][simple+'task_label'] = veda.Util.mlstring("Согласовать", "Coordinate");
+        stages.push("coordination"+i);
+        individual[complex+'coordination'+i][0]['v-s:parent'] = [individual];
+      };
+    }
+    if (individual.hasValue(complex+"introduction")) {
+      individual[complex+'introduction'][0][simple+'possible_decisions'] = ['v-wf:DecisionExamined'];
+      individual[complex+'introduction'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомление", "Introduction");
+      stages.push("introduction");
+      individual[complex+'introduction'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"sign")) {
+      individual[complex+'sign'][0][simple+'possible_decisions'] = ['v-wf:DecisionSign', 'v-wf:DecisionDeclined', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'sign'][0][simple+'task_label'] = veda.Util.mlstring("Подписать", "Sign");
+      stages.push("sign");
+      individual[complex+'sign'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"approval")) {
+      individual[complex+'approval'][0][simple+'possible_decisions'] = ['v-wf:DecisionApprove', 'v-wf:DecisionDeclined', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'approval'][0][simple+'task_label'] = veda.Util.mlstring("Утвердить", "Approve");
+      stages.push("approval");
+      individual[complex+'approval'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"review")) {
+      individual[complex+'review'][0][simple+'possible_decisions'] = ['v-wf:DecisionReview', 'v-wf:DecisionRejected', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'review'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Review");
+      stages.push("review");
+      individual[complex+'review'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"instruction")) {
+      individual[complex+'instruction'][0][simple+'possible_decisions'] = ['v-wf:DecisionAchieved', 'v-wf:DecisionRejected', 'v-wf:DecisionNotPerformed', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'instruction'][0][simple+'task_label'] = veda.Util.mlstring("Исполнить поручение", "Execute task");
+      stages.push("instruction");
+      individual[complex+'instruction'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"instruction2")) {
+      individual[complex+'instruction2'][0][simple+'possible_decisions'] = ['v-wf:DecisionAchieved', 'v-wf:DecisionRejected', 'v-wf:DecisionNotPerformed', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'instruction2'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
+      stages.push("instruction2");
+      individual[complex+'instruction2'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"instruction3")) {
+      individual[complex+'instruction3'][0][simple+'possible_decisions'] = ['v-wf:DecisionAchieved', 'v-wf:DecisionRejected', 'v-wf:DecisionNotPerformed', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'instruction3'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Execute task");
+      stages.push("instruction3");
+      individual[complex+'instruction3'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"instruction4")) {
+      individual[complex+'instruction4'][0][simple+'possible_decisions'] = ['v-wf:DecisionAchieved','v-wf:DecisionRejected', 'v-wf:DecisionNotPerformed', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'instruction4'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
+      stages.push("instruction4");
+      individual[complex+'instruction4'][0]['v-s:parent'] = [individual];
+    }
+    if (individual.hasValue(complex+"examination")) {
+      individual[complex+'examination'][0][simple+'possible_decisions'] = ['v-wf:DecisionExamined', 'v-wf:DecisionRejected', 'v-wf:DecisionNotPerformed', 'v-wf:DecisionRedirect', 'v-wf:DecisionNotForMe'];
+      individual[complex+'examination'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Examine");
+      stages.push("examination");
+      individual[complex+'examination'][0]['v-s:parent'] = [individual];
+    }
   };
-  var stages = [];
-  var complex = 's-wf:ComplexRouteStartForm_';
-  var simple = 's-wf:SimpleRouteStartForm_';
-
-  var doc = individual['v-wf:processedDocument'][0];
-  if (!doc) { return; }
-  individual["v-s:onDocument"] = [doc];
-
-  if (individual.hasValue(complex+"informing")) {
-    stages.push("informing");
-    individual[complex+'informing'][0]['v-s:parent'] = [individual];
-  }
-  for (var i = 1; i <= 6; i++) {
-    if (individual.hasValue(complex+"coordination"+i)){
-      individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionAgreed'), veda.Util.newUri('v-wf:DecisionDeclined'), veda.Util.newUri('v-wf:DecisionNoAgreed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-      individual[complex+'coordination'+i][0][simple+'task_label'] = veda.Util.mlstring("Согласовать", "Coordinate");
-      stages.push("coordination"+i);
-      individual[complex+'coordination'+i][0]['v-s:parent'] = [individual];
-    };
-  }
-  if (individual.hasValue(complex+"introduction")) {
-    individual[complex+'introduction'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionExamined')]")];
-    individual[complex+'introduction'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомление", "Introduction");
-    stages.push("introduction");
-    individual[complex+'introduction'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"sign")) {
-    individual[complex+'sign'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionSign'), veda.Util.newUri('v-wf:DecisionDeclined'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'sign'][0][simple+'task_label'] = veda.Util.mlstring("Подписать", "Sign");
-    stages.push("sign");
-    individual[complex+'sign'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"approval")) {
-    individual[complex+'approval'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionApprove'), veda.Util.newUri('v-wf:DecisionDeclined'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'approval'][0][simple+'task_label'] = veda.Util.mlstring("Утвердить", "Approve");
-    stages.push("approval");
-    individual[complex+'approval'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"review")) {
-    individual[complex+'review'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionReview'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'review'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Review");
-    stages.push("review");
-    individual[complex+'review'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"instruction")) {
-    individual[complex+'instruction'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'instruction'][0][simple+'task_label'] = veda.Util.mlstring("Исполнить поручение", "Execute task");
-    stages.push("instruction");
-    individual[complex+'instruction'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"instruction2")) {
-    individual[complex+'instruction2'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'instruction2'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
-    stages.push("instruction2");
-    individual[complex+'instruction2'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"instruction3")) {
-    individual[complex+'instruction3'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'instruction3'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Execute task");
-    stages.push("instruction3");
-    individual[complex+'instruction3'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"instruction4")) {
-    individual[complex+'instruction4'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'instruction4'][0][simple+'task_label'] = veda.Util.mlstring("Рассмотреть", "Execute task");
-    stages.push("instruction4");
-    individual[complex+'instruction4'][0]['v-s:parent'] = [individual];
-  }
-  if (individual.hasValue(complex+"examination")) {
-    individual[complex+'examination'][0][simple+'possible_decisions'] = [new String("[veda.Util.newUri ('v-wf:DecisionExamined'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]")];
-    individual[complex+'examination'][0][simple+'task_label'] = veda.Util.mlstring("Ознакомиться", "Examine");
-    stages.push("examination");
-    individual[complex+'examination'][0]['v-s:parent'] = [individual];
-  }
-
   stages.forEach(function(stage) {
     var routeid = complex+stage;
     var sub = individual[routeid][0];
