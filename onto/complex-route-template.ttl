@@ -180,6 +180,9 @@ s-wf:ComplexRouteStartForm_Common_Template
       stages.push("examination");
       individual[complex+'examination'][0]['v-s:parent'] = [individual];
     }
+    if (individual.hasValue(complex+"autoinstruction")) {
+      stages.push("autoinstruction");
+    }
   };
 
   stages.forEach(function(stage) {
