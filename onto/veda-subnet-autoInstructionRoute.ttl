@@ -165,7 +165,7 @@ d:map_decision_form_type_autoinstruction
 d:map_autoinstraction_to_date
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_actor_task_date_to ;
-  v-wf:mappingExpression "veda.Workflow.get_properties_chain (process.getExecutor(), [{$get:'v-s:dateTo'}])" ;
+  v-wf:mappingExpression "veda.Workflow.get_properties_chain (process.getExecutor(), [{$get:'v-s:dateToPlan'}])" ;
   rdfs:label "Контрольный срок"^^xsd:string ;
 .
 
