@@ -209,7 +209,7 @@ s-wf:ComplexRouteStartForm_Common_Template
     }
   </style>
   <h2 about="s-wf:ComplexRouteStartForm" property="rdfs:label"></h2>
-  <h4 id="on-document" rel="v-s:onDocument" data-template="v-ui:ClassNameLabelLinkTemplate"></h4>
+  <h4 id="on-document" about="@" rel="v-s:onDocument" data-template="v-ui:ClassNameLabelLinkTemplate"></h4>
   <br>
   <div class="row">
     <div class="col-md-6 simpleStartForm informing" rel="s-wf:ComplexRouteStartForm_informing" data-embedded="true">
