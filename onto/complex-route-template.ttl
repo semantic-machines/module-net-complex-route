@@ -96,10 +96,12 @@ s-wf:ComplexRouteStartForm_Common_Template
           if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
             if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
               delete individual.properties[routeid];
+              $('[rel="' + routeid + '"]', template).empty();
             }
           };
         } else {
           delete individual.properties[routeid];
+          $('[rel="' + routeid + '"]', template).empty();
         };
       });
       veda.Util.send(individual, template);
