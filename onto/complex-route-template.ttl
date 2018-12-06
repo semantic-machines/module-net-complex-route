@@ -196,8 +196,14 @@ s-wf:ComplexRouteStartForm_Common_Template
     if (!sub.hasValue(simple+'editable') || sub[simple+'editable'][0] == false) {
       $('.'+stage, template).attr('about', '@');
       $('.'+stage, template).removeAttr('data-embedded');
-      $('veda-control[rel="s-wf:ComplexRouteStartForm_'+stage+'"]', template).remove();
-      sub.save();
+      sub['v-s:parent'] = [individual];
+      //$('.' + stage + ' [rel]:not([about])', template).attr('about', '@');
+      //$('.' + stage + ' [property]:not([about])', template).attr('about', '@');
+      //$('.' + stage + 'veda-control[rel="s-wf:ComplexRouteStartForm_'+stage+'"]', template).remove();
+      
+      if (individual.isNew()) {
+        sub.save();  
+      }
     }
   });
 //# sourceURL=s-wf:ComplexRouteStartForm_Template_pre
