@@ -13,12 +13,11 @@ import { Selector, t } from 'testcafe';
         .click('div.suggestion[resource="s-wf:ComplexRouteTest0"]')
         .click('.action#send')
         .click('div.actions.actions-fixed button#save_and_start_process')
-    basic.logout();
-    //согласование 1
-    basic.login('karpovrt', '123');
+        //согласование 1
+        .expect(Selector('#user-info').innerText).eql('Администратор2 .\n')
     basic.sendInbox();
     basic.logout();
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
     basic.sendInbox();
     basic.logout();
     //согласование 2
@@ -26,7 +25,7 @@ import { Selector, t } from 'testcafe';
     basic.sendInbox();
     basic.logout();
     //отклоняем
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
       await t
         .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
         .wait(5000)
@@ -47,14 +46,14 @@ import { Selector, t } from 'testcafe';
         .click('button#send')
     basic.logout();
     //согласование 2
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
     basic.sendInbox();
     basic.logout();
     basic.login('karpovrt', '123');
     basic.sendInbox();
     basic.logout();
     //проверяем задачи под joeat
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
     basic.checkInbox('2');
     basic.logout();
     //проверяем задачи под karpovrt
@@ -62,7 +61,7 @@ import { Selector, t } from 'testcafe';
     basic.checkInbox('0');
     basic.logout();
     //отвечаем на задачу под joeat
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
     basic.sendInbox();
     basic.logout();
     //проверяем задачи под karpovrt
@@ -70,7 +69,7 @@ import { Selector, t } from 'testcafe';
     basic.checkInbox('0');
     basic.logout();
     //отвечаем на задачу под joeat
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
     basic.sendInbox();
     basic.logout();
     //проверяем задачи под karpovrt
@@ -86,12 +85,12 @@ import { Selector, t } from 'testcafe';
         .click('button.search-button')
         .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
         .click('div.possible-decisions.clearfix div[rel="v-wf:possibleDecisionClass"] div.radio[resource="v-wf:DecisionRedirect"] label input[name="decisionRadios"]')
-        .typeText('veda-control[rel="v-wf:to"]', 'АдминистраторJ')
-        .click('div.suggestions div.suggestion[resource="td:AndreyJoe-Analyst2"]')
+        .typeText('veda-control[rel="v-wf:to"]', 'Администратор4')
+        .click('div.suggestions div.suggestion[resource="td:AndreyBychin-Analyst2"]')
         .click('button#send')
     basic.logout();
     //не мне
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
       await t
         .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
         .wait(5000)
@@ -109,12 +108,12 @@ import { Selector, t } from 'testcafe';
         .click('button.search-button')
         .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
         .click('div.possible-decisions.clearfix div[rel="v-wf:possibleDecisionClass"] div.radio[resource="v-wf:DecisionRemake"] label input[name="decisionRadios"]')
-        .typeText('veda-control[property="rdfs:comment"]', 'АдминистраторJ')
         .click('veda-control[property="v-s:dateTo"]')
+        .typeText('veda-control[property="rdfs:comment"]', 'Администратор4')
         .click('button#send')
     basic.logout();
     //не выполнено
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
       await t
         .click('ul.nav.navbar-nav.navbar-right li[about="v-ft:Inbox"]')
         .wait(5000)
@@ -132,20 +131,25 @@ import { Selector, t } from 'testcafe';
         .click('button.search-button')
         .click('table.table.table-striped.table-condensed tbody.result-container a.glyphicon.glyphicon-search')
         .click('div.possible-decisions.clearfix div[rel="v-wf:possibleDecisionClass"] div.radio[resource="v-wf:DecisionRemake"] label input[name="decisionRadios"]')
-        .typeText('veda-control[property="rdfs:comment"]', 'Администратор2')
         .click('veda-control[property="v-s:dateTo"]')
+        .typeText('veda-control[property="rdfs:comment"]', 'Администратор2')
         .click('button#send')
     basic.logout();
     //выполнено
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
+      await t
+        .expect(Selector('#user-info').innerText).eql('Администратор4 .\n')
     basic.sendInbox();
     basic.logout();
     //Контролирующий
     basic.login('karpovrt', '123');
+      await t
+        .expect(Selector('#user-info').innerText).eql('Администратор2 .\n')
     basic.sendInbox();
     basic.logout();
-    basic.login('joeat', '123');
+    basic.login('BychinAT', '123');
+      await t
+        .expect(Selector('#user-info').innerText).eql('Администратор4 .\n')
     basic.sendInbox();
     basic.logout();
-
 });

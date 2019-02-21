@@ -12,6 +12,7 @@ test('testInbox', async t => {
       .typeText('veda-control.fulltext.dropdown', 'Тестовый шаблон комплексного маршурута')
       .click('div.suggestion[resource="s-wf:ComplexRouteTest"]')
       .click('.action#save')
+      .wait(1000)
       .click('.action#task-button')
       .click('ul#standard-tasks li a[about="v-wf:taskRouteStartForm"]')
       .typeText('veda-control.fulltext[rel="v-s:responsible"]', 'Администратор3')
@@ -21,7 +22,9 @@ test('testInbox', async t => {
       .pressKey('ctrl+a delete')
       .typeText('veda-control.fulltext[rel="v-s:responsible"]', 'Администратор5')
       .click('div.suggestions div.suggestion[resource="td:RomanIvanov-CommercialDirector"]')
+      .wait(2000)
       .click('div.suggestions div.suggestion[resource="td:RomanIvanov-Analyst1"]')
+      .wait(2000)
       .click('div.fulltext-menu small.actions.pull-right span.close-menu')
       .typeText('veda-control[property="rdfs:comment"]', timeStamp)
       .click('div.modal-body button#send.action')
@@ -57,11 +60,11 @@ test('testInbox', async t => {
       .click('button#send')
   basic.checkInbox('0');
     await t
-      .expect(Selector('ul.nav.navbar-nav.navbar-right li#user-info').innerText).eql('5 Администратор5\n');
+      .expect(Selector('ul.nav.navbar-nav.navbar-right li#user-info').innerText).eql('Администратор5 5 .');
   basic.logout();
   basic.login('bushenevvt', '123');
   basic.checkInbox('0');
     await t
-      .expect(Selector('ul.nav.navbar-nav.navbar-right li#user-info').innerText).eql('Администратор3\n');
+      .expect(Selector('ul.nav.navbar-nav.navbar-right li#user-info').innerText).eql('Администратор3 .\n');
   basic.logout();
 });
