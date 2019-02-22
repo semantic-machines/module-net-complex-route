@@ -1,4 +1,4 @@
-import Basic from './basic';
+import Basic from './basicComplexRoute';
 import { Selector, t } from 'testcafe';
   fixture `test Repeat Complex Route`
     .page `http://localhost:8080/`;
