@@ -10,5 +10,6 @@ mkdir $PWD/ontology/$PROJECT_NAME
 cp -r $PWD/qa/data/* $PWD/ontology/$PROJECT_NAME
 cp -r $PWD/onto/* $PWD/ontology/$PROJECT_NAME
 cp $PWD/module.ttl $PWD/ontology/$PROJECT_NAME/module-install.ttl
+mkdir $PWD/ontology/$PROJECT_NAME/test-data
 cp $PWD/qa/data/* $PWD/ontology/$PROJECT_NAME/test-data
 ./control-install.sh
