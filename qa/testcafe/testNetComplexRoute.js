@@ -12,7 +12,8 @@ import { Selector, t } from 'testcafe';
         .typeText('veda-control.fulltext.dropdown', 'Тестовый шаблон комплексного маршурута 0')
         .click('div.suggestion[resource="s-wf:ComplexRouteTest0"]')
         .click('.action#send')
-        .click('div.actions.actions-fixed button#save_and_start_process')
+        .hover('button#save_and_start_process')
+        .click('button#save_and_start_process')
         //согласование 1
         .expect(Selector('#user-info').innerText).eql('Администратор2 .\n')
     basic.sendInbox();
