@@ -1,4 +1,4 @@
-import Basic from './basic';
+import Basic from './basicComplexRoute';
 import { Selector, t } from 'testcafe';
   fixture `test Delegation Task`
     .page `http://localhost:8080/`;
