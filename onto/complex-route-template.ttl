@@ -72,7 +72,7 @@ s-wf:ComplexRouteStartForm_Common_Template
   v-ui:forClass s-wf:ComplexRouteStartForm_Common ;
   v-ui:template """
 <script>
-  console.log("This is COMMON ComplexRouteStartForm template");
+  //console.log("This is COMMON ComplexRouteStartForm template");
 
   var stages = [];
   var complex = 's-wf:ComplexRouteStartForm_';
@@ -118,10 +118,10 @@ s-wf:ComplexRouteStartForm_Common_Template
 
     for (var i = 1; i <= 6; i++) {
       if (individual.hasValue(complex+"coordination"+i)){
-        individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAgreed'), 
-          new veda.IndividualModel('v-wf:DecisionDeclined'), 
-          new veda.IndividualModel('v-wf:DecisionNoAgreed'), 
-          new veda.IndividualModel('v-wf:DecisionRedirect'), 
+        individual[complex+'coordination'+i][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAgreed'),
+          new veda.IndividualModel('v-wf:DecisionDeclined'),
+          new veda.IndividualModel('v-wf:DecisionNoAgreed'),
+          new veda.IndividualModel('v-wf:DecisionRedirect'),
           new veda.IndividualModel('v-wf:DecisionNotForMe')];
         individual[complex+'coordination'+i][0][simple+'task_label'] = veda.Util.mlstring("Согласовать", "Coordinate");
         stages.push("coordination"+i);
@@ -200,9 +200,9 @@ s-wf:ComplexRouteStartForm_Common_Template
       //$('.' + stage + ' [rel]:not([about])', template).attr('about', '@');
       //$('.' + stage + ' [property]:not([about])', template).attr('about', '@');
       //$('.' + stage + 'veda-control[rel="s-wf:ComplexRouteStartForm_'+stage+'"]', template).remove();
-      
+
       if (individual.isNew()) {
-        sub.save();  
+        sub.save();
       }
     }
   });
