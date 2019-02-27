@@ -43,7 +43,7 @@ before_script:
 
 script:
   - travis_wait 20 grunt test --stack --verbose
-  - testcafe chromium qa/testcafe/testNetComplexRoute.js
+  - testcafe --skip-js-errors chromium qa/testcafe/testNetComplexRoute.js
 
 after_script:
   - ./control-stop.sh
