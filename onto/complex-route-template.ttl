@@ -424,14 +424,6 @@ s-wf:ComplexRouteStartForm_Common_Template
   </div>
 </div>
 <script>
-  var doc = individual['v-wf:processedDocument'][0];
-  if (doc['rdf:type'][0].id === "mnd-s:ExternalServiceRequest") {
-    $('.instruction2 .checkbox_setStatus').show();
-  };
-  if ( doc['rdf:type'][0].id === "mnd-s:ItRequest" ) {
-    $('.instruction2 .checkbox_setStatus').show();
-    $('.instruction2 .checkbox_canEdit').show();
-  };
   if (!individual.hasValue("v-wf:isProcess")) {
     $(".actions #save", template).remove();
     $(".actions #edit", template).remove();
