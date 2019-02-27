@@ -39,7 +39,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - fluxbox >/dev/null 2>&1 &
   - ./control-start.sh
-  - sleep 180
+  - sleep 280
 
 script:
   - travis_wait 20 grunt test --stack --verbose
