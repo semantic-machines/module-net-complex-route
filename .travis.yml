@@ -50,4 +50,4 @@ after_script:
 
 after_failure:
   - ./control-stop.sh
-  - ./send-to-chunk-io.sh
+  - ./tools/send-to-chunk-io.sh
