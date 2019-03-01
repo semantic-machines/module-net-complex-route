@@ -39,15 +39,15 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - fluxbox >/dev/null 2>&1 &
   - ./control-start.sh
-  - sleep 180
+  - sleep 280
 
 script:
   - travis_wait 20 grunt test --stack --verbose
-  - testcafe chromium qa/testcafe/testNetComplexRoute.js
+  - testcafe --skip-js-errors chromium qa/testcafe/testNetComplexRoute.js
 
 after_script:
   - ./control-stop.sh
 
 after_failure:
   - ./control-stop.sh
-  - ./send-to-chunk-io.sh
+  - ./tools/send-to-chunk-io.sh
