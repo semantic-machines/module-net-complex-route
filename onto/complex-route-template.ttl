@@ -185,6 +185,9 @@ s-wf:ComplexRouteStartForm_Common_Template
     if (individual.hasValue(complex+"autoinstruction")) {
       stages.push("autoinstruction");
     }
+    if (individual.hasValue(complex+"distribution")) {
+      stages.push("distribution");
+    }
   };
 
   stages.forEach(function(stage) {
