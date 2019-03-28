@@ -56,7 +56,8 @@ d:task_autoinstruction_to_release
   v-wf:locationY "247"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, d:map_autoinstraction_to_date, s-wf:map_initiator, d:set_change_status_true;
-  v-wf:subNet s-wf:net_coordination;
+  #v-wf:subNet s-wf:net_coordination;
+	v-wf:subNet s-wf:UniversalNet;    
 .
 
 d:task_autoinstruction_to_release_link_hasFlow
