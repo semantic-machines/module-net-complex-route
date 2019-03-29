@@ -297,7 +297,7 @@ s-wf:map_possible_decision_for_instruction
   rdf:type v-wf:Mapping ;
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:possible_decision ;
-  v-wf:mappingExpression "[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect')]" ;
+  v-wf:mappingExpression "[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionNotPerformed')]" ;
   rdfs:label "Варианты ответа для исполнения"^^xsd:string;
 .
 
