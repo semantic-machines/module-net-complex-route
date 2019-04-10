@@ -152,7 +152,7 @@ s-wf:map_msg_template_autoinstruction-universal
 d:task_autoinstraction_decision_for_instruction
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:possible_decision ;
-  v-wf:mappingExpression "[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionRedirect'), veda.Util.newUri('v-wf:DecisionNotForMe')]" ;
+  v-wf:mappingExpression "[veda.Util.newUri ('v-wf:DecisionAchieved'), veda.Util.newUri('v-wf:DecisionRejected'), veda.Util.newUri('v-wf:DecisionNotPerformed'), veda.Util.newUri('v-wf:DecisionProlongate'), veda.Util.newUri('v-wf:DecisionNotForMe')]" ;
   rdfs:label "Варианты ответа для исполнения"^^xsd:string;
 .
 
