@@ -593,6 +593,7 @@ s-wf:tr_refine_form
   v-wf:transformRule s-wf:rul_transform21_7 ;
   v-wf:transformRule s-wf:rul_transform21_8 ;
   v-wf:transformRule s-wf:rul_transform21_9 ;
+  v-wf:transformRule s-wf:rul_transform21_10 ;
 .
 
 s-wf:rul_transform21_0
@@ -635,7 +636,7 @@ s-wf:rul_transform21_1
 s-wf:rul_transform21_2
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c1')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
 #  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
@@ -645,7 +646,7 @@ s-wf:rul_transform21_2
 s-wf:rul_transform21_3
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c2')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -656,7 +657,7 @@ s-wf:rul_transform21_3
 s-wf:rul_transform21_4
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c3')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -668,7 +669,7 @@ s-wf:rul_transform21_4
 s-wf:rul_transform21_5
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c4')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -681,7 +682,7 @@ s-wf:rul_transform21_5
 s-wf:rul_transform21_6
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c5')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -695,7 +696,7 @@ s-wf:rul_transform21_6
 s-wf:rul_transform21_7
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_c6')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -710,7 +711,7 @@ s-wf:rul_transform21_7
 s-wf:rul_transform21_8
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_sign')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -726,7 +727,7 @@ s-wf:rul_transform21_8
 s-wf:rul_transform21_9
   rdf:type v-wf:Rule ;
   rdfs:isDefinedBy s-wfc: ;
-  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'prevTask')" ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'origin_task')" ;
   v-wf:segregateElement "elementContentStrValue('v-wf:variableValue', 's-wf:cr_approval')" ;
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination1')";
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoCoordination2')";
@@ -738,6 +739,15 @@ s-wf:rul_transform21_9
   v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionGoApproval')";
 #  v-wf:aggregate  "putUri ('v-wf:possibleDecisionClass', 'v-wf:DecisionBreak')";
   v-wf:grouping "1";
+.
+s-wf:rul_transform21_10
+  rdf:type v-wf:Rule ;
+  v-wf:segregateObject "objectContentStrValue ('v-wf:variableName', 'redirect_from')" ;
+  v-wf:segregateElement "contentName('v-wf:variableValue')" ;
+  v-wf:aggregate  "putValue ('v-wf:redirect_from_task')";
+  v-wf:grouping "1";
+  rdfs:isDefinedBy s-wf: ;
+  rdfs:label "Предыдущая задача из переменной redirect_from"@ru ;
 .
 
 # --- end -------------------------- NET Complex Route ----------------------------------- end ---- #
