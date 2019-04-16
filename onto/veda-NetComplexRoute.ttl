@@ -372,7 +372,7 @@ s-wf:cr_rework a v-wf:Task;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:completeDecisionTransform s-wf:tr_taken_decision;
   v-wf:completedExecutorJournalMap s-wf:map_jrn_msg_nce_t2_b, s-wf:map_jrn_msg_nce_t2_b_ev, s-wf:map_journal_to_4_OOV_result_data_N_author, s-wf:map_journal_doc_id, s-wf:map_journal_process_id, s-wf:map_jrn_decision_b;
-  v-wf:executor s-wf:executor_for_rework;
+  v-wf:executor s-wf:executor_responsible;
   v-wf:expectedResultType s-wf:UserTaskForm;
   v-wf:hasFlow s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:crf_rework_to_rr, s-wf:cr_rework_to_redirect;
   v-wf:join v-wf:None;
