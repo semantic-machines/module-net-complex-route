@@ -23,6 +23,7 @@ s-wf:subnet_autoinstruction_route a v-wf:Net;
   v-s:updateCounter "3"^^xsd:integer;
   v-wf:consistsOf d:rkqt78slxs4o8z8it6fgf47e, d:task_autoinstruction_subnet_journal,  d:task_autoinstruction_to_release, d:o7ey2dszv23ykoqz5mra9r8o ;
   v-wf:consistsOf d:bt9k3jv4npxhj74qh7bbxq15, d:task_autoinstruction_subnet_journal_hasFlow, d:task_autoinstruction_to_release_link_hasFlow ;
+  v-wf:consistsOf d:task_autoinstruction_before_handler, d:task_autoinstruction_before_handler_flow, d:task_autoinstruction_after_handler, d:task_autoinstruction_after_handler_flow;
   v-wf:inputVariable s-wf:var_doc_id, s-wf:var_journal_initiator ;
 .
 # d:mu18gdzzvp99huwicvj1qkre, d:fszmffnqwfeqxxwr48vi9rq8, d:a33jy1sb1inmegt5j9ncswprh, d:task_autoinstruction_to_release_link
@@ -31,15 +32,34 @@ d:rkqt78slxs4o8z8it6fgf47e a v-wf:InputCondition;
   rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
   v-s:updateCounter "1"^^xsd:integer;
   v-wf:hasFlow d:bt9k3jv4npxhj74qh7bbxq15;
-  v-wf:locationX "0"^^xsd:integer;
-  v-wf:locationY "284"^^xsd:integer;
+  v-wf:locationX "22"^^xsd:integer;
+  v-wf:locationY "256"^^xsd:integer;
 .
 
 d:o7ey2dszv23ykoqz5mra9r8o a v-wf:OutputCondition;
   rdfs:isDefinedBy "http://semantic-machines.com/veda/complex-route-template"^^xsd:string;
   v-s:updateCounter "1"^^xsd:integer;
-  v-wf:locationX "679"^^xsd:integer;
-  v-wf:locationY "243"^^xsd:integer;
+  v-wf:locationX "653"^^xsd:integer;
+  v-wf:locationY "262"^^xsd:integer;
+.
+
+d:task_autoinstruction_before_handler
+    a v-wf:Task;
+  rdfs:label "Обработка мероприятия"^^xsd:string;
+  v-s:updateCounter "2"^^xsd:integer;
+  v-wf:executor d:executor_before_handler;
+  v-wf:hasFlow d:task_autoinstruction_before_handler_flow;
+  v-wf:join v-wf:None;
+  v-wf:locationX "289"^^xsd:integer;
+  v-wf:locationY "153"^^xsd:integer;
+  v-wf:split v-wf:None; 
+.
+
+d:task_autoinstruction_before_handler_flow
+    a v-wf:Flow;
+  rdfs:label ""^^xsd:string;
+  v-wf:predicate "true"^^xsd:string;
+  v-wf:flowsInto d:task_autoinstruction_to_release;
 .
 
 d:task_autoinstruction_to_release
@@ -52,8 +72,8 @@ d:task_autoinstruction_to_release
   v-wf:executor d:executor_from_activity_responsible1;
   v-wf:hasFlow d:task_autoinstruction_to_release_link_hasFlow;
   v-wf:join v-wf:None;
-  v-wf:locationX "402"^^xsd:integer;
-  v-wf:locationY "247"^^xsd:integer;
+  v-wf:locationX "400"^^xsd:integer;
+  v-wf:locationY "250"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, d:map_autoinstraction_to_date, s-wf:map_initiator, d:set_change_status_true;
   #v-wf:subNet s-wf:net_coordination;
@@ -61,6 +81,25 @@ d:task_autoinstruction_to_release
 .
 
 d:task_autoinstruction_to_release_link_hasFlow
+    a v-wf:Flow;
+  rdfs:label ""^^xsd:string;
+  v-wf:predicate "true"^^xsd:string;
+  v-wf:flowsInto d:task_autoinstruction_after_handler;
+.
+
+d:task_autoinstruction_after_handler
+    a v-wf:Task;
+  rdfs:label "Обработка мероприятия"^^xsd:string;
+  v-s:updateCounter "2"^^xsd:integer;
+  v-wf:executor d:executor_after_handler;
+  v-wf:hasFlow d:task_autoinstruction_after_handler_flow;
+  v-wf:join v-wf:None;
+  v-wf:locationX "502"^^xsd:integer;
+  v-wf:locationY "153"^^xsd:integer;
+  v-wf:split v-wf:None;
+.
+
+d:task_autoinstruction_after_handler_flow
     a v-wf:Flow;
   rdfs:label ""^^xsd:string;
   v-wf:predicate "true"^^xsd:string;
@@ -84,7 +123,7 @@ d:task_autoinstruction_subnet_journal
   v-wf:hasFlow d:task_autoinstruction_subnet_journal_hasFlow;
   v-wf:join v-wf:None;
   v-wf:locationX "187"^^xsd:integer;
-  v-wf:locationY "251"^^xsd:integer;
+  v-wf:locationY "250"^^xsd:integer;
   v-wf:split v-wf:None;
   v-wf:startingMapping s-wf:map_doc_id, d:map_autoinstraction_notification_response;
 .
@@ -95,7 +134,7 @@ d:task_autoinstruction_subnet_journal_hasFlow
   rdfs:label ""^^xsd:string;
   v-s:updateCounter "2"^^xsd:integer;
   v-wf:predicate "true"^^xsd:string;
-  v-wf:flowsInto d:task_autoinstruction_to_release ;
+  v-wf:flowsInto d:task_autoinstruction_before_handler ;
 .
 
 ###--- дополнительные сущности к сети
@@ -112,6 +151,45 @@ d:set_change_status_true
   v-wf:mapToVariable s-wf:var_set_status ;
   v-wf:mappingExpression  "veda.Util.newBool (true);" ;
 .
+
+d:executor_before_handler
+  rdf:type v-s:Codelet ;
+  v-s:script
+  """
+  (function() {
+    var processId = process.src_data['@'];
+
+    var doc = process.getExecutor();
+    print('$$$$ doc:', veda.Util.toJson(doc));
+    
+    var set_in_doc = {
+      '@': doc[0].data,
+      'v-wf:isProcess': veda.Util.newUri(process.src_data['@'])
+    };
+    set_in_individual(task.ticket, set_in_doc);
+    return [veda.Workflow.get_new_variable('res', veda.Util.newStr('OK'))];
+  }());
+  """;
+  rdfs:label "Исполнитель для обработки документа"@ru ;
+.
+
+d:executor_after_handler
+  rdf:type v-wf:ExecutorDefinition ;
+  v-wf:executorExpression
+  """
+  (function() {
+
+    var doc = get_individual(task.ticket, process.getExecutor()[0].data);
+    if (doc && veda.Util.hasValue(doc, 'v-wf:isProcess')) {
+      delete doc['v-wf:isProcess'];
+      put_individual(task.ticket, doc);
+    }
+    return [veda.Workflow.get_new_variable('res', veda.Util.newStr('OK'))];
+  }());
+  """;
+  rdfs:label "Исполнитель для обработки документа"@ru ;
+.
+
 d:executor_autoinstruction_notification_response
   rdf:type v-s:Codelet ;
   v-s:script
