@@ -26,9 +26,9 @@ s-wf:net_complex_route a v-wf:Net;
   v-s:edited "2017-06-06T07:45:34.000Z"^^xsd:dateTime;
   v-s:lastEditor cfg:AdministratorAppointment;
   v-s:updateCounter "16"^^xsd:integer;
-  v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_join_point, s-wf:cr_join_point2, s-wf:crf_i4_to_jp2, s-wf:crf_jp_to_rework_rigths, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i4, s-wf:crf_a_to_r, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_instruction4, s-wf:crf_i4_to_i, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
+  v-wf:consistsOf s-wf:cr_start, s-wf:crf_start_to_car, s-wf:cr_check_already_run, s-wf:crf_car_to_finish, s-wf:cr_set_workflow_status_inProcess, s-wf:crf_setStatus_to_decrease_rights, s-wf:cr_decrease_rights, s-wf:crf_dr_to_i, s-wf:cr_informing_task, s-wf:cr_introduction, s-wf:cr_join_point, s-wf:cr_join_point2, s-wf:crf_i4_to_jp2, s-wf:crf_jp_to_rework_rigths, s-wf:cr_rework, s-wf:crf_rework_to_c1, s-wf:crf_rework_to_c2, s-wf:crf_rework_to_c3, s-wf:crf_rework_to_c4, s-wf:crf_rework_to_c5, s-wf:crf_rework_to_c6, s-wf:crf_rework_to_rr, s-wf:crf_rework_to_s, s-wf:crf_rework_to_a, s-wf:cr_sign, s-wf:crf_s_to_a, s-wf:crf_s_to_jp, s-wf:cr_approval, s-wf:crf_i3_to_e, s-wf:crf_a_to_i4, s-wf:crf_a_to_r, s-wf:cr_instruction, s-wf:crf_i_to_i2, s-wf:cr_examination, s-wf:cr_review, s-wf:crf_r_to_i2, s-wf:cr_instruction2, s-wf:crf_i2_to_i3, s-wf:cr_instruction3, s-wf:crf_i3_to_d, s-wf:cr_instruction4, s-wf:crf_i4_to_i, s-wf:cr_distribution, s-wf:crf_d_to_rr, s-wf:cr_restore_rights, s-wf:crf_rr_to_finish, s-wf:cr_finish, s-wf:cr_informing2, s-wf:crf_a_to_i2, s-wf:crf_dr_to_e, s-wf:crf_dr_to_c1;
   v-wf:consistsOf s-wf:cr_c1, s-wf:crf_c1_to_c2, s-wf:crf_c1_to_jp, s-wf:cr_c2, s-wf:crf_c2_to_c3, s-wf:crf_c2_to_jp, s-wf:cr_c3, s-wf:crf_c3_to_c4, s-wf:crf_c3_to_jp, s-wf:cr_c4, s-wf:crf_c4_to_c5, s-wf:crf_c4_to_jp, s-wf:cr_c5, s-wf:crf_c5_to_c6, s-wf:crf_c5_to_jp, s-wf:cr_c6, s-wf:crf_c6_to_jp;
-  v-wf:consistsOf s-wf:after_coord_point, s-wf:after_sign_point, s-wf:after_approv_point;
+  v-wf:consistsOf s-wf:after_coord_point, s-wf:after_sign_point, s-wf:after_approv_point, s-wf:crf_car_to_set_status;
   v-wf:consistsOf s-wf:c6_to_after_flow, s-wf:sign_to_after_flow, s-wf:approv_to_after_flow;
   v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap, s-wf:cr_informing5, s-wf:crf_r_to_i5 ;
   v-wf:consistsOf s-wf:rework_rights, s-wf:rework_redirect, s-wf:rework_redirect_to_rigths, s-wf:rework_rigths_to_cr_rework, s-wf:cr_rework_to_redirect;
@@ -59,11 +59,17 @@ s-wf:cr_check_already_run a v-wf:Task;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:completedMapping s-wf:m_result_f_out_var;
   v-wf:executor s-wf:codelet_is_run;
-  v-wf:hasFlow s-wf:cr_car_to_dr, s-wf:crf_car_to_finish;
+  v-wf:hasFlow s-wf:crf_car_to_set_status, s-wf:crf_car_to_finish;
   v-wf:locationX "-150"^^xsd:integer;
   v-wf:locationY "495"^^xsd:integer;
   v-wf:split v-wf:XOR;
   v-wf:startingMapping s-wf:map_doc_id.
+
+s-wf:crf_car_to_set_status a v-wf:Flow;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  v-wf:flowsInto s-wf:cr_set_workflow_status_inProcess;
+  v-wf:predicate "task_result.getValue('result')[0].data == 'false'"^^xsd:string;
+.
 s-wf:crf_car_to_finish a v-wf:Flow;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   v-s:created "2017-05-23T12:44:36.000Z"^^xsd:dateTime;
@@ -73,7 +79,35 @@ s-wf:crf_car_to_finish a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:flowsInto s-wf:cr_finish;
-  v-wf:predicate "task_result.getValue('result')[0].data == 'true'"^^xsd:string.
+  v-wf:predicate "task_result.getValue('result')[0].data == 'true'"^^xsd:string;
+.
+
+s-wf:cr_set_workflow_status_inProcess a v-wf:Task;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  rdfs:label "Установить статус документооборота"^^xsd:string;
+  v-s:updateCounter "1"^^xsd:integer;
+  v-wf:belongsTo s-wf:net_complex_route;
+  v-wf:executor d:set_workflow_status_InProcess_executor;
+  v-wf:hasFlow s-wf:crf_setStatus_to_decrease_rights;
+  v-wf:locationX "-150"^^xsd:integer;
+  v-wf:locationY "213"^^xsd:integer;
+.
+
+d:set_workflow_status_InProcess_executor
+  rdf:type v-wf:ExecutorDefinition ;
+  v-wf:executorExpression """
+    veda.Codelet.change_document_workflow_status(process, 'v-wf:InProcess')
+    """;
+  rdfs:label "Исполнитель для установки статуса InProcess"@ru ;
+.
+
+s-wf:crf_setStatus_to_decrease_rights a v-wf:Flow;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  v-s:updateCounter "17"^^xsd:integer;
+  v-wf:flowsInto s-wf:cr_decrease_rights;
+  v-wf:predicate "true"^^xsd:string;
+.
+
 s-wf:cr_decrease_rights a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   rdfs:label "Понизить права"^^xsd:string;
@@ -365,6 +399,16 @@ s-wf:crf_jp_to_rework_rigths a v-wf:Flow;
   v-wf:flowsInto s-wf:rework_rights;
   v-wf:predicate "true"^^xsd:string
 .
+
+s-wf:workflowStatusMapping_InReworking
+  rdf:type v-wf:Mapping ;
+  v-wf:mapToVariable s-wf:var_workflowStatus ;
+  v-wf:mappingExpression """
+    veda.Codelet.change_document_workflow_status(process, 'v-wf:InReworking')
+  """;
+  rdfs:label "Исполнитель для обработки документа (установка hasStatusWorkflow - InReworking)"@ru ;
+.
+
 s-wf:cr_rework a v-wf:Task;
   rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
   rdfs:label "Доработать"^^xsd:string;
@@ -379,8 +423,8 @@ s-wf:cr_rework a v-wf:Task;
   v-wf:split v-wf:XOR;
   v-wf:startDecisionTransform s-wf:tr_refine_form;
   v-wf:startingExecutorJournalMap s-wf:map_jrn_msg_nc_t2_b_remake, s-wf:map_jrn_msg_nc_t2_b_ev, s-wf:map_journal_to_4_PLV_responsible, s-wf:map_journal_doc_id, s-wf:map_journal_process_id;
-  v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator, s-wf:map_get_origin_task, s-wf:map_redirect_from_4_PLV_redirect_from;
-  v-wf:completedMapping s-wf:map_set_result_decision_from_TR_result_data, s-wf:map_cleaning_responsible;
+  v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator, s-wf:map_get_origin_task, s-wf:map_redirect_from_4_PLV_redirect_from, s-wf:workflowStatusMapping_InReworking;
+  v-wf:completedMapping s-wf:map_set_result_decision_from_TR_result_data, s-wf:map_cleaning_responsible, s-wf:workflowStatusMapping_InProcess;
   v-wf:startingMessageMap s-wf:map_msg_template_4_SV_default_template, s-wf:map_from_4_TIV_initiator, s-wf:map_document_4_TIV_docId, s-wf:map_vf_to_4_O_executor, s-wf:map_comment_4_TIV_actor_task_rework, s-wf:map_wf_from_sys_appt, s-wf:map_rdf_type_4_v_s_Email, s-wf:map_task_url_4_O_DecisionForms_of_executor, s-wf:map_to_4_O_executor, s-wf:map_documentType_4_TIV_DocId_documentType, s-wf:map_inbox_url_4_appInboxUrl_of_executor, s-wf:map_doc_url_4_appUrl_of_executor;
   v-wf:locationX "679"^^xsd:integer;
   v-wf:locationY "-95"^^xsd:integer;
@@ -389,20 +433,29 @@ s-wf:rework_rights a v-wf:Task;
   v-wf:belongsTo s-wf:net_complex_route;
   v-wf:predicate "true"^^xsd:string;
   v-wf:hasFlow s-wf:rework_rigths_to_cr_rework;
-  v-wf:executor s-wf:s-wf:codelet_change_responsible_right;
+  v-wf:executor s-wf:codelet_change_responsible_right;
   v-wf:startingMapping s-wf:map_responsible_for_rework;
   rdfs:label "Установить права для задачи доработать"^^xsd:string;
   v-wf:split v-wf:XOR;
-  v-wf:locationX "445"^^xsd:integer;
-  v-wf:locationY "-100"^^xsd:integer;
+  v-wf:locationX "587"^^xsd:integer;
+  v-wf:locationY "-240"^^xsd:integer;
 .
 s-wf:rework_redirect a v-wf:Task;
   v-wf:belongsTo s-wf:net_complex_route;
   rdfs:label "Обработка redirect: responsible = *result_decision[wf:to]"^^xsd:string;
   v-wf:completedMapping s-wf:map_responsible_2_result_decision, s-wf:map_redirect_from_2_result_decision;
   v-wf:hasFlow s-wf:rework_redirect_to_rigths;
-  v-wf:locationX "595"^^xsd:integer;
+  v-wf:locationX "763"^^xsd:integer;
   v-wf:locationY "-245"^^xsd:integer;
+.
+
+s-wf:workflowStatusMapping_InProcess
+  rdf:type v-wf:Mapping ;
+  v-wf:mapToVariable s-wf:var_workflowStatus ;
+  v-wf:mappingExpression """
+    veda.Codelet.change_document_workflow_status(process, 'v-wf:InProcess')
+  """;
+  rdfs:label "Исполнитель для обработки документа (установка hasStatusWorkflow - InProcess)"@ru ;
 .
 
 s-wf:rework_redirect_to_rigths a v-wf:Flow;
