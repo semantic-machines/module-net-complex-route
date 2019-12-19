@@ -404,7 +404,8 @@ s-wf:workflowStatusMapping_InReworking
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_workflowStatus ;
   v-wf:mappingExpression """
-    veda.Codelet.change_document_workflow_status(process, 'v-wf:InReworking')
+    veda.Codelet.change_document_workflow_status(process, 'v-wf:InReworking');
+    veda.Util.newUri('v-wf:InReworking');
   """;
   rdfs:label "Исполнитель для обработки документа (установка hasStatusWorkflow - InReworking)"@ru ;
 .
@@ -453,7 +454,8 @@ s-wf:workflowStatusMapping_InProcess
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_workflowStatus ;
   v-wf:mappingExpression """
-    veda.Codelet.change_document_workflow_status(process, 'v-wf:InProcess')
+    veda.Codelet.change_document_workflow_status(process, 'v-wf:InProcess');
+    veda.Util.newUri('v-wf:InProcess');
   """;
   rdfs:label "Исполнитель для обработки документа (установка hasStatusWorkflow - InProcess)"@ru ;
 .
