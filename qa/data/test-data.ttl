@@ -325,7 +325,6 @@ td:ComplexRouteStartForm1
 td:IvanovRT
   rdf:type v-s:Account ;
   v-s:login "IvanovRT"^^xsd:string ;
-  v-s:mailbox "roman.ivanov@mondigroup.com"^^xsd:string ;
   v-s:owner td:RomanIvanov ;
   v-s:password "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"^^xsd:string ;
   rdfs:label "IvanovRT" ;
@@ -390,7 +389,6 @@ td:RomanIvanov-CommercialDirector
 td:PetrovRT
   rdf:type v-s:Account ;
   v-s:login "PetrovRT"^^xsd:string ;
-  v-s:mailbox "roman.petrov@mondigroup.com"^^xsd:string ;
   v-s:owner td:RomanPetrov ;
   v-s:password "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"^^xsd:string ;
   rdfs:label "PetrovRT" ;
@@ -454,7 +452,6 @@ td:RomanPetrov-CommercialDirector
 td:SidorovAT
   rdf:type v-s:Account ;
   v-s:login "SidorovAT"^^xsd:string ;
-  v-s:mailbox "andrey.sidorov@mondigroup.com"^^xsd:string ;
   v-s:owner td:AndreySidorov ;
   v-s:password "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"^^xsd:string ;
   rdfs:label "SidorovAT" ;
@@ -493,7 +490,6 @@ td:AndreySidorov-Analyst2
 td:JoeAT
   rdf:type v-s:Account ;
   v-s:login "JoeAT"^^xsd:string ;
-  v-s:mailbox "andrey.joe@mondigroup.com"^^xsd:string ;
   v-s:owner td:AndreyJoe ;
   v-s:password "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"^^xsd:string ;
   rdfs:label "JoeAT" ;
