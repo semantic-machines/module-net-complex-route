@@ -306,7 +306,7 @@ s-wf:Test0_ComplexRouteStartForm_Template
 
 # -------- стартовая форма маршрута ----------------
 td:ComplexRouteStartForm1
-  v-s:author cfg:VedaSystemAccount ;
+  v-s:author cfg:VedaSystemAppointment ;
   rdf:type s-wf:ComplexRouteStartForm ;
   rdf:type v-wf:StartForm ;
   v-wf:forNet s-wf:net_complex_route ;
