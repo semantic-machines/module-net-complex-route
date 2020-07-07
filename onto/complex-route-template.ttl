@@ -30,7 +30,6 @@ s-wf:ComplexRouteStartForm
   rdfs:label "Стартовая форма Комплексного маршрута"@ru ;
   rdfs:label "Complex route start form"@en ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate s-wf:ComplexRouteStartForm_Common_Template ;
   v-ui:hasModel s-wf:ComplexRouteStartForm_Model ;
 .
 
@@ -63,6 +62,12 @@ s-wf:ComplexRouteStartForm_Model
   """ ;
 .
 
+v-s:TS_ComplexRouteStartForm
+  rdf:type v-ui:TemplateSpecification;
+  v-s:loadPriority "15"^^xsd:integer;
+  v-ui:defaultTemplate v-wf:ComplexRouteStartForm_Common_Template;
+  v-ui:forClass s-wf:ComplexRouteStartForm
+.
 s-wf:ComplexRouteStartForm_Common_Template
   rdf:type v-ui:ClassTemplate ;
   rdfs:isDefinedBy s-wf: ;
