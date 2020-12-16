@@ -65,7 +65,7 @@ s-wf:ComplexRouteStartForm_Model
 v-s:TS_ComplexRouteStartForm
   rdf:type v-ui:TemplateSpecification;
   v-s:loadPriority "15"^^xsd:integer;
-  v-ui:defaultTemplate v-wf:ComplexRouteStartForm_Common_Template;
+  v-ui:defaultTemplate s-wf:ComplexRouteStartForm_Common_Template;
   v-ui:forClass s-wf:ComplexRouteStartForm
 .
 s-wf:ComplexRouteStartForm_Common_Template
@@ -82,6 +82,7 @@ s-wf:ComplexRouteStartForm_Common_Template
   var complex = 's-wf:ComplexRouteStartForm_';
   var simple = 's-wf:SimpleRouteStartForm_';
   var stagePromises = [];
+  var notEditableStages = [];
   if (this.hasValue("v-wf:isProcess")) {
     $('#save_and_start_process', template).remove();
     for(var key in individual.properties) {
@@ -100,16 +101,20 @@ s-wf:ComplexRouteStartForm_Common_Template
         if (sub) {
           if (!sub.hasValue(simple+'participant') || sub.properties[simple+'participant'].length == 0) {
             if (!sub.hasValue(simple+'actions') || sub.properties[simple+'actions'].length == 0) {
-              delete individual.properties[routeid];
-              $('[rel="' + routeid + '"]', template).empty();
+              individual[routeid] = [];
             }
           };
         } else {
-          delete individual.properties[routeid];
-          $('[rel="' + routeid + '"]', template).empty();
+          individual[routeid] = [];
         };
       });
-      veda.Util.send(individual, template);
+      return notEditableStages.reduce(function(pr, curSub) {
+        return pr.then(function() {
+          return curSub.save();
+        });
+      }, Promise.resolve()).then(function(){
+        veda.Util.send(individual, template);  
+      });
     });
 
     var doc = individual['v-wf:processedDocument'][0];
@@ -204,13 +209,11 @@ s-wf:ComplexRouteStartForm_Common_Template
         $('.'+stage, template).attr('about', '@');
         $('.'+stage, template).removeAttr('data-embedded');
         sub['v-s:parent'] = [individual];
-        //$('.' + stage + ' [rel]:not([about])', template).attr('about', '@');
-        //$('.' + stage + ' [property]:not([about])', template).attr('about', '@');
-        //$('.' + stage + 'veda-control[rel="s-wf:ComplexRouteStartForm_'+stage+'"]', template).remove();
-
+        
         if (individual.isNew()) {
-          sub.save();
-        }
+          notEditableStages.push(sub);
+          //sub.save();
+        };
       }
     });
   })
