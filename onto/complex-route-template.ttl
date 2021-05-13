@@ -73,7 +73,7 @@ s-wf:ComplexRouteStartForm_Common_Template
   rdfs:isDefinedBy s-wf: ;
   rdfs:label "Шаблон стартовых данных Комплексного маршрута"@ru ;
   rdfs:label "Complex route start form template"@en ;
-  v-ui:forClass s-wf:ComplexRouteStartForm_Common ;
+  v-ui:forClass s-wf:ComplexRouteStartForm ;
   v-ui:template """
 <script>
   //console.log("This is COMMON ComplexRouteStartForm template");
@@ -339,6 +339,17 @@ s-wf:ComplexRouteStartForm_Common_Template
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
+    <div class="col-md-6 simpleStartForm instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
+            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+          </h3>
+        </div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+      </div>
+    </div>
     <div class="col-md-6 simpleStartForm review" rel="s-wf:ComplexRouteStartForm_review" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
@@ -373,17 +384,6 @@ s-wf:ComplexRouteStartForm_Common_Template
       </div>
     </div>
     <div class="col-md-6 simpleStartForm instruction3" rel="s-wf:ComplexRouteStartForm_instruction3" data-embedded="true">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title clearfix">
-            <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
-            <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
-          </h3>
-        </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormFull_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
-      </div>
-    </div>
-    <div class="col-md-6 simpleStartForm instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
       <div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title clearfix">
