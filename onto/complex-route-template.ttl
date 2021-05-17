@@ -194,6 +194,9 @@ s-wf:ComplexRouteStartForm_Common_Template
     if (individual.hasValue(complex+"autoinstruction")) {
       stages.push("autoinstruction");
     }
+    if (individual.hasValue(complex+"preautoinstruction")) {
+      stages.push("preautoinstruction");
+    }
     if (individual.hasValue(complex+"distribution")) {
       stages.push("distribution");
     }
@@ -416,7 +419,16 @@ s-wf:ComplexRouteStartForm_Common_Template
         <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
-
+    <div class="col-md-12 simpleStartForm preautoinstruction" rel="s-wf:ComplexRouteStartForm_preautoinstruction" data-embedded="true">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title clearfix">
+            <span class="pull-left" about="@" property="rdfs:label"></span>
+          </h3>
+        </div>
+        <div class="panel-body" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></div>
+      </div>
+    </div>
     <div class="col-md-12 simpleStartForm autoinstruction" rel="s-wf:ComplexRouteStartForm_autoinstruction" data-embedded="true">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -591,6 +603,15 @@ s-wf:ComplexRouteStartForm_distribution
   rdf:type rdf:Property ;
   rdfs:label "Рассылка уведомлений"@ru ;
   rdfs:label "Distribution"@en ;
+  rdfs:domain s-wf:ComplexRouteStartForm ;
+  rdfs:range s-wf:SimpleRouteStartForm ;
+  rdfs:isDefinedBy s-wf: ;
+.
+
+s-wf:ComplexRouteStartForm_preautoinstruction
+  rdf:type rdf:Property ;
+  rdfs:label "Предварительные поручения v-s:Action"@ru ;
+  rdfs:label "Instruction for preliminary actions"@en ;
   rdfs:domain s-wf:ComplexRouteStartForm ;
   rdfs:range s-wf:SimpleRouteStartForm ;
   rdfs:isDefinedBy s-wf: ;
