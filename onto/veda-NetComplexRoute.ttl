@@ -32,6 +32,7 @@ s-wf:net_complex_route a v-wf:Net;
   v-wf:consistsOf s-wf:c6_to_after_flow, s-wf:sign_to_after_flow, s-wf:approv_to_after_flow;
   v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap, s-wf:cr_informing5, s-wf:crf_r_to_i5 ;
   v-wf:consistsOf s-wf:rework_rights, s-wf:rework_redirect, s-wf:rework_redirect_to_rigths, s-wf:rework_rigths_to_cr_rework, s-wf:cr_rework_to_redirect;
+  v-wf:consistsOf s-wf:preAutoActionProcess, s-wf:preAutoInstruction_after_sign ;
   v-wf:inputVariable s-wf:var_doc_id, s-wf:var_startForm_id, s-wf:var_journal_initiator;
   v-wf:localVariable s-wf:var_right_1.
 s-wf:cr_start a v-wf:InputCondition;
@@ -569,7 +570,7 @@ s-wf:cr_sign a v-wf:Task;
   v-wf:completeDecisionTransform s-wf:tr_taken_decision;
   v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible, s-wf:map_set_origin_task;
   v-wf:executor s-wf:executor_sign;
-  v-wf:hasFlow s-wf:crf_s_to_jp, s-wf:sign_to_after_flow;
+  v-wf:hasFlow s-wf:crf_s_to_jp, s-wf:sign_to_after_flow, s-wf:preAutoInstruction_after_sign;
   v-wf:locationX "1048"^^xsd:integer;
   v-wf:locationY "195"^^xsd:integer;
   v-wf:split v-wf:OR;
@@ -1020,3 +1021,23 @@ s-wf:crf_a_to_aap a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:flowsInto s-wf:autoActionProcess;
   v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_autoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0 || veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}]).length > 0"^^xsd:string.
+
+s-wf:preAutoActionProcess
+  a v-wf:Task;
+  v-wf:subNet s-wf:subnet_autoinstruction_route;
+  v-wf:split v-wf:None;
+  v-s:updateCounter "3"^^xsd:integer;
+  v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
+  v-wf:join v-wf:None;
+  v-wf:completedMapping s-wf:m_result_f_out_var, s-wf:map_decision_of_set_responsible;
+  v-wf:executor s-wf:executor_preautoinstruction;
+  v-wf:locationX "1210"^^xsd:integer;
+  v-wf:locationY "70"^^xsd:integer;
+  rdfs:label "ПреАвтопоручения"^^xsd:string;
+  v-s:updateCounter "1"^^xsd:integer;
+  v-wf:completedJournalMap s-wf:map_journal_msg_4_task_label_complete, s-wf:map_jrn_ev_type_4_TaskCompleted, s-wf:map_journal_doc_id, s-wf:map_journal_process_id.
+
+s-wf:preAutoInstruction_after_sign a v-wf:Flow;
+  v-s:updateCounter "17"^^xsd:integer;
+  v-wf:flowsInto s-wf:preAutoActionProcess;
+  v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_preautoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0 || veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasPreliminaryAction'}]).length > 0"^^xsd:string.

@@ -220,6 +220,12 @@ s-wf:executor_autoinstruction
   v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasAction'}])" ;
 .
 
+s-wf:executor_preautoinstruction
+  rdf:type v-wf:ExecutorDefinition ;
+  rdfs:isDefinedBy s-wfc: ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasPreliminaryAction'}])" ;
+.
+
 s-wf:executor_distribution
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;
