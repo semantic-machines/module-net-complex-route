@@ -75,9 +75,19 @@ d:task_autoinstruction_to_release
   v-wf:locationX "400"^^xsd:integer;
   v-wf:locationY "250"^^xsd:integer;
   v-wf:split v-wf:None;
-  v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, d:map_autoinstraction_to_date, s-wf:map_initiator, d:set_change_status_true;
+  v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, s-wf:Autoinstruction_task_date_to, s-wf:map_initiator, d:set_change_status_true;
   #v-wf:subNet s-wf:net_coordination;
 	v-wf:subNet s-wf:UniversalNet;    
+.
+
+s-wf:Autoinstruction_task_date_to
+  rdf:type v-wf:Mapping ;
+  v-wf:mapToVariable s-wf:var_actor_task_date_to ;
+  v-wf:mappingExpression """
+    (veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'v-s:count'}]) && veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'v-s:count'}])[0])?
+  veda.Util.newDate(new Date(new Date().getTime()+(veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'v-s:count'}])[0].data*24*60*60*1000))):
+  veda.Workflow.get_properties_chain ( process.getExecutor(), [{$get:'v-s:dateToPlan'}]);
+  """ ;
 .
 
 d:task_autoinstruction_to_release_link_hasFlow
