@@ -905,7 +905,7 @@ v-wf:DecisionGoCoordination1
   rdfs:subClassOf v-wf:Decision ;
   rdfs:label "Перейти к 1 этапу согласования"@ru ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+  v-ui:hasTemplate "v-wf_DecisionTemplate1.html" ;
 .
 
 v-wf:DecisionGoCoordination2
@@ -913,7 +913,7 @@ v-wf:DecisionGoCoordination2
   rdfs:subClassOf v-wf:Decision ;
   rdfs:label "Перейти к 2 этапу согласования"@ru ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+  v-ui:hasTemplate "v-wf_DecisionTemplate1.html" ;
 .
 
 v-wf:DecisionGoCoordination3
@@ -921,7 +921,7 @@ v-wf:DecisionGoCoordination3
   rdfs:subClassOf v-wf:Decision ;
   rdfs:label "Перейти к 3 этапу согласования"@ru ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+  v-ui:hasTemplate "v-wf_DecisionTemplate1.html" ;
 .
 
 v-wf:DecisionGoCoordination4
@@ -929,7 +929,7 @@ v-wf:DecisionGoCoordination4
   rdfs:subClassOf v-wf:Decision ;
   rdfs:label "Перейти к 4 этапу согласования"@ru ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+  v-ui:hasTemplate "v-wf_DecisionTemplate1.html" ;
 .
 
 v-wf:DecisionGoCoordination5
@@ -937,7 +937,7 @@ v-wf:DecisionGoCoordination5
   rdfs:subClassOf v-wf:Decision ;
   rdfs:label "Перейти к 5 этапу согласования"@ru ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+  v-ui:hasTemplate "v-wf_DecisionTemplate1.html" ;
 .
 
 v-wf:DecisionGoCoordination6
@@ -945,7 +945,7 @@ v-wf:DecisionGoCoordination6
   rdfs:subClassOf v-wf:Decision ;
   rdfs:label "Перейти к 6 этапу согласования"@ru ;
   rdfs:isDefinedBy s-wf: ;
-  v-ui:hasTemplate v-wf:DecisionTemplate1 ;
+  v-ui:hasTemplate "v-wf_DecisionTemplate1.html" ;
 .
 
 s-wf:map_documentType_4_TIV_DocId_documentType
