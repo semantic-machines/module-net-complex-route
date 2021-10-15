@@ -58,7 +58,7 @@ s-wf:ComplexRouteStartForm_Model
     });
     return true;
   };
-  
+
   """ ;
 .
 
@@ -132,62 +132,62 @@ s-wf:ComplexRouteStartForm_Common_Template
           new veda.IndividualModel('v-wf:DecisionDeclined'),
           new veda.IndividualModel('v-wf:DecisionNoAgreed'),
           new veda.IndividualModel('v-wf:DecisionNotForMe')];
-        individual[complex+'coordination'+i][0][simple+'task_label'] = ["Согласовать@ru", "Coordinate@en"];
+        individual[complex+'coordination'+i][0][simple+'task_label'] = ["Согласовать^ru", "Coordinate^en"];
         stages.push("coordination"+i);
         individual[complex+'coordination'+i][0]['v-s:parent'] = [individual];
       };
     }
     if (individual.hasValue(complex+"introduction")) {
       individual[complex+'introduction'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionExamined')];
-      individual[complex+'introduction'][0][simple+'task_label'] = ["Ознакомление@ru", "Introduction@en"];
+      individual[complex+'introduction'][0][simple+'task_label'] = ["Ознакомление^ru", "Introduction^en"];
       stages.push("introduction");
       individual[complex+'introduction'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"sign")) {
       individual[complex+'sign'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionSign'), new veda.IndividualModel('v-wf:DecisionDeclined'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'sign'][0][simple+'task_label'] = ["Подписать@ru", "Sign@en"];
+      individual[complex+'sign'][0][simple+'task_label'] = ["Подписать^ru", "Sign^en"];
       stages.push("sign");
       individual[complex+'sign'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"approval")) {
       individual[complex+'approval'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionApprove'), new veda.IndividualModel('v-wf:DecisionDeclined'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'approval'][0][simple+'task_label'] = ["Утвердить@ru", "Approve@en"];
+      individual[complex+'approval'][0][simple+'task_label'] = ["Утвердить^ru", "Approve^en"];
       stages.push("approval");
       individual[complex+'approval'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"review")) {
       individual[complex+'review'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionReview'), new veda.IndividualModel('v-wf:DecisionRejected'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'review'][0][simple+'task_label'] = ["Рассмотреть@ru", "Review@en"];
+      individual[complex+'review'][0][simple+'task_label'] = ["Рассмотреть^ru", "Review^en"];
       stages.push("review");
       individual[complex+'review'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"instruction")) {
       individual[complex+'instruction'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAchieved'), new veda.IndividualModel('v-wf:DecisionRejected'), new veda.IndividualModel('v-wf:DecisionNotPerformed'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'instruction'][0][simple+'task_label'] = ["Исполнить поручение@ru", "Execute task@en"];
+      individual[complex+'instruction'][0][simple+'task_label'] = ["Исполнить поручение^ru", "Execute task^en"];
       stages.push("instruction");
       individual[complex+'instruction'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"instruction2")) {
       individual[complex+'instruction2'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAchieved'), new veda.IndividualModel('v-wf:DecisionRejected'), new veda.IndividualModel('v-wf:DecisionNotPerformed'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'instruction2'][0][simple+'task_label'] = ["Рассмотреть@ru", "Execute task@en"];
+      individual[complex+'instruction2'][0][simple+'task_label'] = ["Рассмотреть^ru", "Execute task^en"];
       stages.push("instruction2");
       individual[complex+'instruction2'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"instruction3")) {
       individual[complex+'instruction3'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAchieved'), new veda.IndividualModel('v-wf:DecisionRejected'), new veda.IndividualModel('v-wf:DecisionNotPerformed'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'instruction3'][0][simple+'task_label'] = ["Ознакомиться@ru", "Execute task@en"];
+      individual[complex+'instruction3'][0][simple+'task_label'] = ["Ознакомиться^ru", "Execute task^en"];
       stages.push("instruction3");
       individual[complex+'instruction3'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"instruction4")) {
       individual[complex+'instruction4'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionAchieved'),new veda.IndividualModel('v-wf:DecisionRejected'), new veda.IndividualModel('v-wf:DecisionNotPerformed'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'instruction4'][0][simple+'task_label'] = ["Исполнить поручение@ru", "Execute task@en"];
+      individual[complex+'instruction4'][0][simple+'task_label'] = ["Исполнить поручение^ru", "Execute task^en"];
       stages.push("instruction4");
       individual[complex+'instruction4'][0]['v-s:parent'] = [individual];
     }
     if (individual.hasValue(complex+"examination")) {
       individual[complex+'examination'][0][simple+'possible_decisions'] = [new veda.IndividualModel('v-wf:DecisionExamined'), new veda.IndividualModel('v-wf:DecisionNotForMe')];
-      individual[complex+'examination'][0][simple+'task_label'] = ["Ознакомиться@ru", "Examine@en"];
+      individual[complex+'examination'][0][simple+'task_label'] = ["Ознакомиться^ru", "Examine^en"];
       stages.push("examination");
       individual[complex+'examination'][0]['v-s:parent'] = [individual];
     }
