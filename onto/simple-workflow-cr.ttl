@@ -214,6 +214,12 @@ s-wf:executor_examination
   v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_examination'}])" ;
 .
 
+s-wf:executor_examination2
+  rdf:type v-wf:ExecutorDefinition ;
+  rdfs:isDefinedBy s-wfc: ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_examination2'}])" ;
+.
+
 s-wf:executor_autoinstruction
   rdf:type v-wf:ExecutorDefinition ;
   rdfs:isDefinedBy s-wfc: ;

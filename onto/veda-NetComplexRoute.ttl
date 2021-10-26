@@ -32,7 +32,7 @@ s-wf:net_complex_route a v-wf:Net;
   v-wf:consistsOf s-wf:c6_to_after_flow, s-wf:sign_to_after_flow, s-wf:approv_to_after_flow;
   v-wf:consistsOf s-wf:cr_informing3, s-wf:crf_s_to_i3, s-wf:cr_informing4, s-wf:crf_c6_to_i4, s-wf:autoActionProcess, s-wf:crf_a_to_aap, s-wf:cr_informing5, s-wf:crf_r_to_i5 ;
   v-wf:consistsOf s-wf:rework_rights, s-wf:rework_redirect, s-wf:rework_redirect_to_rigths, s-wf:rework_rigths_to_cr_rework, s-wf:cr_rework_to_redirect;
-  v-wf:consistsOf s-wf:preAutoActionProcess, s-wf:preAutoInstruction_after_sign ;
+  v-wf:consistsOf s-wf:preAutoActionProcess, s-wf:preAutoInstruction_after_sign, s-wf:cr_examination_after_autoinstruction, s-wf:preautoinstruction_to_examination_flow, s-wf:autoinstruction_to_examination_flow ;
   v-wf:inputVariable s-wf:var_doc_id, s-wf:var_startForm_id, s-wf:var_journal_initiator;
   v-wf:localVariable s-wf:var_right_1.
 s-wf:cr_start a v-wf:InputCondition;
@@ -1014,6 +1014,7 @@ s-wf:autoActionProcess
   v-wf:locationX "1336"^^xsd:integer;
   v-wf:locationY "-30"^^xsd:integer;
   rdfs:label "Автопоручения"^^xsd:string;
+  v-wf:hasFlow s-wf:autoinstruction_to_examination_flow;
   v-s:updateCounter "1"^^xsd:integer;
   v-wf:completedJournalMap s-wf:map_journal_msg_4_task_label_complete, s-wf:map_jrn_ev_type_4_TaskCompleted, s-wf:map_journal_doc_id, s-wf:map_journal_process_id.
 
@@ -1034,6 +1035,7 @@ s-wf:preAutoActionProcess
   v-wf:locationX "1210"^^xsd:integer;
   v-wf:locationY "70"^^xsd:integer;
   rdfs:label "ПреАвтопоручения"^^xsd:string;
+  v-wf:hasFlow s-wf:preautoinstruction_to_examination_flow;
   v-s:updateCounter "1"^^xsd:integer;
   v-wf:completedJournalMap s-wf:map_journal_msg_4_task_label_complete, s-wf:map_jrn_ev_type_4_TaskCompleted, s-wf:map_journal_doc_id, s-wf:map_journal_process_id.
 
@@ -1041,3 +1043,27 @@ s-wf:preAutoInstruction_after_sign a v-wf:Flow;
   v-s:updateCounter "17"^^xsd:integer;
   v-wf:flowsInto s-wf:preAutoActionProcess;
   v-wf:predicate "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$go:'s-wf:ComplexRouteStartForm_preautoinstruction'}, {$get:'s-wf:SimpleRouteStartForm_actions'}]).length > 0 || veda.Workflow.get_properties_chain (process.getInputVariable ('docId'), [{$get:'v-s:hasPreliminaryAction'}]).length > 0"^^xsd:string.
+
+s-wf:cr_examination_after_autoinstruction a v-wf:Task;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  rdfs:label "Ознакомление"^^xsd:string;
+  v-s:updateCounter "2"^^xsd:integer;
+  v-wf:completeDecisionTransform s-wf:tr_taken_decision;
+  v-wf:executor s-wf:executor_examination2;
+  v-wf:join v-wf:None;
+  v-wf:locationX "1105"^^xsd:integer;
+  v-wf:locationY "-25"^^xsd:integer;
+  v-wf:split v-wf:None;
+  v-wf:startDecisionTransform s-wf:tr_examin_form;
+  v-wf:startingMapping s-wf:map_doc_id, s-wf:map_initiator;
+  v-wf:subNet s-wf:InterlayerNet.
+
+  s-wf:preautoinstruction_to_examination_flow a v-wf:Flow;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  v-wf:belongsTo s-wf:net_complex_route;
+  v-wf:flowsInto s-wf:cr_examination_after_autoinstruction.
+
+  s-wf:autoinstruction_to_examination_flow a v-wf:Flow;
+  rdfs:isDefinedBy <http://semantic-machines.com/veda/simple-workflow-cr/>;
+  v-wf:belongsTo s-wf:net_complex_route;
+  v-wf:flowsInto s-wf:cr_examination_after_autoinstruction.
