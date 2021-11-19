@@ -334,7 +334,7 @@ s-wf:ComplexRouteStartForm_Common_Template
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 simpleStartForm approval" rel="s-wf:ComplexRouteStartForm_approval" data-embedded="true">
@@ -345,7 +345,7 @@ s-wf:ComplexRouteStartForm_Common_Template
             <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormMinimal_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+        <div class="panel-body" about="@" data-template="s-wf:SimpleRouteStartFormShort_Template" data-embedded="true" style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
       </div>
     </div>
     <div class="col-md-6 simpleStartForm instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
