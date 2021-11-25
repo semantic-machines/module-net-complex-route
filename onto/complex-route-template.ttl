@@ -118,7 +118,6 @@ s-wf:ComplexRouteStartForm_Common_Template
     });
 
     var doc = individual['v-wf:processedDocument'][0];
-    if (!doc) { return; }
     individual["v-s:onDocument"] = [doc];
 
     if (individual.hasValue(complex+"informing")) {
@@ -207,7 +206,7 @@ s-wf:ComplexRouteStartForm_Common_Template
       individual[complex+'examination2'][0]['v-s:parent'] = [individual];
     }
   };
-  return Promise.all(stagePromises).then(function(){
+  Promise.all(stagePromises).then(function(){
     stages.forEach(function(stage) {
       var routeid = complex+stage;
       var sub = individual[routeid][0];
@@ -225,8 +224,7 @@ s-wf:ComplexRouteStartForm_Common_Template
         };
       }
     });
-  })
-
+  });
 </script>
 <div class="container sheet">
   <style scoped>
