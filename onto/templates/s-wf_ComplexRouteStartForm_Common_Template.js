@@ -372,7 +372,7 @@ export const html = `
             <span class="pull-left" about="@" property="rdfs:label"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></div>
+        <ul class="list-group" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></ul>
       </div>
     </div>
     <div class="col-md-12 simpleStartForm autoinstruction" rel="s-wf:ComplexRouteStartForm_autoinstruction" data-embedded="true">
@@ -382,7 +382,7 @@ export const html = `
             <span class="pull-left" about="@" property="rdfs:label"></span>
           </h3>
         </div>
-        <div class="panel-body" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></div>
+        <ul class="list-group" about="@" rel="s-wf:SimpleRouteStartForm_actions" data-template="s-wf:SimpleRouteStartFormForActions_Template" data-embedded="true"></ul>
       </div>
     </div>
     <div class="col-md-6 simpleStartForm examination2" rel="s-wf:ComplexRouteStartForm_examination2" data-embedded="true">
