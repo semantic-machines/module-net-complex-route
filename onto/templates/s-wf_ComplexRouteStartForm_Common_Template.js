@@ -6,16 +6,16 @@ export const pre = function (individual, template, container, mode, extra) {
   template = $(template);
   container = $(container);
 
-  //console.log("This is COMMON ComplexRouteStartForm template");
+  // console.log("This is COMMON ComplexRouteStartForm template");
 
-  var stages = [];
-  var complex = 's-wf:ComplexRouteStartForm_';
-  var simple = 's-wf:SimpleRouteStartForm_';
-  var stagePromises = [];
-  var notEditableStages = [];
+  const stages = [];
+  const complex = 's-wf:ComplexRouteStartForm_';
+  const simple = 's-wf:SimpleRouteStartForm_';
+  const stagePromises = [];
+  const notEditableStages = [];
   if (this.hasValue('v-wf:isProcess')) {
     $('#save_and_start_process', template).remove();
-    for (var key in individual.properties) {
+    for (const key in individual.properties) {
       if (key.indexOf(complex) != -1) {
         stages.push(key.split('_')[1]);
         stagePromises.push(individual[key][0].load());
@@ -26,8 +26,8 @@ export const pre = function (individual, template, container, mode, extra) {
     $('#on-document', template).remove();
     $('#save_and_start_process', template).on('click', function () {
       stages.forEach(function (stage) {
-        var routeid = complex + stage;
-        var sub = individual[routeid][0];
+        const routeid = complex + stage;
+        const sub = individual[routeid][0];
         if (sub) {
           if (!sub.hasValue(simple + 'participant') || sub.properties[simple + 'participant'].length == 0) {
             if (!sub.hasValue(simple + 'actions') || sub.properties[simple + 'actions'].length == 0) {
@@ -49,7 +49,7 @@ export const pre = function (individual, template, container, mode, extra) {
         });
     });
 
-    var doc = individual['v-wf:processedDocument'][0];
+    const doc = individual['v-wf:processedDocument'][0];
     individual['v-s:onDocument'] = [doc];
 
     if (individual.hasValue(complex + 'informing')) {
@@ -57,7 +57,7 @@ export const pre = function (individual, template, container, mode, extra) {
       individual[complex + 'informing'][0]['v-s:parent'] = [individual];
     }
 
-    for (var i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 6; i++) {
       if (individual.hasValue(complex + 'coordination' + i)) {
         individual[complex + 'coordination' + i][0][simple + 'possible_decisions'] = [
           new IndividualModel('v-wf:DecisionAgreed'),
@@ -180,8 +180,8 @@ export const pre = function (individual, template, container, mode, extra) {
   }
   return Promise.all(stagePromises).then(function () {
     stages.forEach(function (stage) {
-      var routeid = complex + stage;
-      var sub = individual[routeid][0];
+      const routeid = complex + stage;
+      const sub = individual[routeid][0];
       if (!sub.hasValue(simple + 'visible') || sub[simple + 'visible'][0] == false) {
         $('.' + stage, template).hide();
       }
@@ -192,7 +192,7 @@ export const pre = function (individual, template, container, mode, extra) {
 
         if (individual.isNew()) {
           notEditableStages.push(sub);
-          //sub.save();
+          // sub.save();
         }
       }
     });
