@@ -6,8 +6,6 @@ export const pre = function (individual, template, container, mode, extra) {
   template = $(template);
   container = $(container);
 
-  // console.log("This is COMMON ComplexRouteStartForm template");
-
   const stages = [];
   const complex = 's-wf:ComplexRouteStartForm_';
   const simple = 's-wf:SimpleRouteStartForm_';
