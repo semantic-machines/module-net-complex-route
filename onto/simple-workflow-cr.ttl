@@ -195,6 +195,11 @@ s-wf:executor_instruction3
   rdfs:isDefinedBy s-wfc: ;
   v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction3'}])" ;
 .
+s-wf:executor_instruction3_1
+  rdf:type v-wf:ExecutorDefinition ;
+  rdfs:isDefinedBy s-wfc: ;
+  v-wf:executorExpression "veda.Workflow.get_properties_chain (process.getInputVariable ('startForm_id'), [{$get:'s-wf:ComplexRouteStartForm_instruction3_1'}])" ;
+.
 
 s-wf:executor_instruction4
   rdf:type v-wf:ExecutorDefinition ;
@@ -395,6 +400,19 @@ s-wf:map_coordinator6_1
   rdfs:isDefinedBy s-wfc: ;
   v-wf:mapToVariable s-wf:var_coordination_level ;
   v-wf:mappingExpression "veda.Util.newStr ('6')" ;
+.
+
+s-wf:var_is_create_permission_filter
+  rdf:type v-wf:VarDefine ;
+  v-wf:varDefineName "is_create_permission_filter" ;
+  rdfs:label "Создавать permissionFilter"@ru ;
+  rdfs:isDefinedBy s-wf: ;
+.
+s-wf:map_is_create_permission_filter
+  rdf:type v-wf:Mapping ;
+  v-wf:mapToVariable s-wf:var_is_create_permission_filter ;
+  v-wf:mappingExpression "process.getInputVariable ('is_create_permission_filter')" ;
+  rdfs:isDefinedBy s-wf: ;
 .
 # ------------- journal ------------------------
 
@@ -805,6 +823,7 @@ s-wf:complexRouteStartFormToNet
   v-wf:transformRule s-wf:rul_transform1_complex ;
   v-wf:transformRule s-wf:rul_transform2_complex ;
   v-wf:transformRule s-wf:rul_transform3_complex ;
+  v-wf:transformRule s-wf:rul_transform4_complex ;
   rdfs:isDefinedBy s-wf: ;
 .
 
@@ -833,6 +852,15 @@ s-wf:rul_transform3_complex
   v-wf:aggregate  "putUri ('rdf:type', 'v-wf:Variable')";
   v-wf:aggregate  "putValue ('v-wf:variableValue')";
   v-wf:aggregate  "putString ('v-wf:variableName', 'startForm_id')";
+.
+
+s-wf:rul_transform4_complex
+  rdf:type v-wf:Rule ;
+  rdfs:isDefinedBy s-wfc: ;
+  v-wf:segregateElement "contentName('s-wf:ComplexRouteStartForm_permissionFilter')" ;
+  v-wf:aggregate  "putUri ('rdf:type', 'v-wf:Variable')";
+  v-wf:aggregate  "putValue ('v-wf:variableValue')";
+  v-wf:aggregate  "putString ('v-wf:variableName', 'is_create_permission_filter')";
 .
 
 s-wf:map_msg_template_project

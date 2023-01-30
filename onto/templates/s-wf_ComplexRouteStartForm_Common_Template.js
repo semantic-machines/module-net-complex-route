@@ -137,6 +137,17 @@ export const pre = function (individual, template, container, mode, extra) {
       stages.push('instruction3');
       individual[complex + 'instruction3'][0]['v-s:parent'] = [individual];
     }
+    if (individual.hasValue(complex + 'instruction3_1')) {
+      individual[complex + 'instruction3_1'][0][simple + 'possible_decisions'] = [
+        new IndividualModel('v-wf:DecisionAchieved'),
+        new IndividualModel('v-wf:DecisionRejected'),
+        new IndividualModel('v-wf:DecisionNotPerformed'),
+        new IndividualModel('v-wf:DecisionNotForMe'),
+      ];
+      individual[complex + 'instruction3_1'][0][simple + 'task_label'] = ['Ознакомиться^ru', 'Execute task^en'];
+      stages.push('instruction3_1');
+      individual[complex + 'instruction3_1'][0]['v-s:parent'] = [individual];
+    }
     if (individual.hasValue(complex + 'instruction4')) {
       individual[complex + 'instruction4'][0][simple + 'possible_decisions'] = [
         new IndividualModel('v-wf:DecisionAchieved'),
@@ -353,6 +364,22 @@ export const html = `
             class="panel-body"
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
+            data-embedded="true"
+            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+        </div>
+      </div>
+      <div class="col-md-6 simpleStartForm instruction3_1" rel="s-wf:ComplexRouteStartForm_instruction3_1" data-embedded="true">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title clearfix">
+              <span class="pull-left" about="s-wf:ComplexRouteStartForm_instruction" property="rdfs:label"></span>
+              <span class="pull-right statusWorkflow" about="@" rel="v-wf:hasStatusWorkflow" data-template="v-ui:StatusTemplate"></span>
+            </h3>
+          </div>
+          <div
+            class="panel-body"
+            about="@"
+            data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
             style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
         </div>

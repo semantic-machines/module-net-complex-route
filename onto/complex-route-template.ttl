@@ -220,6 +220,14 @@ s-wf:ComplexRouteStartForm_instruction3
   rdfs:range s-wf:SimpleRouteStartForm ;
   rdfs:isDefinedBy s-wf: ;
 .
+s-wf:ComplexRouteStartForm_instruction3_1
+  rdf:type rdf:Property ;
+  rdfs:label "Поручение"@ru ;
+  rdfs:label "Instruction"@en ;
+  rdfs:domain s-wf:ComplexRouteStartForm ;
+  rdfs:range s-wf:SimpleRouteStartForm ;
+  rdfs:isDefinedBy s-wf: ;
+.
 
 s-wf:ComplexRouteStartForm_instruction4
   rdf:type rdf:Property ;
