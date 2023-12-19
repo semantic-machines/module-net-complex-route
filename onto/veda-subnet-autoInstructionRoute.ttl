@@ -75,7 +75,7 @@ d:task_autoinstruction_to_release
   v-wf:locationX "400"^^xsd:integer;
   v-wf:locationY "250"^^xsd:integer;
   v-wf:split v-wf:None;
-  v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, s-wf:Autoinstruction_task_date_to, s-wf:map_initiator, d:set_change_status_true, d:set_isEditable_false;
+  v-wf:startingMapping d:task_autoinstruction_map_controller, s-wf:map_msg_template_autoinstruction-universal, s-wf:map_doc_id_from_executor, d:task_autoinstraction_decision_for_instruction, d:map_decision_form_type_autoinstruction, d:map_autoinstruction_task_action, s-wf:Autoinstruction_task_date_to, s-wf:map_initiator, d:set_change_status_true, d:set_isEditable_false, d:set_isAutoinstruction_true;
   #v-wf:subNet s-wf:net_coordination;
 	v-wf:subNet s-wf:UniversalNet;    
 .
@@ -165,6 +165,11 @@ d:set_isEditable_false
   rdf:type v-wf:Mapping ;
   v-wf:mapToVariable s-wf:var_isEditable ;
   v-wf:mappingExpression  "veda.Util.newBool (false);" ;
+.
+d:set_isAutoinstruction_true
+  rdf:type v-wf:Mapping ;
+  v-wf:mapToVariable s-wf:var_isAutoinstruction ;
+  v-wf:mappingExpression  "veda.Util.newBool (true);" ;
 .
 
 d:executor_before_handler
