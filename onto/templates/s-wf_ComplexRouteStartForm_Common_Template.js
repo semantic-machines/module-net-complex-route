@@ -110,6 +110,7 @@ export const pre = function (individual, template, container, mode, extra) {
         new IndividualModel('v-wf:DecisionRejected'),
         new IndividualModel('v-wf:DecisionNotPerformed'),
         new IndividualModel('v-wf:DecisionNotForMe'),
+        new IndividualModel('v-wf:DecisionProlongate'),
       ];
       individual[complex + 'instruction'][0][simple + 'task_label'] = ['Исполнить поручение^ru', 'Execute task^en'];
       stages.push('instruction');
@@ -154,6 +155,7 @@ export const pre = function (individual, template, container, mode, extra) {
         new IndividualModel('v-wf:DecisionRejected'),
         new IndividualModel('v-wf:DecisionNotPerformed'),
         new IndividualModel('v-wf:DecisionNotForMe'),
+        new IndividualModel('v-wf:DecisionProlongate'),
       ];
       individual[complex + 'instruction4'][0][simple + 'task_label'] = ['Исполнить поручение^ru', 'Execute task^en'];
       stages.push('instruction4');
