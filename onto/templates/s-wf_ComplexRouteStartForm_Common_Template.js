@@ -98,7 +98,7 @@ export const pre = function (individual, template, container, mode, extra) {
       individual[complex + 'review'][0][simple + 'possible_decisions'] = [
         new IndividualModel('v-wf:DecisionReview'),
         new IndividualModel('v-wf:DecisionRejected'),
-        new IndividualModel('v-wf:DecisionNotForMe'),
+        new IndividualModel('v-wf:DecisionNotForMeWithAcceptReject'),
       ];
       individual[complex + 'review'][0][simple + 'task_label'] = ['Рассмотреть^ru', 'Review^en'];
       stages.push('review');
