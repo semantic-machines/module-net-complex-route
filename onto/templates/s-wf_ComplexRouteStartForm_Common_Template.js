@@ -206,6 +206,9 @@ export const pre = function (individual, template, container, mode, extra) {
           // sub.save();
         }
       }
+      if (sub.hasValue(simple + 'required', true)) {
+        $('.' + stage, template).attr('about', '@');
+      }
     });
   });
 };
