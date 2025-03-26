@@ -189,6 +189,15 @@ export const pre = function (individual, template, container, mode, extra) {
       individual[complex + 'examination2'][0]['v-s:parent'] = [individual];
     }
   }
+  template.on('internal-validated', function (event) {
+    const validationData = event.detail;
+    if (validationData.state) {
+      $('#save_and_start_process', template).removeAttr('disabled');
+    } else {
+      $('#save_and_start_process', template).attr('disabled', 'disabled');
+    }
+    event.stopPropagation();
+  });
   return Promise.all(stagePromises).then(function () {
     stages.forEach(function (stage) {
       const routeid = complex + stage;
