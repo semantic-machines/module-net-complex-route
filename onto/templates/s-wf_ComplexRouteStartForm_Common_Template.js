@@ -241,9 +241,8 @@ export const html = `
     </style>
     <h2 about="s-wf:ComplexRouteStartForm" property="rdfs:label"></h2>
     <h4 id="on-document" about="@" rel="v-s:onDocument" data-template="v-ui:ClassNameLabelLinkTemplate"></h4>
-    <br />
     <div class="row">
-      <div class="col-md-6 simpleStartForm informing" rel="s-wf:ComplexRouteStartForm_informing" data-embedded="true">
+      <div class="col-md-12 simpleStartForm informing" rel="s-wf:ComplexRouteStartForm_informing" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -253,7 +252,7 @@ export const html = `
           <div class="panel-body" about="@" data-embedded="true" data-template="s-wf:SimpleRouteStartFormMinimal_Template"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm introduction" rel="s-wf:ComplexRouteStartForm_introduction" data-embedded="true">
+      <div class="col-md-12 simpleStartForm introduction" rel="s-wf:ComplexRouteStartForm_introduction" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -266,10 +265,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm coordination1" rel="s-wf:ComplexRouteStartForm_coordination1" data-embedded="true">
+      <div class="col-md-12 simpleStartForm coordination1" rel="s-wf:ComplexRouteStartForm_coordination1" data-embedded="true">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -282,10 +281,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm coordination2" rel="s-wf:ComplexRouteStartForm_coordination2" data-embedded="true">
+      <div class="col-md-12 simpleStartForm coordination2" rel="s-wf:ComplexRouteStartForm_coordination2" data-embedded="true">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -298,11 +297,11 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
 
-      <div class="col-md-6 simpleStartForm coordination3" rel="s-wf:ComplexRouteStartForm_coordination3" data-embedded="true">
+      <div class="col-md-12 simpleStartForm coordination3" rel="s-wf:ComplexRouteStartForm_coordination3" data-embedded="true">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -315,10 +314,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm coordination4" rel="s-wf:ComplexRouteStartForm_coordination4" data-embedded="true">
+      <div class="col-md-12 simpleStartForm coordination4" rel="s-wf:ComplexRouteStartForm_coordination4" data-embedded="true">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -331,10 +330,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm coordination5" rel="s-wf:ComplexRouteStartForm_coordination5" data-embedded="true">
+      <div class="col-md-12 simpleStartForm coordination5" rel="s-wf:ComplexRouteStartForm_coordination5" data-embedded="true">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -347,10 +346,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm coordination6" rel="s-wf:ComplexRouteStartForm_coordination6" data-embedded="true">
+      <div class="col-md-12 simpleStartForm coordination6" rel="s-wf:ComplexRouteStartForm_coordination6" data-embedded="true">
         <div class="panel panel-success">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -363,10 +362,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm sign" rel="s-wf:ComplexRouteStartForm_sign" data-embedded="true">
+      <div class="col-md-12 simpleStartForm sign" rel="s-wf:ComplexRouteStartForm_sign" data-embedded="true">
         <div class="panel panel-warning">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -379,10 +378,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm instruction3_1" rel="s-wf:ComplexRouteStartForm_instruction3_1" data-embedded="true">
+      <div class="col-md-12 simpleStartForm instruction3_1" rel="s-wf:ComplexRouteStartForm_instruction3_1" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -395,10 +394,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm approval" rel="s-wf:ComplexRouteStartForm_approval" data-embedded="true">
+      <div class="col-md-12 simpleStartForm approval" rel="s-wf:ComplexRouteStartForm_approval" data-embedded="true">
         <div class="panel panel-warning">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -411,10 +410,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormShort_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
+      <div class="col-md-12 simpleStartForm instruction4" rel="s-wf:ComplexRouteStartForm_instruction4" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -427,10 +426,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm review" rel="s-wf:ComplexRouteStartForm_review" data-embedded="true">
+      <div class="col-md-12 simpleStartForm review" rel="s-wf:ComplexRouteStartForm_review" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -443,10 +442,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm instruction" rel="s-wf:ComplexRouteStartForm_instruction" data-embedded="true">
+      <div class="col-md-12 simpleStartForm instruction" rel="s-wf:ComplexRouteStartForm_instruction" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -459,10 +458,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm instruction2" rel="s-wf:ComplexRouteStartForm_instruction2" data-embedded="true">
+      <div class="col-md-12 simpleStartForm instruction2" rel="s-wf:ComplexRouteStartForm_instruction2" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -475,10 +474,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm instruction3" rel="s-wf:ComplexRouteStartForm_instruction3" data-embedded="true">
+      <div class="col-md-12 simpleStartForm instruction3" rel="s-wf:ComplexRouteStartForm_instruction3" data-embedded="true">
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -491,10 +490,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormFull_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm examination" rel="s-wf:ComplexRouteStartForm_examination" data-embedded="true">
+      <div class="col-md-12 simpleStartForm examination" rel="s-wf:ComplexRouteStartForm_examination" data-embedded="true">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -507,10 +506,10 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormMinimal_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
-      <div class="col-md-6 simpleStartForm distribution" rel="s-wf:ComplexRouteStartForm_distribution" data-embedded="true">
+      <div class="col-md-12 simpleStartForm distribution" rel="s-wf:ComplexRouteStartForm_distribution" data-embedded="true">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title clearfix">
@@ -523,7 +522,7 @@ export const html = `
             about="@"
             data-template="s-wf:SimpleRouteStartFormMinimal_Template"
             data-embedded="true"
-            style="min-height:380px; height:380px; overflow-y:auto; overflow-x:hidden;"></div>
+            style="padding-top:5px;"></div>
         </div>
       </div>
       <div class="col-md-12 simpleStartForm preautoinstruction" rel="s-wf:ComplexRouteStartForm_preautoinstruction" data-embedded="true">
